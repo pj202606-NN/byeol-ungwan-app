@@ -1,6 +1,6 @@
 /* ==========================================================================
-   tokens.css — 디자인 변수 (임시값)
-   Figma 디자인 구현 시 이 파일의 값을 교체합니다.
+   tokens.css — 디자인 변수
+   색상은 Figma PNG 에서 추출한 값 (정확한 값은 Figma 확인 시 교체 가능)
    ========================================================================== */
 
 :root {
@@ -17,13 +17,36 @@
   --font-point-song-myung: 'Song Myung', var(--font-fallback-serif);
   --font-point-maru-buri: 'Maru Buri', var(--font-fallback-serif);
 
-  /* ── 색상 (임시) ── */
-  --color-page-bg: #e6e7eb;        /* PC: 앱 프레임 바깥 배경 */
-  --color-app-bg: #ffffff;         /* 앱 내부 배경 */
-  --color-surface: #f4f5f7;
-  --color-border: #e1e3e8;
-  --color-text: #1a1a1a;
-  --color-text-sub: #6b6f78;
+  /* 포인트 폰트 사용 지점 — 비교할 때 이 한 줄만 바꾸면 됨
+     예) var(--font-point-hahmlet) / var(--font-point-song-myung) / var(--font-point-maru-buri)
+     (최종 선택 전이므로 기본값은 시스템 명조) */
+  --font-point: var(--font-fallback-serif);
+
+  /* ── 색상 (Figma 05_home 기준 추출값) ── */
+  --color-page-bg: #e6e7eb;        /* PC: 앱 프레임 바깥 배경 (임시) */
+  --color-app-bg: #070e16;         /* 앱 기본 배경 (밤하늘) */
+  --color-app-bg-deep: #030609;    /* 섹션 구분 띠 */
+  --color-dome: #081b26;           /* 상단 하늘 돔 아래쪽 */
+  --color-dome-edge: #172832;      /* 돔 테두리 */
+  --color-surface: #111c25;        /* 카드·원형 자리 */
+  --color-surface-2: #121f29;      /* 관측 지도 카드 */
+  --color-line: #182531;           /* 목록 구분선 */
+  --color-divider: #44494f;        /* 큰 구분선 */
+  --color-accent: #416f95;         /* 파란 강조 (탭 밑줄·순위·라벨) */
+  --color-accent-dim: #2a4962;
+  --color-gold: #dfd5bb;           /* '오늘은,' · 선택된 날짜 */
+  --color-star: #f8efe0;           /* 별 */
+  --color-text: #ffffff;
+  --color-text-sub: #888888;       /* 보조 설명 */
+  --color-text-muted: #7b7b7b;     /* 날짜·링크 */
+  --color-text-faint: #555555;     /* 섹션 부제 */
+  --color-text-dim: #9c9fa2;       /* 한자·비활성 이름 */
+  --color-tab-inactive: #51565b;
+  --color-nav-bg: #0b1925;         /* 하단 메뉴바 (05_home.png 기준, 불투명 기준색) */
+  --color-nav-glass: rgba(9, 30, 42, 0.8); /* 반투명 메뉴바 — 홈 돔 아래쪽 청록(#081b26)보다 아주 살짝 어둡게 */
+  --color-nav-border: #39434e;     /* 하단 메뉴바 외곽선 */
+  --color-nav-text: #e6e6e6;
+  --color-border: #1e2a33;
 
   /* ── 기본 크기 / 간격 ── */
   --font-size-base: 16px;
@@ -35,7 +58,17 @@
 
   /* ── 앱 구조 ── */
   --header-height: 0px;            /* 상단 고정 영역 (필요 시 지정) */
-  --bottom-nav-height: 56px;       /* 하단 메뉴바 높이 (Safe Area 제외) */
+  --bottom-nav-height: 72px;       /* 하단 메뉴바 높이 (nav_main.png 393×72) */
+  --bottom-nav-side: 16px;         /* 메뉴바 좌우 여백 */
+  --bottom-nav-gap: 12px;          /* 메뉴바 아래 최소 여백 (Safe Area 가 없을 때) */
+  --bottom-nav-blur: 5px;          /* 메뉴바 뒤 배경 흐림 (Figma 4~6) */
+  --bottom-nav-icon-stroke: 1.4;   /* 메뉴바 아이콘 선 굵기 (SVG 원본 1.6 — 메뉴바에서만 얇게) */
+  --bottom-nav-inactive-opacity: 0.45; /* 현재 화면이 아닌 메뉴의 밝기 */
+  --bottom-nav-label-size: 11px;   /* 메뉴바 글자 크기 (원본 측정 12px 에서 한 단계 줄임) */
+  --bottom-fade-height: 70px;      /* 메뉴바 위로 이어지는 하단 그라데이션 높이 */
+  --bottom-nav-bottom-space: max(var(--bottom-nav-gap), env(safe-area-inset-bottom, 0px));
+  /* 본문 끝 여백: 마지막 내용이 메뉴바 위로 올라올 수 있도록 (메뉴바 + 아래 여백 + 24) */
+  --content-bottom-space: calc(var(--bottom-nav-height) + var(--bottom-nav-bottom-space) + 24px);
   --tablet-content-max: 720px;     /* 태블릿에서 콘텐츠 최대 너비 (임시) */
 
   /* ── PC 프레임 (Figma 393 × 852 비율) ── */

@@ -1,14 +1,57 @@
+import { Link, useLocation } from 'react-router';
+import Icon from './Icon.tsx';
+import {
+  CONSTELLATION_BACK_TO,
+  CONSTELLATION_NAV,
+  CONSTELLATION_PREFIX,
+  MAIN_NAV,
+  isActive,
+  type NavItem,
+} from './navConfig.ts';
 import './BottomNav.css';
 
 /**
- * 하단 메뉴바 (임시)
- * 앱 프레임(.app-frame) 의 마지막 자식으로 배치되어 항상 프레임 하단에 붙습니다.
- * 실제 메뉴 항목·아이콘은 Figma 디자인 구현 단계에서 교체합니다.
+ * 공통 하단 메뉴바 — AppShell 에서 한 번만 배치 (페이지마다 중복 구현하지 않음)
+ * 현재 주소가 /constellations 아래이면 별자리 전용 메뉴바, 그 외에는 기본 메뉴바
+ * 디자인 기준: figma-reference/nav_main.png, nav_constellations.png (393×72)
  */
 export default function BottomNav() {
+  const { pathname } = useLocation();
+  const isConstellation = pathname.startsWith(CONSTELLATION_PREFIX);
+
   return (
-    <nav className="bottom-nav" aria-label="하단 메뉴">
-      <span className="bottom-nav__placeholder">하단 메뉴 영역 (임시)</span>
-    </nav>
+    <div className="bottom-nav-area">
+      <nav
+        className={`bottom-nav ${isConstellation ? 'bottom-nav--constellation' : 'bottom-nav--main'}`}
+        aria-label={isConstellation ? '별자리 메뉴' : '주 메뉴'}
+      >
+        {isConstellation && (
+          <Link to={CONSTELLATION_BACK_TO} className="bottom-nav__back" aria-label="홈으로 돌아가기">
+            <Icon name="back" className="bottom-nav__icon" />
+          </Link>
+        )}
+        <ul className="bottom-nav__list">
+          {(isConstellation ? CONSTELLATION_NAV : MAIN_NAV).map((item) => (
+            <NavButton key={item.key} item={item} active={isActive(item, pathname)} />
+          ))}
+        </ul>
+      </nav>
+    </div>
+  );
+}
+
+function NavButton({ item, active }: { item: NavItem; active: boolean }) {
+  return (
+    <li className="bottom-nav__item">
+      <Link
+        to={item.to}
+        className="bottom-nav__link"
+        aria-current={active ? 'page' : undefined}
+        data-active={active || undefined}
+      >
+        <Icon name={item.icon} className="bottom-nav__icon" />
+        <span className="bottom-nav__label">{item.label}</span>
+      </Link>
+    </li>
   );
 }

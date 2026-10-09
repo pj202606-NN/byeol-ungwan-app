@@ -1,0 +1,17 @@
+/* 아이콘 공통 — 색은 부모의 color(currentColor), 크기는 --icon-size */
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  color: inherit;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}

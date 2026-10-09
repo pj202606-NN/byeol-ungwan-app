@@ -1,0 +1,38 @@
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-header__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  color: var(--color-text);
+}
+
+.section-header__subtitle {
+  margin-top: 0;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.2px;
+  color: var(--color-text-faint);
+}
+
+.section-header__more {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  line-height: 26px;
+  color: #595959;
+  cursor: pointer;
+}
+
+.section-header__more span {
+  font-size: 15px;
+  font-weight: 300;
+}
