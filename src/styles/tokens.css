@@ -4,9 +4,18 @@
    ========================================================================== */
 
 :root {
-  /* ── 폰트: 현재는 시스템 기본 폰트 (Figma 폰트 확정 후 로컬 파일로 교체) ── */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic',
+  /* ── 폰트 (로컬 파일 — src/styles/fonts.css 에서 등록) ── */
+  --font-fallback-sans: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic',
     'Noto Sans KR', 'Segoe UI', Roboto, sans-serif;
+  --font-fallback-serif: 'AppleMyungjo', 'Nanum Myeongjo', 'Batang', serif;
+
+  /* 기본 폰트: 앱 전체 UI·본문·버튼·입력창 */
+  --font-family: 'Pretendard Variable', var(--font-fallback-sans);
+
+  /* 포인트 폰트 후보 (비교용 — 최종 1종 선택 전까지 화면에 임의 적용하지 않음) */
+  --font-point-hahmlet: 'Hahmlet', var(--font-fallback-serif);
+  --font-point-song-myung: 'Song Myung', var(--font-fallback-serif);
+  --font-point-maru-buri: 'Maru Buri', var(--font-fallback-serif);
 
   /* ── 색상 (임시) ── */
   --color-page-bg: #e6e7eb;        /* PC: 앱 프레임 바깥 배경 */

@@ -89,6 +89,15 @@ byeol-ungwan-app/
 
 `node_modules/`, `dist/` 는 자동 생성 폴더입니다 (Git 제외, 직접 수정하지 않음).
 
+### 에셋 폴더
+
+| 폴더 | 용도 | Git / 배포 |
+|---|---|---|
+| `src/assets/icons/` | 앱에서 쓰는 아이콘 (SVG 권장) | 포함 |
+| `src/assets/images/` | 앱에서 쓰는 이미지·일러스트 (PNG/WebP 2x~3x) | 포함 |
+| `src/assets/fonts/` | 웹폰트 (WOFF2) | 포함 |
+| `src/assets/figma-reference/` | Figma 화면 PNG — **구현 참고용** | **제외** (로컬 전용, 코드에서 import 금지) |
+
 ## 4. GitHub Pages 배포 관련 파일
 
 | 파일 | 내용 |

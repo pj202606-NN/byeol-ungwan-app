@@ -45,7 +45,10 @@ video {
   height: auto;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font: inherit;
   color: inherit;
 }

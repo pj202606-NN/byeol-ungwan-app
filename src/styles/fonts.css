@@ -1,0 +1,58 @@
+/* ==========================================================================
+   fonts.css — 로컬 웹폰트 등록 (외부 CDN 사용 안 함)
+   출처·라이선스: src/assets/fonts/FONT_LICENSES.md
+
+   - 기본 폰트: Pretendard (tokens.css 의 --font-family)
+   - 포인트 폰트 후보 3종: 등록만 해 둠. 브라우저는 실제로 사용하는 화면에서만 내려받음.
+     사용 예)  font-family: var(--font-point-hahmlet);
+   ========================================================================== */
+
+/* ── 기본: Pretendard (가변 폰트 하나로 45~920 모든 굵기) ── */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/pretendard/PretendardVariable.woff2') format('woff2-variations');
+}
+
+/* ── 포인트 후보 1: Hahmlet (함렡) ── */
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/hahmlet/Hahmlet-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/hahmlet/Hahmlet-Bold.woff2') format('woff2');
+}
+
+/* ── 포인트 후보 2: Song Myung (송명) — 공식 배포 형식 TTF, Regular 1종 ── */
+@font-face {
+  font-family: 'Song Myung';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/song-myung/SongMyung-Regular.ttf') format('truetype');
+}
+
+/* ── 포인트 후보 3: Maru Buri (마루 부리) ── */
+@font-face {
+  font-family: 'Maru Buri';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/maru-buri/MaruBuri-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Maru Buri';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/maru-buri/MaruBuri-Bold.woff2') format('woff2');
+}

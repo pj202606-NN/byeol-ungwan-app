@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import { applyDeviceAttribute } from './utils/device.ts';
 import { registerPwa } from './pwa/registerPwa.ts';
+import './styles/fonts.css';
 import './styles/tokens.css';
 import './styles/global.css';
 

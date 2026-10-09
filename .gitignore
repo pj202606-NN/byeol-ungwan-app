@@ -1,6 +1,8 @@
 # 로컬 전용 (공개 저장소에 올리지 않음)
 OLD_PROJECT/
 LOCAL_ONLY.md
+# Figma 화면 PNG (구현 참고용, 공개·배포 제외 — 코드에서 import 금지)
+src/assets/figma-reference/
 
 # 의존성 (npm install 로 재설치 가능)
 node_modules/
