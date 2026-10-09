@@ -5,6 +5,7 @@ import FortunePage from './pages/FortunePage.tsx';
 import RecordsPage from './pages/RecordsPage.tsx';
 import ExplorePage from './pages/ExplorePage.tsx';
 import RankingPage from './pages/RankingPage.tsx';
+import CompatibilityPage from './pages/CompatibilityPage.tsx';
 
 /**
  * 라우팅 — GitHub Pages(정적 호스팅)에서 새로고침 404 를 막기 위해 HashRouter 사용
@@ -23,7 +24,8 @@ export default function App() {
           <Route path="constellations">
             <Route path="explore" element={<ExplorePage />} />
             <Route path="ranking" element={<RankingPage />} />
-            {/* 아직 구현하지 않은 궁합·사전 등은 탐색으로 되돌림 (별자리 영역·메뉴바 유지) */}
+            <Route path="compatibility" element={<CompatibilityPage />} />
+            {/* 아직 구현하지 않은 사전 등은 탐색으로 되돌림 (별자리 영역·메뉴바 유지) */}
             <Route index element={<Navigate to="explore" replace />} />
             <Route path="*" element={<Navigate to="/constellations/explore" replace />} />
           </Route>

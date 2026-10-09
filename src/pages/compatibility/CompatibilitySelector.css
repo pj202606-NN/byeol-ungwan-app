@@ -1,0 +1,226 @@
+/* ==========================================================================
+   08_02_01 상대 별자리 선택 시트 — figma-reference/08_02_01_compatibility-selector.png
+   (2x PNG 측정값 ÷ 2 = CSS px, 세로 위치는 시트 위쪽 끝 기준)
+   ========================================================================== */
+
+/* 앱 프레임 전체를 덮음 (하단 메뉴바 위) */
+.compat-selector {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+
+/* 뒤쪽 화면: 흐리고 어둡게 */
+.compat-selector__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: compat-selector-fade 0.2s ease-out;
+}
+
+/* 상태 표시줄 아래 콘텐츠 기준 위쪽 188.5 부터 (높이 609.5) */
+.compat-selector__sheet {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 76.4%; /* 콘텐츠 높이 798 중 609.5 */
+  max-height: calc(100% - 48px);
+  border: 1px solid #1d2d3a;
+  border-bottom: 0;
+  border-radius: 24px 24px 0 0;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  outline: none;
+  animation: compat-selector-up 0.24s ease-out;
+}
+
+@keyframes compat-selector-fade {
+  from { opacity: 0; }
+}
+
+@keyframes compat-selector-up {
+  from { transform: translateY(24px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compat-selector__backdrop,
+  .compat-selector__sheet {
+    animation: none;
+  }
+}
+
+/* 손잡이 (가운데 16.5, 40 × 3) — 누르면 닫힘. 터치 영역은 넓게 */
+.compat-selector__handle {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: center;
+  width: 88px;
+  height: 32px;
+  margin-top: -0.5px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.compat-selector__handle::before {
+  position: absolute;
+  top: 14.5px;
+  left: 24px;
+  width: 40px;
+  height: 3px;
+  border-radius: 1.5px;
+  background: #444a4c;
+  content: '';
+}
+
+/* 제목 (가운데 47.5) · 오른쪽 '저수자리 x 항수자리' */
+.compat-selector__head {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 1.5px;
+  padding: 0 20px 0 20.5px;
+}
+
+.compat-selector__title {
+  margin: 0;
+  font-family: var(--font-point);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.compat-selector__pair {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 12.5px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #a0a0a0;
+}
+
+/* 검색 (위 75.5, 높이 33, 좌우 20.5) */
+.compat-selector__search {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  margin: 15px 20px 0 20.5px;
+}
+
+.compat-selector__search input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 0 40px 0 15.5px;
+  border: 1px solid #3a4249;
+  border-radius: 17px;
+  background: transparent;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--color-text);
+  outline: none;
+  appearance: none;
+}
+
+.compat-selector__search input::placeholder {
+  color: var(--color-text-sub);
+}
+
+.compat-selector__search input:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.compat-selector__search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.compat-selector__search-icon {
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  color: var(--color-text-sub);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* 별자리 목록 — 이 영역만 스크롤 */
+.compat-selector__list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin; /* 본문 스크롤과 같은 모양 */
+  scrollbar-color: #26323c transparent;
+  padding: 6px 20px calc(22px + env(safe-area-inset-bottom, 0px)) 20.5px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.compat-selector__group + .compat-selector__group {
+  margin-top: 18px;
+}
+
+.compat-selector__group-label {
+  margin: 18px 0 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--color-accent);
+}
+
+/* 4열 (393 폭에서 버튼 81 × 32, 간격 9.5 · 9) */
+.compat-selector__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px 9.5px;
+  margin-top: 9px;
+}
+
+.compat-selector__option {
+  height: 32px;
+  padding: 0;
+  border: 1px solid #2a353d;
+  border-radius: 10px;
+  background: none;
+  font-size: 14px;
+  white-space: nowrap;
+  color: #a0a0a0;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 버튼 사이 간격까지 눌리도록 터치 영역 확장 (겹치지 않는 범위) */
+.compat-selector__option::before {
+  position: absolute;
+  inset: -4.5px -4.75px;
+  content: '';
+}
+
+.compat-selector__option[aria-pressed='true'] {
+  border-color: #cac0a8;
+  background: #cac0a8;
+  font-weight: 600;
+  color: var(--color-surface-2);
+}
+
+.compat-selector__option:focus-visible,
+.compat-selector__handle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.compat-selector__empty {
+  margin-top: 24px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--color-text-sub);
+}

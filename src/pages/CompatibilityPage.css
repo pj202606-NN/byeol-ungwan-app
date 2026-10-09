@@ -1,0 +1,351 @@
+/* ==========================================================================
+   08_02 오늘의 궁합 — figma-reference/08_02_compatibility.png · 08_02_02_compatibility-result.png
+   (2x PNG 측정값 ÷ 2 = CSS px, 세로 위치는 상태 표시줄(54) 아래 콘텐츠 시작점 기준)
+   ========================================================================== */
+
+.compat {
+  padding-bottom: 16px;
+  background: var(--color-app-bg);
+  color: var(--color-text);
+}
+
+/* ── 위쪽: 헤더 · 질문 · 나 / 상대방 (아래로 갈수록 청록) ── */
+.compat-top {
+  padding-bottom: 56px; /* 아래 24 는 본문 판이 겹치는 부분 */
+  background: linear-gradient(to bottom, var(--color-app-bg) 30%, #081721 100%);
+}
+
+/* 질문 (가운데 89.5) */
+.compat-question {
+  margin-top: 6.5px;
+  padding: 0 20px;
+  font-family: var(--font-point);
+  font-size: 15.5px;
+  line-height: 22px;
+  text-align: center;
+  word-break: keep-all;
+  color: #cac0a8;
+}
+
+.compat-question strong {
+  font-weight: 700;
+}
+
+/* 나 · 상대방 — 화면을 반으로 나눠 각 가운데 정렬 (393 폭: 98 / 296) */
+.compat-pair {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 22.5px;
+}
+
+.compat-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.compat-side--partner {
+  padding: 0 0 0 2.5px;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.compat-side--partner:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px; /* 화면 가장자리에서 잘리지 않도록 안쪽에 */
+  border-radius: 12px;
+}
+
+.compat-side__label {
+  display: block;
+  font-size: 11.5px;
+  line-height: 16px;
+  color: var(--color-text-sub);
+}
+
+/* 별자리 도형 · 빈 원 자리 (96 × 96, 위 148) */
+.compat-side__figure {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-top: 9px;
+}
+
+.compat-side__ring {
+  display: block;
+  width: 95px;
+  height: 95px;
+  margin: 9.5px 0 0.5px;
+  border: 1px solid #3c4650;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #0a1822 0%, rgba(10, 24, 34, 0) 70%);
+}
+
+/* 가운데 궁합 아이콘 (가운데 x 196.5, y 201) */
+.compat-pair__icon {
+  position: absolute;
+  top: 68px;
+  left: 50%;
+  color: #fdfdfd;
+  transform: translateX(-50%);
+}
+
+.compat-side__name,
+.compat-side__select {
+  display: flex;
+  align-items: baseline;
+  height: 26px;
+  margin-top: 13px;
+  font-family: var(--font-point);
+  font-size: 18px;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.compat-side__name span {
+  margin-left: 6px;
+  font-family: var(--font-family);
+  font-size: 12.5px;
+  color: var(--color-text-dim);
+}
+
+.compat-side__select {
+  align-items: center;
+  font-size: 16px;
+}
+
+.compat-side__chevron {
+  margin-left: 8px;
+  color: #bdbdbd;
+}
+
+.compat-side__sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 18px;
+  white-space: nowrap;
+  color: var(--color-text-sub);
+}
+
+/* ── 본문 판 (위쪽 모서리 둥글게, 위 영역에 24 겹침 · 위 335) ── */
+.compat-sheet {
+  position: relative;
+  margin-top: -24px;
+  padding-top: 30px;
+  border-radius: 24px 24px 0 0;
+  background: var(--color-app-bg);
+}
+
+.compat-sheet:has(.compat-quote) {
+  padding-top: 54px;
+}
+
+/* 선택 전 안내 (가운데 375) */
+.compat-guide {
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  word-break: keep-all;
+  color: #d9d9d9;
+}
+
+.compat-guide strong {
+  font-weight: 700;
+}
+
+.compat-divider {
+  height: 1px;
+  margin: 31px 21px 0;
+  border: 0;
+  background: var(--color-divider);
+}
+
+/* 결과: 양 끝이 흐려지는 구분선 (위 555.5) */
+.compat-divider--result {
+  margin: 51px 19px 0 20.5px;
+  background: linear-gradient(to right, rgba(68, 73, 79, 0.15), var(--color-divider) 25%, var(--color-divider) 75%, rgba(68, 73, 79, 0.15));
+}
+
+/* ── 선택 전: 흐리게 가린 풀이 + 안내 ── */
+.compat-locked {
+  position: relative;
+  margin-top: 64px;
+  padding: 0 34px;
+}
+
+.compat-locked__blurred {
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--color-text-sub);
+  filter: blur(5px);
+  opacity: 0.5;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+}
+
+.compat-locked__blurred-title {
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  color: var(--color-text);
+}
+
+.compat-locked__notice {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.compat-locked__title {
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.compat-locked__desc {
+  margin-top: 6.75px;
+  font-size: 13px;
+  line-height: 20.5px;
+  color: var(--color-text-sub);
+}
+
+.compat-locked__desc span {
+  display: block;
+}
+
+/* ── 결과: 인용 (세로선 x 36.5, 위 389) ── */
+.compat-quote {
+  margin: 0 20px 0 36px;
+}
+
+.compat-quote .quote-block__label + .quote-block__text {
+  margin-top: 14.5px;
+}
+
+.compat-quote .quote-block__text {
+  line-height: 25px;
+}
+
+.compat-quote .quote-block__footer {
+  margin-top: 7.5px;
+}
+
+/* ── 결과: 바로가기 버튼 (가운데 630, 높이 28.5) ── */
+.compat-chips {
+  display: flex;
+  gap: 9px;
+  margin-top: 59.75px;
+  padding: 0 21px 0 21.5px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.compat-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.compat-chips__chip {
+  flex: 1 0 auto;
+  height: 28.5px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 14.25px;
+  background: #0d1c29;
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--color-text-sub);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.compat-chips__chip[aria-current='true'] {
+  background: #17344d;
+  color: var(--color-text);
+}
+
+/* ── 결과: 풀이 섹션 (접고 펼치기) ── */
+.compat-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 71.5px;
+  margin-top: 56.75px;
+  padding: 0 39px 0 34px;
+}
+
+.compat-section {
+  scroll-margin-top: 24px;
+}
+
+.compat-section__head {
+  margin: 0;
+}
+
+.compat-section__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.compat-section__chevron {
+  margin-right: 2.5px;
+  color: #5e6267;
+}
+
+.compat-section__chevron.chevron--up {
+  margin-top: 5px;
+}
+
+.compat-section__body {
+  margin-top: 6.5px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--color-text-sub);
+}
+
+.compat-section__body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 점 x 44.5 · 글자 x 56 */
+.compat-section__body li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.compat-section__body li::before {
+  position: absolute;
+  top: 10.5px;
+  left: 9px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  content: '';
+}
