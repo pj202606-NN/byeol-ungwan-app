@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import Chevron from './Chevron.tsx';
 import './PageHeader.css';
@@ -8,6 +9,8 @@ interface PageHeaderProps {
   showBack?: boolean;
   /** 스크롤 중에도 화면 위에 고정 */
   sticky?: boolean;
+  /** 오른쪽 영역 (생략 시 프로필 원) — 08_01 순위는 '별운관' 로고 */
+  right?: ReactNode;
 }
 
 /**
@@ -15,7 +18,7 @@ interface PageHeaderProps {
  * (06 운세, 08_03 탐색, 07 기록·09 마이(← 없음) 에서 반복)
  * ← : 앱 안에서 이전 화면이 있으면 뒤로, 없으면(직접 접속 등) 홈으로
  */
-export default function PageHeader({ title, showBack = true, sticky = false }: PageHeaderProps) {
+export default function PageHeader({ title, showBack = true, sticky = false, right }: PageHeaderProps) {
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -32,8 +35,10 @@ export default function PageHeader({ title, showBack = true, sticky = false }: P
         </button>
       )}
       <h1 className="page-header__title">{title}</h1>
-      {/* 프로필 이미지 자리 (디자인 시안도 단색 원, 동작 미확정) */}
-      <span className="page-header__avatar" aria-hidden="true" />
+      {right ?? (
+        // 프로필 이미지 자리 (디자인 시안도 단색 원, 동작 미확정)
+        <span className="page-header__avatar" aria-hidden="true" />
+      )}
     </header>
   );
 }

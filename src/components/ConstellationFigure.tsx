@@ -19,10 +19,12 @@ interface ConstellationFigureProps {
   viewBox: string;
   /** 연결선 굵기 (viewBox 단위, 기본 0.8) — 작게 축소해 쓸 때 굵게 */
   lineWidth?: number;
+  /** 별 주변 빛 번짐 (기본 표시) — 아주 작은 도형(08_01 순위)에서는 끔 */
+  halo?: boolean;
   className?: string;
 }
 
-export default function ConstellationFigure({ stars, lines, viewBox, lineWidth = 0.8, className }: ConstellationFigureProps) {
+export default function ConstellationFigure({ stars, lines, viewBox, lineWidth = 0.8, halo = true, className }: ConstellationFigureProps) {
   return (
     <svg className={className} viewBox={viewBox} aria-hidden="true" focusable="false">
       <defs>
@@ -38,7 +40,7 @@ export default function ConstellationFigure({ stars, lines, viewBox, lineWidth =
       </g>
       {stars.map((s, i) => (
         <g key={i}>
-          <circle cx={s.x} cy={s.y} r={s.r * (s.glow ? 3 : 2.2)} fill="url(#star-glow)" />
+          {halo && <circle cx={s.x} cy={s.y} r={s.r * (s.glow ? 3 : 2.2)} fill="url(#star-glow)" />}
           <circle cx={s.x} cy={s.y} r={s.r} fill="var(--color-star)" />
         </g>
       ))}

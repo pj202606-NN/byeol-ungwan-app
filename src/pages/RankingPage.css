@@ -1,0 +1,175 @@
+/* ==========================================================================
+   08_01 별자리 순위 — figma-reference/08_01_ranking.png (2x PNG 측정값 ÷ 2 = CSS px)
+   세로 위치는 상태 표시줄(54) 아래 콘텐츠 시작점 기준
+   ========================================================================== */
+
+.ranking {
+  /* 화면이 넉넉하면 순위 줄이 남는 높이를 나눠 가지도록 세로 flex */
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* 배경이 메뉴바 아래(본문 끝 여백)까지 이어지도록 — 레이아웃 높이는 그대로 */
+  margin-bottom: calc(-1 * var(--content-bottom-space));
+  padding-bottom: calc(16px + var(--content-bottom-space));
+  background: linear-gradient(to bottom, var(--color-app-bg) 45%, #071620 100%);
+  color: var(--color-text);
+}
+
+/* 헤더 오른쪽 가로 '별운관' 로고 자리 (에셋 제공 시 이 안에 SVG) */
+.ranking-logo {
+  display: block;
+  width: 47px;
+  height: 18px;
+  margin-right: -3px;
+}
+
+/* ── 방위 탭 (청룡 / 현무 / 백호 / 주작) — 화면 폭을 4등분, 좌우 여백 20 (393 폭에서 탭 76·간격 16) ── */
+.ranking-tabs {
+  display: flex;
+  gap: 16px;
+  padding: 4.5px 20px 0;
+}
+
+.ranking-tabs__tab {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 0 11px;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--color-tab-inactive);
+  cursor: pointer;
+}
+
+.ranking-tabs__tab[aria-selected='true'] {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.ranking-tabs__tab[aria-selected='true']::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color-accent);
+  content: '';
+}
+
+/* ── 방위 정보 · 날짜 ── */
+.ranking-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10.5px;
+  padding: 0 20.5px 0 20px;
+  font-size: 11px;
+  line-height: 18px;
+  color: var(--color-text-muted);
+}
+
+/* ── 순위 목록 (줄 간격 76.25, 구분선은 좌우 20 안쪽) ── */
+.ranking-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 9.875px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking-item {
+  position: relative;
+  display: flex;
+  flex: 1 0 76.25px; /* 기본 76.25 — 화면이 넉넉하면 함께 늘어남 */
+  align-items: center;
+  max-height: 120px; /* 너무 넓게 벌어지지 않도록 상한 */
+  padding: 0 20px 0 25px;
+}
+
+.ranking-item + .ranking-item::before {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  left: 20px;
+  height: 1px;
+  background: #1d2d3a;
+  content: '';
+}
+
+.ranking-item__rank {
+  flex: 0 0 35px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* 미니 별자리: viewBox 60 -20 40 40 (화면 x 60~100, 줄 가운데 ±20) */
+.ranking-item__figure {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+}
+
+.ranking-item__text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden; /* 좁은 화면에서 가로 넘침 방지 */
+  margin-left: 58px; /* 이름 시작 x 118 */
+}
+
+.ranking-item__name {
+  display: flex;
+  align-items: baseline;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.ranking-item.is-top .ranking-item__name {
+  color: #cac0a8;
+}
+
+.ranking-item__hanja {
+  margin-left: 6px;
+  font-weight: 400;
+  color: #505050;
+}
+
+.ranking-item__mine {
+  margin-left: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #cac0a8;
+}
+
+.ranking-item__desc {
+  margin-top: 0;
+  /* 393 폭에서는 한 줄 — 좁은 화면에서는 단어 단위로 최대 두 줄 */
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 11px;
+  line-height: 19px;
+  word-break: keep-all;
+  color: var(--color-text-muted);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.ranking-item__chevron {
+  flex: 0 0 auto;
+  margin-left: 8px;
+  color: #8a8a8a;
+}
+
+/* 나의 별자리: 줄 가운데가 푸르게 빛나는 배경 */
+.ranking-item.is-mine {
+  background: radial-gradient(ellipse 48% 85% at 54% 50%, #0a2440 0%, rgba(10, 36, 64, 0) 100%);
+}

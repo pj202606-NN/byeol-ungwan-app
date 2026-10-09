@@ -42,6 +42,8 @@
 }
 
 .app-content {
+  display: flex; /* 페이지가 남는 화면 높이를 채울 수 있도록 (08_01 순위) */
+  flex-direction: column;
   width: 100%;
   min-height: 100%;
 }
