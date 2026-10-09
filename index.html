@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>별운관</title>
+    <meta name="description" content="별운관 졸업전시 웹앱" />
+
+    <!-- 브라우저/상태 표시줄 색 (vite.config.ts 의 THEME_COLOR 와 맞출 것) -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- 홈 화면 설치 시 독립 실행 (Android / iOS) -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="별운관" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>이 앱을 사용하려면 JavaScript를 켜 주세요.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   tokens.css — 디자인 변수 (임시값)
+   Figma 디자인 구현 시 이 파일의 값을 교체합니다.
+   ========================================================================== */
+
+:root {
+  /* ── 폰트: 현재는 시스템 기본 폰트 (Figma 폰트 확정 후 로컬 파일로 교체) ── */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic',
+    'Noto Sans KR', 'Segoe UI', Roboto, sans-serif;
+
+  /* ── 색상 (임시) ── */
+  --color-page-bg: #e6e7eb;        /* PC: 앱 프레임 바깥 배경 */
+  --color-app-bg: #ffffff;         /* 앱 내부 배경 */
+  --color-surface: #f4f5f7;
+  --color-border: #e1e3e8;
+  --color-text: #1a1a1a;
+  --color-text-sub: #6b6f78;
+
+  /* ── 기본 크기 / 간격 ── */
+  --font-size-base: 16px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --radius-md: 12px;
+
+  /* ── 앱 구조 ── */
+  --header-height: 0px;            /* 상단 고정 영역 (필요 시 지정) */
+  --bottom-nav-height: 56px;       /* 하단 메뉴바 높이 (Safe Area 제외) */
+  --tablet-content-max: 720px;     /* 태블릿에서 콘텐츠 최대 너비 (임시) */
+
+  /* ── PC 프레임 (Figma 393 × 852 비율) ── */
+  --frame-ratio-w: 393;
+  --frame-ratio-h: 852;
+  --frame-margin: 24px;            /* 브라우저 가장자리와의 최소 여백 */
+  --frame-radius: 28px;            /* 임시 모서리 곡률 */
+  --frame-border: 1px solid rgba(0, 0, 0, 0.12);
+  --frame-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.10);
+}

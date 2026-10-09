@@ -1,0 +1,9 @@
+{
+  // VS Code 탐색기 표시 전용 설정 — 실행·빌드에는 영향 없음
+  // package.json 아래에 npm/TypeScript/Vite 설정 파일을 접어서 표시
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, tsconfig.json, tsconfig.node.json, vite.config.ts"
+  }
+}

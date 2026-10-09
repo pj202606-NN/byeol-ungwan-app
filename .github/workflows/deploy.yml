@@ -1,0 +1,53 @@
+# GitHub Pages 자동 배포 (main 브랜치 push 시)
+# - 빌드 결과물(dist/)만 공개됩니다. OLD_PROJECT/, src/ 등은 배포되지 않습니다.
+# - 배포 경로는 저장소 이름으로 자동 설정됩니다: https://<사용자>.github.io/<저장소이름>/
+# - 사용 전: 저장소 Settings → Pages → Build and deployment → Source 를 "GitHub Actions" 로 선택
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Actions 탭에서 수동 실행 가능
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # 저장소 이름이 바뀌어도 경로가 자동으로 맞춰짐 (vite.config.ts 의 BASE_PATH)
+          BASE_PATH: /${{ github.event.repository.name }}/
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
