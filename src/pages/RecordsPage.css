@@ -1,0 +1,229 @@
+/* ==========================================================================
+   07 기록 — figma-reference/07_records.png (2x PNG 측정값 ÷ 2 = CSS px)
+   세로 위치는 상태 표시줄(54) 아래 콘텐츠 시작점 기준
+   ========================================================================== */
+
+.records {
+  padding-bottom: 16px;
+  background: var(--color-app-bg);
+  color: var(--color-text);
+}
+
+/* ── 위쪽: 헤더 · 달력 · 요약 (아래로 갈수록 청록) ── */
+.records-top {
+  padding-bottom: 60px; /* 요약 아래 36 + 본문 판이 겹치는 24 */
+  background: linear-gradient(to bottom, var(--color-app-bg) 25%, #071722 92%);
+}
+
+.records-intro {
+  margin-top: -14px; /* 헤더 안쪽 (중심 66) */
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.records-top .month-calendar {
+  margin-top: 33px;
+}
+
+/* 기분 색 범례 (오른쪽 정렬) */
+.records-moods {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 27px 0 0;
+  padding: 0 32px 0 0;
+  list-style: none;
+  font-size: 11px;
+  line-height: 16px;
+  color: #3e454a;
+}
+
+.records-moods li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.records-moods__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.records-divider {
+  height: 1px;
+  margin: 29px 21px 0;
+  border: 0;
+  background: #445057;
+}
+
+/* 총 N일의 하늘 기록 + 오른쪽 범례 */
+.records-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 33px;
+  padding: 0 41px 0 39px;
+  line-height: 18px;
+}
+
+.records-summary__count {
+  font-size: 11px;
+  color: var(--color-text-sub);
+}
+
+.records-summary__count strong {
+  font-weight: 700;
+}
+
+.records-summary__legend {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  color: #cac0a8;
+}
+
+.records-summary__legend li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.records-summary__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.records-summary__mark--filled {
+  background: var(--color-gold);
+}
+
+.records-summary__mark--ring {
+  border: 1px solid #cac0a8;
+}
+
+/* ── 본문 판 (위쪽 모서리 둥글게) ── */
+.records-sheet {
+  position: relative;
+  margin-top: -24px;
+  padding-top: 34.5px;
+  border-radius: 24px 24px 0 0;
+  background: var(--color-app-bg);
+}
+
+.records-day__weekday {
+  padding-left: 39px;
+  font-size: 12.5px;
+  line-height: 18px;
+  color: var(--color-text-sub);
+}
+
+.records-day__date {
+  margin-top: 1px;
+  padding-left: 39px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #cac0a8;
+}
+
+.records-quote {
+  margin: 31.5px 20px 0 36px;
+  padding-top: 2.5px; /* 위 작은 제목 없는 인용: 세로선 위 끝 → 첫 줄 */
+}
+
+.records-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 3.5px 29px 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  line-height: 18px;
+  color: #55585b;
+  cursor: pointer;
+}
+
+/* ── 오늘의 기분 / 짧은 기록 ── */
+.records-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  padding: 0 32px;
+}
+
+.records-block--note {
+  margin-top: 54px;
+}
+
+.records-block__title {
+  padding-left: 2px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+}
+
+.records-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.records-chips__chip {
+  height: 32px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 16px;
+  background: #0d1c29;
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--color-text-sub);
+  cursor: pointer;
+}
+
+.records-note {
+  height: 120px;
+  margin-top: 14.5px;
+  padding: 10px 14px;
+  border: 1px solid #797979;
+  border-radius: 14px;
+  background: transparent;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--color-text);
+  resize: none;
+}
+
+.records-note::placeholder {
+  color: #494949;
+}
+
+.records-note:focus {
+  border-color: #a9a9a9;
+  outline: none;
+}
+
+.records-save {
+  align-self: flex-end;
+  height: 31px;
+  margin-top: 16.5px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #d9cfb7, #b9ae96);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #1a1813;
+  cursor: pointer;
+}

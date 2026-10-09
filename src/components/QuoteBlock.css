@@ -13,11 +13,16 @@
 }
 
 .quote-block__text {
-  margin-top: 17.75px;
+  margin-top: 0;
   font-family: var(--font-point);
   font-size: 16.5px;
   line-height: 23.5px;
+  word-break: keep-all; /* 좁은 화면에서 한국어 단어 중간이 끊기지 않도록 */
   color: var(--color-text);
+}
+
+.quote-block__label + .quote-block__text {
+  margin-top: 17.75px; /* 위 작은 제목이 있을 때만 (06 운세) */
 }
 
 .quote-block__text span {

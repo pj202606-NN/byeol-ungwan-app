@@ -2,6 +2,7 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router';
 import AppShell from './layouts/AppShell.tsx';
 import HomePage from './pages/HomePage.tsx';
 import FortunePage from './pages/FortunePage.tsx';
+import RecordsPage from './pages/RecordsPage.tsx';
 
 /**
  * 라우팅 — GitHub Pages(정적 호스팅)에서 새로고침 404 를 막기 위해 HashRouter 사용
@@ -15,6 +16,7 @@ export default function App() {
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
           <Route path="fortune" element={<FortunePage />} />
+          <Route path="records" element={<RecordsPage />} />
           {/* 정의되지 않은 주소는 홈으로 */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

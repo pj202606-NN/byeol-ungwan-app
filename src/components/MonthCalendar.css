@@ -1,0 +1,91 @@
+/* 07_records.png 측정값: 열 중심 45 · 95 · 145 · 196 · 247 · 297 · 347, 행 간격 40, 원 30 */
+.month-calendar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  padding: 0 27px;
+}
+
+.month-calendar__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #626262;
+  --chevron-stroke: 1.1px;
+  cursor: pointer;
+}
+
+.month-calendar__title {
+  font-family: var(--font-point);
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--color-text);
+}
+
+.month-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 34px; /* 요일 줄 (중심 166.5 → 첫 날짜 줄 중심 203.5) */
+  grid-auto-rows: 40px;
+  margin-top: 12.5px; /* 달 표시 중심 122 → 요일 중심 166.5 */
+  padding: 0 21px 0 20px;
+}
+
+.month-calendar__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.month-calendar__day {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-calendar__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* 날짜 위 기록 점 (기분 색) */
+.month-calendar__dot {
+  position: absolute;
+  top: calc(50% - 14px - 2.5px);
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.month-calendar__day.is-future .month-calendar__num {
+  color: #505050;
+}
+
+/* 오늘: 테두리 원 */
+.month-calendar__day.is-today .month-calendar__num {
+  border: 1px solid #9a9a9a;
+}
+
+/* 강조 날짜: 금색 원 */
+.month-calendar__day.is-highlighted .month-calendar__num {
+  background: var(--color-gold);
+  color: #0e1a26;
+}
