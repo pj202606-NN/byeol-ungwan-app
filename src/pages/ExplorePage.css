@@ -1,0 +1,178 @@
+/* ==========================================================================
+   08_03 별자리 탐색 — figma-reference/08_03_explore.png (2x PNG 측정값 ÷ 2 = CSS px)
+   세로 위치는 상태 표시줄(54) 아래 콘텐츠 시작점 기준
+   ========================================================================== */
+
+.explore {
+  padding-bottom: 16px;
+  background: var(--color-app-bg);
+  color: var(--color-text);
+}
+
+/* ── 위쪽: 헤더 · 큰 별자리 · 현재 위치 (아래로 갈수록 청록) ── */
+.explore-top {
+  position: relative;
+  padding-bottom: 63px; /* 현재 위치 아래 39 + 본문 판이 겹치는 24 */
+  background: linear-gradient(to bottom, var(--color-app-bg) 37%, #071722 95%);
+}
+
+/* 홈과 같은 별자리 좌표 — 보여 주는 영역만 위로 78 이동 (viewBox 0 78 393 340) */
+.explore-top__figure {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 393px;
+  height: 340px;
+  transform: translateX(-50%);
+}
+
+.explore-where {
+  position: relative;
+  margin-top: 314px; /* 헤더(72) 아래 → '현재 위치' 줄 위쪽 386 */
+  padding: 0 39px;
+}
+
+.explore-where__label {
+  font-size: 12.5px;
+  line-height: 18px;
+  color: #555a5f;
+}
+
+.explore-where__label strong {
+  font-weight: 700;
+}
+
+.explore-where__direction {
+  margin-top: 11px;
+  font-family: var(--font-point);
+  font-size: 23px;
+  line-height: 30px;
+}
+
+.explore-where__time {
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-sub);
+}
+
+/* 오른쪽 원 + 새로고침 아이콘 (동작 미확정) */
+.explore-where__ring {
+  position: absolute;
+  top: 33px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 원보다 넓은 터치 영역 (44×44) */
+.explore-where__ring::before {
+  position: absolute;
+  inset: -9px;
+  content: '';
+}
+
+/* ── 본문 판 ── */
+.explore-sheet {
+  position: relative;
+  margin-top: -24px;
+  padding-top: 20px;
+  border-radius: 24px 24px 0 0;
+  background: var(--color-app-bg);
+}
+
+.explore-rows {
+  margin: 0;
+  padding: 0 20px 0 34px;
+}
+
+.explore-rows > div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  min-height: 40px;
+}
+
+.explore-rows dt {
+  font-size: 14px;
+  color: #6a6e73;
+  white-space: nowrap;
+}
+
+.explore-rows dd {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+  word-break: keep-all;
+  color: var(--color-text);
+}
+
+.explore-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 7px 23px 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 12.5px;
+  line-height: 18px;
+  color: #6e7071;
+  cursor: pointer;
+}
+
+/* ── 관측 지도 ── */
+.explore-map {
+  margin-top: 41px;
+}
+
+.explore-map__title {
+  padding: 0 34px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+}
+
+.explore-map__card {
+  height: 342px;
+  margin: 23.5px 33px 0 31px;
+  border-radius: 10px;
+  background: var(--color-surface);
+}
+
+.explore-map__chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.explore-rows--observe {
+  margin-top: 16.5px;
+}
+
+/* 겉보기 등급 옆 ? (내용·동작 미확정) */
+.explore-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  margin-left: 8px;
+  border: 1px solid #9aa0a5;
+  border-radius: 50%;
+  font-size: 9px;
+  line-height: 1;
+  color: #c9cdd1;
+}

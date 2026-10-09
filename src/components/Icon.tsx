@@ -9,6 +9,7 @@ import compatibilitySvg from '../assets/icons/icon-compatibility.svg?raw';
 import exploreSvg from '../assets/icons/icon-explore.svg?raw';
 import dictionarySvg from '../assets/icons/icon-dictionary.svg?raw';
 import shareSvg from '../assets/icons/icon-share.svg?raw';
+import refreshSvg from '../assets/icons/icon-refresh.svg?raw';
 import './Icon.css';
 
 /**
@@ -28,6 +29,7 @@ const ICONS = {
   explore: exploreSvg,
   dictionary: dictionarySvg,
   share: shareSvg,
+  refresh: refreshSvg,
 } as const;
 
 export type IconName = keyof typeof ICONS;

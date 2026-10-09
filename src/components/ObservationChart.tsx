@@ -1,6 +1,6 @@
 /**
  * 관측 지도 (방위 원 + 별자리 이동 궤적) — SVG
- * 홈 '별자리 탐색' 카드, 08_03 탐색 화면의 '관측 지도' 에서 같은 형태.
+ * 홈 '별자리 탐색' 카드, 08_03 탐색 화면의 '관측 지도' 에서 같은 형태 (탐색은 같은 좌표를 약 1.57배로 크게).
  * 좌표: Figma 2x PNG 의 카드 내부 픽셀 좌표 (카드 210×246 → viewBox 420×492)
  * ※ 현재 점 위치는 디자인 시안 값. 실제 천체 위치 계산은 추후 데이터 연결 시 교체.
  */
@@ -25,13 +25,23 @@ interface ObservationChartProps {
   label: string;
   /** 현재 위치 (viewBox 좌표) */
   point?: [number, number];
+  /** 보여 줄 영역 — 기본은 홈 카드(420×492). 탐색 화면처럼 카드 비율이 다르면 중심(210,246) 기준으로 지정 */
+  viewBox?: string;
+  /** 방위·별자리 이름 글자 크기 (viewBox 단위, 기본 16) */
+  labelSize?: number;
   className?: string;
 }
 
-export default function ObservationChart({ label, point = [113, 290], className }: ObservationChartProps) {
+export default function ObservationChart({
+  label,
+  point = [113, 290],
+  viewBox = '0 0 420 492',
+  labelSize = 16,
+  className,
+}: ObservationChartProps) {
   const [px, py] = point;
   return (
-    <svg className={className} viewBox="0 0 420 492" role="img" aria-label={`관측 지도: ${label}의 현재 위치`}>
+    <svg className={className} viewBox={viewBox} role="img" aria-label={`관측 지도: ${label}의 현재 위치`}>
       <g fill="none" stroke="#5b6b76" strokeWidth="1.6">
         <circle cx={C.x} cy={C.y} r={R} />
         <circle cx={C.x} cy={C.y} r={102} strokeDasharray="5 5" strokeOpacity="0.7" />
@@ -55,12 +65,12 @@ export default function ObservationChart({ label, point = [113, 290], className 
       <circle cx={px} cy={py} r="15" fill="#4f6577" fillOpacity="0.8" />
       <circle cx={px} cy={py} r="9" fill="#d7ecf2" />
 
-      <g fill="#d2e1e8" fontSize="16" textAnchor="middle" fontFamily="var(--font-family)">
+      <g fill="#d2e1e8" fontSize={labelSize} textAnchor="middle" fontFamily="var(--font-family)">
         <text x={C.x} y={C.y - R - 9}>북</text>
         <text x={C.x} y={C.y + R + 23}>남</text>
         <text x={C.x - R - 18} y={C.y + 6}>서</text>
         <text x={C.x + R + 18} y={C.y + 6}>동</text>
-        <text x={px} y={py - 20} fontSize="16">{label}</text>
+        <text x={px} y={py - 20} fontSize={labelSize}>{label}</text>
       </g>
     </svg>
   );
