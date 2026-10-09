@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router';
+import { useEffect, useRef } from 'react';
+import { Outlet, useLocation } from 'react-router';
 import PcStatusBar from '../components/PcStatusBar.tsx';
 import BottomNav from '../components/BottomNav.tsx';
 import './AppShell.css';
@@ -13,11 +14,19 @@ import './AppShell.css';
  *    └ BottomNav     하단 메뉴바 — 앱 프레임 하단에 고정, 본문 위에 겹쳐 표시 (반투명·흐림)
  */
 export default function AppShell() {
+  const { pathname } = useLocation();
+  const scrollRef = useRef<HTMLElement>(null);
+
+  // 화면을 옮기면 본문 스크롤을 맨 위로
+  useEffect(() => {
+    scrollRef.current?.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="app-stage">
       <div className="app-frame app-frame--with-nav">
         <PcStatusBar />
-        <main className="app-scroll">
+        <main className="app-scroll" ref={scrollRef}>
           <div className="app-content">
             <Outlet />
           </div>

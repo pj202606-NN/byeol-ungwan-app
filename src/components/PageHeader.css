@@ -1,0 +1,57 @@
+/* 06_fortune.png 측정값: 높이 72 (가운데 36), 제목 17px, 프로필 원 32px (오른쪽 26) */
+:root {
+  --page-header-height: 72px;
+}
+
+.page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: var(--page-header-height);
+  padding: 0 26px 0 14px;
+}
+
+/* 스크롤 중에도 본문(.app-scroll) 위쪽에 고정 */
+.page-header--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--color-app-bg);
+}
+
+.page-header__back {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; /* 터치 영역 */
+  height: 44px;
+  padding: 0 0 0 6px;
+  border: 0;
+  background: none;
+  color: #fff;
+  --chevron-stroke: 1.6px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.page-header__title {
+  position: absolute;
+  left: 50%;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.page-header__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}

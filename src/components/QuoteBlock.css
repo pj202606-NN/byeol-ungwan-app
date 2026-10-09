@@ -1,0 +1,32 @@
+/* 06_fortune.png 측정값 기준: 세로선 2px #454a50, 선과 글자 사이 24.5px */
+.quote-block {
+  position: relative;
+  margin: 0;
+  padding: 0 0 9px 24.5px;
+  border-left: 2px solid #454a50;
+}
+
+.quote-block__label {
+  font-size: 12px;
+  line-height: 17px;
+  color: #484b4f;
+}
+
+.quote-block__text {
+  margin-top: 17.75px;
+  font-family: var(--font-point);
+  font-size: 16.5px;
+  line-height: 23.5px;
+  color: var(--color-text);
+}
+
+.quote-block__text span {
+  display: block;
+}
+
+.quote-block__footer {
+  margin-top: 8.25px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-sub);
+}

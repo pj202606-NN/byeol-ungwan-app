@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useNavigate } from 'react-router';
 import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import Icon from '../components/Icon.tsx';
 import ObservationChart from '../components/ObservationChart.tsx';
@@ -14,15 +16,28 @@ import {
   todayFortune,
   todayHero,
 } from './home/homeData.ts';
+import { useSectionNav } from '../utils/useSectionNav.ts';
+import { useWheelToHorizontal } from '../utils/useWheelToHorizontal.ts';
 import './HomePage.css';
+
+const sectionKeys = homeTabs.map((t) => t.key);
 
 /**
  * 05 홈 — figma-reference/05_home.png (393 × 2569)
  * 데이터는 디자인 시안 예시 값(home/homeData.ts). 버튼·탭의 이동 동작은 미확정이라 연결하지 않음.
  */
 export default function HomePage() {
+  const navigate = useNavigate();
+  // 별자리 사전 카드 줄: PC 는 페이지 끝에서 마우스 휠로 넘기기 (모바일·태블릿은 손가락 슬라이드)
+  const dictCardsRef = useRef<HTMLUListElement>(null);
+  useWheelToHorizontal(dictCardsRef);
+  // 상단 바로가기 메뉴: 누르면 섹션 이동 + 스크롤 위치에 따라 선택
+  const { activeKey, goTo, rootRef, sectionRef, itemRef } = useSectionNav(sectionKeys, {
+    stickySelectors: ['.home-tabs'],
+  });
+
   return (
-    <div className="home">
+    <div className="home" ref={rootRef}>
       {/* ── 상단: 오늘의 별자리 ── */}
       <section className="home-hero" aria-label="오늘의 별자리">
         <div className="home-hero__dome" aria-hidden="true" />
@@ -59,7 +74,7 @@ export default function HomePage() {
             <span key={line}>{line}</span>
           ))}
         </p>
-        <button type="button" className="home-today__link">
+        <button type="button" className="home-today__link" onClick={() => navigate('/fortune')}>
           운세 자세히 보러 가기 &gt;
         </button>
       </section>
@@ -83,17 +98,25 @@ export default function HomePage() {
 
       <div className="home-band" aria-hidden="true" />
 
-      {/* ── 탭 (동작 미확정 — 표시만) ── */}
-      <div className="home-tabs" role="tablist" aria-label="별자리 메뉴 미리보기">
-        {homeTabs.map((tab, i) => (
-          <button key={tab} type="button" role="tab" aria-selected={i === 0} className="home-tabs__tab">
-            {tab}
+      {/* ── 상단 바로가기 메뉴 (이 위치에 오면 화면 위에 고정) ── */}
+      <nav className="home-tabs" aria-label="홈 섹션 바로가기">
+        {homeTabs.map((tab) => (
+          <button
+            key={tab.key}
+            ref={itemRef(tab.key)}
+            type="button"
+            className="home-tabs__tab"
+            aria-current={activeKey === tab.key ? 'true' : undefined}
+            aria-controls={`home-section-${tab.key}`}
+            onClick={() => goTo(tab.key)}
+          >
+            {tab.label}
           </button>
         ))}
-      </div>
+      </nav>
 
       {/* ── 오늘의 운세 순위 ── */}
-      <section className="home-section home-ranking">
+      <section id="home-section-ranking" ref={sectionRef('ranking')} className="home-section home-ranking">
         <SectionHeader title="오늘의 운세 순위" showMore />
         <ol className="home-ranking__list">
           {ranking.map((r, i) => (
@@ -109,7 +132,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 별자리 궁합 ── */}
-      <section className="home-section home-compat">
+      <section id="home-section-compat" ref={sectionRef('compat')} className="home-section home-compat">
         <SectionHeader title="별자리 궁합" subtitle="어떤 별자리가 당신과 가장 잘 맞을까요?" showMore />
         <div className="home-compat__body">
           <ul className="home-compat__legend">
@@ -133,7 +156,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 별자리 탐색 ── */}
-      <section className="home-section home-explore">
+      <section id="home-section-explore" ref={sectionRef('explore')} className="home-section home-explore">
         <SectionHeader title="별자리 탐색" subtitle="당신의 별자리는 지금 어느 곳에 있을까요?" />
         <div className="home-explore__body">
           <div className="home-explore__card">
@@ -159,7 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 별자리 사전 ── */}
-      <section className="home-section home-dict">
+      <section id="home-section-dict" ref={sectionRef('dict')} className="home-section home-dict">
         <SectionHeader title="별자리 사전" />
         <div className="home-dict__directions" role="tablist" aria-label="방위">
           {directions.map((d, i) => (
@@ -168,9 +191,9 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-        <ul className="home-dict__cards">
-          {dictionaryCards.map((c) => (
-            <li key={c.name} className="home-dict__item">
+        <ul className="home-dict__cards" ref={dictCardsRef}>
+          {dictionaryCards.map((c, i) => (
+            <li key={`${c.name}-${i}`} className="home-dict__item">
               {/* 별자리 카드 이미지 자리 (디자인 시안도 빈 카드) */}
               <div className="home-dict__card">{c.period && <span>{c.period}</span>}</div>
               <p className="home-dict__name">

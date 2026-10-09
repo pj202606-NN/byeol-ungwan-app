@@ -1,0 +1,39 @@
+import { useNavigate } from 'react-router';
+import Chevron from './Chevron.tsx';
+import './PageHeader.css';
+
+interface PageHeaderProps {
+  title: string;
+  /** 왼쪽 ← 버튼 표시 */
+  showBack?: boolean;
+  /** 스크롤 중에도 화면 위에 고정 */
+  sticky?: boolean;
+}
+
+/**
+ * 하위 화면 공통 헤더: ← · 제목 · 프로필 원
+ * (06 운세, 08_03 탐색, 07 기록·09 마이(← 없음) 에서 반복)
+ * ← : 앱 안에서 이전 화면이 있으면 뒤로, 없으면(직접 접속 등) 홈으로
+ */
+export default function PageHeader({ title, showBack = true, sticky = false }: PageHeaderProps) {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    const idx = (window.history.state as { idx?: number } | null)?.idx ?? 0;
+    if (idx > 0) navigate(-1);
+    else navigate('/', { replace: true });
+  };
+
+  return (
+    <header className={sticky ? 'page-header page-header--sticky' : 'page-header'}>
+      {showBack && (
+        <button type="button" className="page-header__back" onClick={goBack} aria-label="뒤로 가기">
+          <Chevron direction="left" size={14} />
+        </button>
+      )}
+      <h1 className="page-header__title">{title}</h1>
+      {/* 프로필 이미지 자리 (디자인 시안도 단색 원, 동작 미확정) */}
+      <span className="page-header__avatar" aria-hidden="true" />
+    </header>
+  );
+}

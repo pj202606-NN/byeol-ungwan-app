@@ -1,3 +1,4 @@
+import type React from 'react';
 import { Link, useLocation } from 'react-router';
 import Icon from './Icon.tsx';
 import {
@@ -19,9 +20,15 @@ export default function BottomNav() {
   const { pathname } = useLocation();
   const isConstellation = pathname.startsWith(CONSTELLATION_PREFIX);
 
+  // 메뉴바는 본문 위에 겹쳐 있으므로, 메뉴바 위에서 굴린 마우스 휠도 본문 스크롤로 전달 (PC)
+  const forwardWheel = (e: React.WheelEvent<HTMLElement>) => {
+    e.currentTarget.closest('.app-frame')?.querySelector('.app-scroll')?.scrollBy({ top: e.deltaY, left: 0 });
+  };
+
   return (
     <div className="bottom-nav-area">
       <nav
+        onWheel={forwardWheel}
         className={`bottom-nav ${isConstellation ? 'bottom-nav--constellation' : 'bottom-nav--main'}`}
         aria-label={isConstellation ? '별자리 메뉴' : '주 메뉴'}
       >

@@ -228,13 +228,31 @@
 }
 
 /* ── 탭 ────────────────────────────────────────────────────────────── */
+/* 상단 바로가기 메뉴 — 이 위치에 오면 본문 위쪽에 고정 (위 여백 20 포함, 디자인 위치 유지) */
+.home {
+  --home-tabs-height: 53.5px; /* 위 여백 20 + 글자 22 + 밑줄까지 11.5 */
+}
+
 .home-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   display: flex;
   gap: 16px;
-  margin-top: 40px;
-  padding: 0 20px;
+  height: var(--home-tabs-height);
+  margin-top: 20px; /* 디자인 위치 유지: 40 - 위 여백 20 */
+  padding: 20px 20px 0; /* 고정됐을 때 화면 맨 위와의 여백 */
   overflow-x: auto;
   scrollbar-width: none;
+  background: var(--color-app-bg);
+}
+
+/* 바로가기로 이동할 때 고정 메뉴 아래 24 여백에 섹션 제목이 오도록 */
+.home-ranking,
+.home-compat,
+.home-explore,
+.home-dict {
+  scroll-margin-top: calc(var(--home-tabs-height) + 24px);
 }
 
 .home-tabs::-webkit-scrollbar {
@@ -249,17 +267,18 @@
   background: none;
   font-size: 16.5px;
   line-height: 22px;
-  letter-spacing: -0.2px;
+  letter-spacing: 0; /* 원본 글자 폭에 맞춤 (05_home.png: 끝 위치 341) */
   white-space: nowrap;
   color: var(--color-tab-inactive);
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-.home-tabs__tab[aria-selected='true'] {
+.home-tabs__tab[aria-current='true'] {
   color: var(--color-text);
 }
 
-.home-tabs__tab[aria-selected='true']::after {
+.home-tabs__tab[aria-current='true']::after {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -514,6 +533,7 @@
   border: 0;
   background: none;
   font-size: 16px;
+  font-weight: 300; /* 선택 안 된 방위: 살짝 얇게 */
   line-height: 22px;
   color: var(--color-text);
   cursor: pointer;
@@ -530,14 +550,16 @@
 }
 
 .home-dict__direction[aria-selected='true'] {
+  font-weight: 600; /* 선택된 방위: 한 단계 굵게 */
   color: var(--color-accent);
 }
 
 .home-dict__cards {
   display: flex;
   gap: 9px;
-  margin: 27.5px 0 0;
-  padding: 0 20px 0 0;
+  /* 화면 양 끝까지 넘어가도록 섹션 왼쪽 여백(20)만큼 바깥으로 넓힘 — 첫 카드 위치는 그대로 */
+  margin: 27.5px 0 0 -20px;
+  padding: 0 20px;
   overflow-x: auto;
   list-style: none;
   scrollbar-width: none;

@@ -17,10 +17,12 @@ interface ConstellationFigureProps {
   /** 연결선: stars 배열의 인덱스 쌍 */
   lines: [number, number][];
   viewBox: string;
+  /** 연결선 굵기 (viewBox 단위, 기본 0.8) — 작게 축소해 쓸 때 굵게 */
+  lineWidth?: number;
   className?: string;
 }
 
-export default function ConstellationFigure({ stars, lines, viewBox, className }: ConstellationFigureProps) {
+export default function ConstellationFigure({ stars, lines, viewBox, lineWidth = 0.8, className }: ConstellationFigureProps) {
   return (
     <svg className={className} viewBox={viewBox} aria-hidden="true" focusable="false">
       <defs>
@@ -29,7 +31,7 @@ export default function ConstellationFigure({ stars, lines, viewBox, className }
           <stop offset="100%" stopColor="#f8efe0" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <g stroke="#8fa3b5" strokeOpacity="0.7" strokeWidth="0.8">
+      <g stroke="#8fa3b5" strokeOpacity="0.7" strokeWidth={lineWidth}>
         {lines.map(([a, b]) => (
           <line key={`${a}-${b}`} x1={stars[a].x} y1={stars[a].y} x2={stars[b].x} y2={stars[b].y} />
         ))}

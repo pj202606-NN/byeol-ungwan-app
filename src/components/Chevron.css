@@ -1,0 +1,22 @@
+.chevron {
+  display: inline-block;
+  flex: 0 0 auto;
+  border-right: var(--chevron-stroke, 1.3px) solid currentColor;
+  border-bottom: var(--chevron-stroke, 1.3px) solid currentColor;
+}
+
+.chevron--down {
+  transform: rotate(45deg);
+}
+
+.chevron--up {
+  transform: rotate(-135deg);
+}
+
+.chevron--left {
+  transform: rotate(135deg);
+}
+
+.chevron--right {
+  transform: rotate(-45deg);
+}

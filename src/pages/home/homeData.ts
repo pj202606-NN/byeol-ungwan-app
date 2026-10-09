@@ -36,7 +36,13 @@ export const pastDays = [
   { weekday: '목', day: 25, tone: 'dim' },
 ] as const;
 
-export const homeTabs = ['운세 순위', '궁합', '별자리 탐색', '별자리 사전'];
+/** 상단 바로가기 메뉴 — 누르면 아래 섹션으로 이동 */
+export const homeTabs = [
+  { key: 'ranking', label: '운세 순위' },
+  { key: 'compat', label: '궁합' },
+  { key: 'explore', label: '별자리 탐색' },
+  { key: 'dict', label: '별자리 사전' },
+] as const;
 
 export const ranking = [
   { rank: '01', name: '각수', hanja: '角宿', score: 97 },
@@ -66,4 +72,8 @@ export const dictionaryCards = [
   { name: '향수', alias: '용자리', period: '4.20 - 4.29' },
   { name: '저수', alias: '담비자리', period: '4.30 - 5.17' },
   { name: '방수', alias: '', period: '' },
+  // ⚠️ 더미 카드 3장 — 청룡 7수 구성(가로로 넘겨 보기) 확인용. 실제 데이터 확정 시 교체
+  { name: '○○수', alias: '○○자리', period: '0.00 - 0.00' },
+  { name: '○○수', alias: '○○자리', period: '0.00 - 0.00' },
+  { name: '○○수', alias: '○○자리', period: '0.00 - 0.00' },
 ];
