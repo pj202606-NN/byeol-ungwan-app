@@ -5,6 +5,7 @@ import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 import { ConstellationCard, DictionaryGlossary, DictionaryHero, DictionarySearch, DictionaryTabs } from './dictionary/DictionaryParts.tsx';
 import {
+  constellationDetails,
   constellationsOf,
   dictionaryPaths,
   directionDetails,
@@ -19,7 +20,8 @@ import './DictionaryPage.css';
  * 별자리 영역 화면 (별자리 전용 메뉴바 '사전')
  * 방위 '자세히 보러 가기' → 방위 상세 (상세 데이터가 있는 청룡만)
  * 방위 탭 → 방위 상세 (상세 데이터가 있는 청룡만, 2026-10-10 요청)
- * ⏳ 미확정(표시만): 현무·백호·주작 탭, 검색, 자세히 보기·카드·용어 → 상세 화면 이동
+ * 별자리 카드 → 별자리 상세(08_04_02) (상세 데이터가 있는 별자리만)
+ * ⏳ 미확정(표시만): 현무·백호·주작 탭, 검색, 자세히 보기, 용어
  */
 export default function DictionaryPage() {
   // 방위 탭: 상세 데이터가 있는 방위(현재 청룡)는 방위 상세로 이동, 나머지는 선택 표시만
@@ -84,7 +86,12 @@ export default function DictionaryPage() {
 
             <div id={`dict-grid-${d.id}`} className="dictionary-grid" hidden={!open[d.id]}>
               {constellationsOf(d.id).map((c) => (
-                <ConstellationCard key={c.id} item={c} />
+                <ConstellationCard
+                  key={c.id}
+                  item={c}
+                  to={constellationDetails[c.id] ? dictionaryPaths.constellation(c.id) : undefined}
+                  backTo={dictionaryPaths.main}
+                />
               ))}
               {/* 방위 상세(08_04_01) — 상세 데이터가 있는 방위만 연결 (현재 청룡) */}
               {directionDetails[d.id] ? (

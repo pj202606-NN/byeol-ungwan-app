@@ -9,6 +9,7 @@ import {
   DictionaryTabs,
 } from './dictionary/DictionaryParts.tsx';
 import {
+  constellationDetails,
   constellationsOf,
   dictionaryPaths,
   directionDetails,
@@ -22,7 +23,8 @@ import './DirectionDetailPage.css';
  * 방위 ID(/constellations/dictionary/direction/:id)에 따라 데이터만 바꿔 표시하는 공통 화면
  * 상세 데이터가 없는 방위(현재 현무·백호·주작)는 사전 메인으로 되돌림
  * ‹ · '전체' 탭 → 사전 메인 / 방위 탭 → 해당 방위 상세 (상세 데이터가 있는 방위만)
- * ⏳ 미확정(표시만): 자세히 보기, 검색, 별자리 카드 → 별자리 상세(08_04_02), 용어
+ * 별자리 카드 → 별자리 상세(08_04_02) (상세 데이터가 있는 별자리만)
+ * ⏳ 미확정(표시만): 자세히 보기, 검색, 용어
  */
 export default function DirectionDetailPage() {
   const { id } = useParams();
@@ -79,7 +81,12 @@ export default function DirectionDetailPage() {
 
         <div className="direction-grid">
           {constellationsOf(id).map((c) => (
-            <ConstellationCard key={c.id} item={c} />
+            <ConstellationCard
+              key={c.id}
+              item={c}
+              to={constellationDetails[c.id] ? dictionaryPaths.constellation(c.id) : undefined}
+              backTo={dictionaryPaths.direction(id)}
+            />
           ))}
         </div>
 

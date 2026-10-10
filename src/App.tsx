@@ -8,6 +8,7 @@ import RankingPage from './pages/RankingPage.tsx';
 import CompatibilityPage from './pages/CompatibilityPage.tsx';
 import DictionaryPage from './pages/DictionaryPage.tsx';
 import DirectionDetailPage from './pages/DirectionDetailPage.tsx';
+import ConstellationDetailPage from './pages/ConstellationDetailPage.tsx';
 
 /**
  * 라우팅 — GitHub Pages(정적 호스팅)에서 새로고침 404 를 막기 위해 HashRouter 사용
@@ -30,7 +31,9 @@ export default function App() {
             <Route path="dictionary" element={<DictionaryPage />} />
             {/* 방위 상세 — 상세 데이터가 없는 방위는 페이지 안에서 사전 메인으로 되돌림 */}
             <Route path="dictionary/direction/:id" element={<DirectionDetailPage />} />
-            {/* 그 밖의 주소(아직 없는 별자리 상세 등)는 탐색으로 되돌림 (별자리 영역·메뉴바 유지) */}
+            {/* 별자리 상세 — 상세 데이터가 없는 별자리는 페이지 안에서 사전 메인으로 되돌림 */}
+            <Route path="dictionary/constellation/:id" element={<ConstellationDetailPage />} />
+            {/* 그 밖의 주소는 탐색으로 되돌림 (별자리 영역·메뉴바 유지) */}
             <Route index element={<Navigate to="explore" replace />} />
             <Route path="*" element={<Navigate to="/constellations/explore" replace />} />
           </Route>

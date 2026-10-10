@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router';
 import Chevron from '../../components/Chevron.tsx';
 import Icon from '../../components/Icon.tsx';
 import type { Constellation, DictionaryTabId } from './dictionaryData.ts';
@@ -58,17 +59,29 @@ export function DictionarySearch() {
 
 /**
  * 별자리 카드: 이미지 자리 + 이름 · 별칭
- * ⏳ 누르면 개별 별자리 상세(08_04_02)로 이동 예정 — 상세 화면이 생기면 dictionaryPaths.constellation(id) 로 연결
+ * to 가 있으면(상세 데이터가 있는 별자리) 개별 별자리 상세(08_04_02)로 이동, 없으면 표시만
  */
-export function ConstellationCard({ item }: { item: Constellation }) {
-  return (
-    <article className="dict-card" data-constellation-id={item.id}>
+export function ConstellationCard({ item, to, backTo }: { item: Constellation; to?: string; backTo?: string }) {
+  const body = (
+    <>
       {/* 카드 이미지 자리 — 에셋 미제공 */}
       <div className="dict-card__image" aria-hidden="true" />
       <p className="dict-card__name">
         {item.name}
         {item.alias && <span>{item.alias}</span>}
       </p>
+    </>
+  );
+  if (to) {
+    return (
+      <Link to={to} state={{ backTo }} className="dict-card dict-card--link" data-constellation-id={item.id}>
+        {body}
+      </Link>
+    );
+  }
+  return (
+    <article className="dict-card" data-constellation-id={item.id}>
+      {body}
     </article>
   );
 }

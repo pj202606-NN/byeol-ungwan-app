@@ -131,8 +131,8 @@ export const constellationsOf = (direction: DirectionId) => constellations.filte
 export const findConstellation = (id: string) => constellations.find((c) => c.id === id);
 
 /**
- * 사전 주소 — 방위 상세(08_04_01)는 라우트 있음
- * ⚠️ 별자리 상세(08_04_02)는 아직 라우트 없음 — 구현할 때 라우트를 추가하고 카드를 연결
+ * 사전 주소 — 방위 상세(08_04_01) · 별자리 상세(08_04_02)
+ * 상세 데이터(directionDetails · constellationDetails)가 있는 항목만 연결
  */
 export const dictionaryPaths = {
   main: '/constellations/dictionary',
@@ -152,6 +152,103 @@ export const myConstellation = {
   meta: ['너구리자리', '청룡', '동쪽', '초여름'],
   stars: todayHero.stars,
   lines: todayHero.lines,
+};
+
+/* ── 개별 별자리 상세 (08_04_02) ─────────────────────────────────────── */
+
+export interface InfoRow {
+  label: string;
+  value: string;
+  /** 값 옆 '?' (설명 내용·동작 미확정) */
+  help?: boolean;
+}
+
+export interface DetailSection {
+  key: string;
+  title: string;
+  /** 문단 → 줄 (초안의 줄바꿈 그대로, 좁은 화면에서는 자연스럽게 다시 줄바꿈) */
+  paragraphs: string[][];
+}
+
+export interface ConstellationDetail {
+  /** 위쪽 정보 줄 */
+  meta: string[];
+  /** 위쪽 오른쪽 기간 */
+  period: string;
+  /** 큰 별자리 도형 (홈 좌표 기준) */
+  stars: StarPoint[];
+  lines: [number, number][];
+  /** 기본 정보 이미지 — 에셋 미제공 */
+  image?: string;
+  basicInfo: InfoRow[];
+  traits: string[];
+  zodiac: { title: string; text: string };
+  sections: DetailSection[];
+  observation: InfoRow[];
+  /** 행운의 상징 (이미지 에셋 미제공) */
+  lucky: { label: string; value: string }[];
+}
+
+/**
+ * 별자리 상세 데이터 — 초안(08_04_02_constellation-detail_draft.png)에 있는 저수만
+ * 나머지 27수는 데이터가 없어 상세 화면을 열지 않음 (카드도 연결하지 않음)
+ * ⚠️ 초안 문구 그대로 — '전통적 의미' 는 '성격과 특징' 과 같은 문장 (초안 그대로 표시, 2026-10-10 결정)
+ */
+export const constellationDetails: Partial<Record<string, ConstellationDetail>> = {
+  jeo: {
+    meta: myConstellation.meta,
+    period: '4. 30 - 5. 17',
+    stars: myConstellation.stars,
+    lines: myConstellation.lines,
+    basicInfo: [
+      { label: '명칭', value: '저수 · 너구리자리' },
+      { label: '한자', value: '氐宿 · 氐土貉' },
+      { label: '특수 명칭', value: '저토학 · 氐土貉' },
+      { label: '상징 동물', value: '너구리' },
+      { label: '상징물', value: '용의 몸통' },
+      { label: '상징 신수', value: '청룡' },
+      { label: '학명', value: 'α Lib 주벤엘게누비' },
+    ],
+    traits: ['적응력', '현실 감각', '영리함', '관찰력'],
+    zodiac: { title: '서양 황도 12궁', text: '생년월일 기준 황소자리 (4/20~5/20)에 해당합니다.' },
+    sections: [
+      {
+        key: 'description',
+        title: '설명',
+        paragraphs: [['동방 청룡에 속한 별자리로 동쪽의 7수 중', '용의 몸통을 뜻하며, 단단한 중심과 현실적 판단을', '기반으로 한 강한 생존력을 상징합니다.']],
+      },
+      {
+        key: 'personality',
+        title: '성격과 특징',
+        paragraphs: [['저수는 흐르는 물처럼 유연한 사고방식을 지닙니다.', '높은 적응력과 현실적 감각 덕에 임기응변에 능하며,', '지적 활동에서 두각을 드러냅니다.']],
+      },
+      {
+        key: 'tradition',
+        title: '전통적 의미',
+        paragraphs: [['저수는 흐르는 물처럼 유연한 사고방식을 지닙니다.', '높은 적응력과 현실적 감각 덕에 임기응변에 능하며,', '지적 활동에서 두각을 드러냅니다.']],
+      },
+      {
+        key: 'folklore',
+        title: '설화 · 역사 속의 너구리',
+        paragraphs: [
+          ['저수의 상징인 너구리는 조선의 훈몽자회(1527년)에', "'넝우리'로 기록된, 오래 전부터 이 땅에서 서식한 친근한", '동물입니다.'],
+          ["거창을 배경으로 한 '천년묵은 너구리와 감찰선생' 이라는", '설화가 전해지며, 여우 설화의 일부 판본에서 너구리는', '여우와 재주를 겨루는 영리한 존재로 등장합니다.'],
+        ],
+      },
+    ],
+    observation: [
+      { label: '겉보기 등급', value: '2.8등급', help: true },
+      { label: '최적 관측 시기', value: '초여름 6월' },
+      { label: '관측 권장 위치', value: '남쪽 하늘' },
+      { label: '관측 구역', value: '천칭자리 α Lib 구역' },
+    ],
+    lucky: [
+      { label: '행운의 색', value: '황색' },
+      { label: '행운의 방위', value: '중앙' },
+      { label: '행운의 요일', value: '토요일' },
+      { label: '행운의 행성', value: '토성' },
+    ],
+  },
 };
 
 /* ── 용어 사전 ────────────────────────────────────────────────────────── */
