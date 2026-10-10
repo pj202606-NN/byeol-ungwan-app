@@ -17,10 +17,12 @@ import './SignupPage.css';
 
 interface SignupPageProps {
   /**
-   * 검증을 통과했을 때 — 04 원판 돌리기로 이어질 예정
-   * ⏳ 원판 미구현 · 저장 방식 미정이라 아직 연결하지 않음 (생략 시 화면 변화 없음)
+   * 검증을 통과했을 때 — 앱에서는 SignupStep(src/entry/entryFlow.tsx)이 정보를 메모리에 넘겨 두고 04 원판으로 이동
+   * (생략 시 화면 변화 없음)
    */
   onComplete?: (profile: UserProfile) => void;
+  /** 이미 입력한 정보 (원판에서 뒤로 돌아왔을 때 다시 채움 — 메모리에 있는 값만) */
+  initial?: UserProfile | null;
 }
 
 const fields = ['name', 'birthDate', 'birthTime'] as const;
@@ -31,10 +33,14 @@ const fields = ['name', 'birthDate', 'birthTime'] as const;
  * 주소 #/signup (온보딩 마지막 단계에서 진입). 하단 메뉴바 없음
  * 이름 · 생년월일 필수, 출생 시각 선택. 입력 값은 이 화면의 상태로만 관리 (저장 없음)
  */
-export default function SignupPage({ onComplete }: SignupPageProps) {
+export default function SignupPage({ onComplete, initial }: SignupPageProps) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [values, setValues] = useState<SignupValues>({ name: '', birthDate: '', birthTime: '' });
+  const [values, setValues] = useState<SignupValues>({
+    name: initial?.name ?? '',
+    birthDate: initial?.birthDate ?? '',
+    birthTime: initial?.birthTime ?? '',
+  });
   const [errors, setErrors] = useState<SignupErrors>({});
   const [submitted, setSubmitted] = useState(false); // 한 번 '찾기'를 누른 뒤부터는 입력할 때마다 다시 검사
   const refs = {
