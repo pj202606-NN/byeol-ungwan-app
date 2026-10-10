@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.tsx';
 import FortunePage from './pages/FortunePage.tsx';
 import RecordsPage from './pages/RecordsPage.tsx';
 import MyPage from './pages/MyPage.tsx';
+import SplashPage from './pages/SplashPage.tsx';
 import ExplorePage from './pages/ExplorePage.tsx';
 import RankingPage from './pages/RankingPage.tsx';
 import CompatibilityPage from './pages/CompatibilityPage.tsx';
@@ -20,6 +21,10 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
+        {/* 초기 진입 과정(01~04) — 하단 메뉴바 없음. 아직 앱 실행 흐름에는 연결하지 않음 (개발 중 직접 주소로 확인) */}
+        <Route element={<AppShell showNav={false} />}>
+          <Route path="splash" element={<SplashPage />} />
+        </Route>
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
           <Route path="fortune" element={<FortunePage />} />
