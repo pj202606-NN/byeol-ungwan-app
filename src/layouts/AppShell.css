@@ -36,9 +36,13 @@
   overflow-y: auto;
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
-  /* PC 브라우저 스크롤바를 어두운 앱 화면에 맞게 얇게 (모바일은 기본 오버레이 스크롤바) */
-  scrollbar-width: thin;
-  scrollbar-color: #26323c transparent;
+  /* 스크롤바는 보이지 않게 — 스크롤 기능(터치 · 휠 · 키보드)은 그대로 (설치형 앱처럼, 2026-10-10)
+     Firefox: scrollbar-width / Chromium · Safari: ::-webkit-scrollbar */
+  scrollbar-width: none;
+}
+
+.app-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .app-content {

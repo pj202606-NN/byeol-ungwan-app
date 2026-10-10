@@ -159,10 +159,13 @@
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin; /* 본문 스크롤과 같은 모양 */
-  scrollbar-color: #26323c transparent;
+  scrollbar-width: none; /* 본문 스크롤과 같이 스크롤바 숨김 (스크롤은 그대로) */
   padding: 6px 20px calc(22px + env(safe-area-inset-bottom, 0px)) 20.5px;
   -webkit-overflow-scrolling: touch;
+}
+
+.compat-selector__list::-webkit-scrollbar {
+  display: none;
 }
 
 .compat-selector__group + .compat-selector__group {
