@@ -1,0 +1,120 @@
+/* ==========================================================================
+   02 온보딩 — figma-reference/02_01 ~ 02_05_onboarding.png (2x PNG 측정값 ÷ 2 = CSS px)
+   세로 위치는 상태 표시줄(54) 아래 콘텐츠(798) 기준
+   ========================================================================== */
+
+/* 위: 그림 · 문구 · 점 (버튼 위 공간의 가운데) / 아래: 버튼 */
+.onboarding {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100%;
+  background: linear-gradient(to bottom, var(--color-app-bg) 30%, #07151f 65%, #06151f 85%, #031017 100%);
+  color: var(--color-text);
+}
+
+.onboarding__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px 28px; /* 393 × 798: 그림 위 156 · 점 아래 511 */
+}
+
+/* 그림 자리 (가로 300 · 세로 224, 가운데 y 268) — 에셋 오면 이 안에 표시 */
+.onboarding__illustration {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  max-width: 100%;
+  height: 224px;
+}
+
+.onboarding__illustration img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 문구 2줄 (가운데 431.8 · 463.3) */
+.onboarding__text {
+  margin-top: 36px;
+  font-family: var(--font-point);
+  font-size: 16.5px;
+  line-height: 31.5px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.onboarding__text span {
+  display: block;
+}
+
+/* 위치 표시 (가운데 508.5): 현재 = 27 × 5 막대, 나머지 = 5 점 */
+.onboarding__dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 27px;
+}
+
+.onboarding__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  background: #475662;
+  /* 단계가 바뀌면 다음 점은 막대로 늘어나고, 이전 막대는 점으로 줄어듦 (2026-10-10 요청) */
+  transition:
+    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.4s ease;
+}
+
+.onboarding__dots .is-current {
+  width: 27px;
+  margin: 0 1.5px;
+  background: #0c304d;
+}
+
+/* 문구: 새 단계에서 살짝 나타남 */
+@keyframes onboarding-text-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.onboarding__text {
+  animation: onboarding-text-in 0.45s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onboarding__dots span {
+    transition: none;
+  }
+
+  .onboarding__text {
+    animation: none;
+  }
+}
+
+/* 버튼 (20 ~ 373, 높이 57.5, 아래 끝 740.5 — 화면 아래 57.5 중 홈 인디케이터 자리 포함) */
+.onboarding__button {
+  flex: 0 0 auto;
+  height: 57.5px;
+  margin: 0 20px max(57.5px, calc(env(safe-area-inset-bottom, 0px) + 23.5px));
+  border: 0;
+  border-radius: 28.75px;
+  background: #050c13; /* 2~5단계 시안 (1단계 시안만 #03070b 로 조금 더 어두움) */
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: #cdcdce;
+  cursor: pointer;
+}
+
+.onboarding__button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

@@ -1,4 +1,7 @@
+import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router';
 import logoSvg from '../assets/icons/site-logo.svg?raw';
+import { onboardingPath } from './onboarding/onboardingData.ts';
 import './SplashPage.css';
 
 /**
@@ -16,11 +19,42 @@ const logo = logoSvg
 /**
  * 01 시작 화면(Splash) — figma-reference/01_splash.png (393 × 852, 콘텐츠 798)
  * 하단 메뉴바 없음. 개발 중 확인용 주소: #/splash (앱 실행 경로는 아직 연결하지 않음)
- * ⏳ 미확정: 표시 시간, 온보딩으로의 자동 전환, 로고·별 지도 애니메이션
+ * 4.5초가 지나거나 화면을 누르면 온보딩 1단계로 넘어감 (2026-10-10 요청)
+ *  - 기록을 바꿔 넘어가므로 온보딩에서 뒤로 가기를 눌러도 시작 화면이 다시 나오지 않음
+ * ⏳ 미확정: 로고·별 지도 애니메이션
  */
+const AUTO_NEXT_MS = 4500;
+
 export default function SplashPage() {
+  const navigate = useNavigate();
+  const done = useRef(false);
+
+  const goNext = () => {
+    if (done.current) return; // 시간 초과와 누르기가 겹쳐도 한 번만 이동
+    done.current = true;
+    navigate(onboardingPath(1), { replace: true });
+  };
+
+  useEffect(() => {
+    const timer = window.setTimeout(goNext, AUTO_NEXT_MS);
+    return () => window.clearTimeout(timer);
+    // 처음 한 번만 예약
+  }, []);
+
   return (
-    <div className="splash" role="img" aria-label="별운관 — 28수로 보는 별자리 운세">
+    <div
+      className="splash"
+      role="button"
+      tabIndex={0}
+      aria-label="별운관 — 28수로 보는 별자리 운세. 누르면 시작합니다"
+      onClick={goNext}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          goNext();
+        }
+      }}
+    >
       {/* 시안 높이(798)의 화면을 가운데에 두고, 화면이 짧거나 길면 위아래가 잘리거나 배경이 이어짐 */}
       <div className="splash__stage">
         {/* 별 지도 원 — 원 안쪽의 별자리 지도 그림은 에셋 미제공 (원 모양 · 테두리만) */}

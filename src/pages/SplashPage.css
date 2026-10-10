@@ -7,6 +7,9 @@
   position: relative;
   flex: 1;
   overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
   /* 위는 아주 어둡게 → 가운데 청록 → 원 아래 기본 배경 → 맨 아래 검정 */
   background: linear-gradient(
     to bottom,
