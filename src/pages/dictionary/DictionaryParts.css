@@ -1,0 +1,172 @@
+/* ==========================================================================
+   별자리 사전 공통 요소 — figma-reference/08_04_dictionary.png (2x PNG 측정값 ÷ 2 = CSS px)
+   ========================================================================== */
+
+/* ── 상단 탭 (전체 / 청룡 / 현무 / 백호 / 주작) — 5등분, 좌우 20 · 간격 6 (393 폭: 탭 66) ── */
+.dict-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 4.5px 20px 0;
+  border-bottom: 1px solid #33383f;
+}
+
+.dict-tabs__tab {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 0 11px;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  line-height: 22px;
+  white-space: nowrap;
+  color: var(--color-tab-inactive);
+  cursor: pointer;
+}
+
+.dict-tabs__tab[aria-selected='true'] {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* 선택 밑줄 — 아래 구분선 위에 겹침 */
+.dict-tabs__tab[aria-selected='true']::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color-accent);
+  content: '';
+}
+
+.dict-tabs__tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+/* ── 위쪽 소개 (내 별자리 · 저수 氐宿 · 정보 줄) ── */
+.dict-hero {
+  position: relative;
+  padding: 0 37px 0 38.5px;
+}
+
+.dict-hero__label {
+  font-size: 12.5px;
+  line-height: 18px;
+  color: #555b5f;
+}
+
+.dict-hero__name {
+  display: flex;
+  align-items: baseline;
+  height: 30px;
+  margin-top: 9.5px;
+  font-family: var(--font-point);
+  font-size: 23px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.dict-hero__name span {
+  margin-left: 6px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: #9ca2a6;
+}
+
+.dict-hero__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 3.5px;
+}
+
+.dict-hero__meta {
+  min-width: 0;
+  font-size: 15px;
+  line-height: 20px;
+  word-break: keep-all;
+  color: var(--color-text-sub);
+}
+
+/* ── 검색 (밑줄 188 + 돋보기, 가운데) ── */
+.dict-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6.5px;
+  padding-left: 6.5px; /* 밑줄이 화면 가운데에 오도록 (돋보기 폭만큼 보정) */
+}
+
+.dict-search__input {
+  width: 188px;
+  min-width: 0;
+  height: 32px;
+  padding: 0 4px 6px; /* 글자 가운데가 밑줄 위 18 */
+  border: 0;
+  border-bottom: 1px solid var(--color-divider);
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--color-text);
+  outline: none;
+  appearance: none;
+}
+
+.dict-search__input::placeholder {
+  color: #55585b;
+}
+
+.dict-search__input:focus-visible {
+  border-bottom-color: var(--color-accent);
+}
+
+.dict-search__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.dict-search__icon {
+  margin-bottom: 6px; /* 글자 높이에 맞춤 */
+  color: #454a50;
+}
+
+/* ── 별자리 카드 (393 폭: 이미지 78 × 100) ── */
+.dict-card {
+  min-width: 0;
+}
+
+.dict-card__image {
+  aspect-ratio: 78 / 100;
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.dict-card__name {
+  display: flex;
+  align-items: baseline;
+  height: 20px;
+  margin-top: 7.5px;
+  padding-left: 2px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+/* 좁은 화면에서는 별칭 끝을 줄임 */
+.dict-card__name span {
+  min-width: 0;
+  margin-left: 5px;
+  overflow: hidden;
+  font-size: 10.5px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  color: #707070;
+}
