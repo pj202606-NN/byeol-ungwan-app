@@ -38,17 +38,6 @@
   margin-top: 279px;
 }
 
-.dictionary-more {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: 7px;
-  font-size: 13px;
-  line-height: 18px;
-  white-space: nowrap;
-  color: #555c60;
-}
-
 /* ── 본문 판 (위 509, 위쪽 모서리 둥글게) ── */
 .dictionary-sheet {
   position: relative;
@@ -66,46 +55,6 @@
 
 .dict-search + .dictionary-section {
   margin-top: 58px;
-}
-
-.dictionary-section__head {
-  margin: 0;
-  padding: 0 39px 0 24px;
-}
-
-.dictionary-section__toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 26px;
-  letter-spacing: -0.2px;
-  text-align: left;
-  color: var(--color-text);
-  cursor: pointer;
-}
-
-.dictionary-section__chevron {
-  margin-right: 2.5px;
-  color: #5e6267;
-}
-
-.dictionary-section__chevron.chevron--up {
-  margin-top: 5px;
-}
-
-.dictionary-section__sub {
-  margin-top: 2px;
-  padding: 0 20px 0 24px;
-  font-size: 15px;
-  line-height: 22px;
-  word-break: keep-all;
-  color: var(--color-text-sub);
 }
 
 /* 4열 카드 (393 폭: 78 × 100, 가로 13.5 · 세로 18.5) */
@@ -135,6 +84,17 @@
   color: var(--color-text);
 }
 
+.dictionary-grid__more:is(a) {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dictionary-grid__more:is(a):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 .dictionary-grid__more > span {
   display: block;
 }
@@ -147,60 +107,6 @@
   margin-left: 0.6em;
   vertical-align: -1px;
   --chevron-stroke: 1.5px;
-}
-
-/* ── 용어 사전 (2열, 44 높이) ── */
-.dictionary-glossary__title {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 26px;
-  letter-spacing: -0.2px;
-}
-
-.dictionary-glossary__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 11px;
-  margin: 21.5px 0 0;
-  padding: 0 20px;
-  list-style: none;
-}
-
-.dictionary-glossary__item {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  height: 44px;
-  padding: 0 14px 0 14.5px;
-  border-radius: 8px;
-  background: var(--color-surface);
-}
-
-.dictionary-glossary__term {
-  flex: 0 0 auto;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  white-space: nowrap;
-  color: var(--color-text);
-}
-
-.dictionary-glossary__summary {
-  min-width: 0;
-  margin-left: 9px;
-  overflow: hidden;
-  font-size: 11.5px;
-  line-height: 16px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #707070;
-}
-
-.dictionary-glossary__chevron {
-  margin-left: auto;
-  padding-left: 6px;
-  color: var(--color-text);
-  --chevron-stroke: 1.2px;
 }
 
 .dictionary-section.dictionary-glossary {

@@ -30,6 +30,37 @@ export const directions: Direction[] = [
   { id: 'south', name: '주작', title: '남방 주작', subtitle: '주작이 수호하는 남쪽의 일곱 별자리', moreLabel: '남방 7수' },
 ];
 
+/** 방위 상세(08_04_01) 표시 내용 */
+export interface DirectionDetail {
+  /** 작은 제목 (예: 동방 7수) */
+  label: string;
+  name: string;
+  /** 초안 표기 그대로 (청룡: '龍') */
+  hanja?: string;
+  meta: string[];
+  /** 소개 문장 (줄 단위) */
+  intro: string[];
+  /** 방위 그림 — 에셋 미제공 */
+  image?: string;
+}
+
+/**
+ * 방위 상세 데이터 — 초안(08_04_01_direction-detail_draft.png)에 있는 청룡만
+ * 현무·백호·주작은 초안 내용이 없어 비워 둠 → 상세 화면 연결 안 함 (2026-10-10 결정)
+ */
+export const directionDetails: Partial<Record<DirectionId, DirectionDetail>> = {
+  east: {
+    label: '동방 7수',
+    name: '청룡',
+    hanja: '龍',
+    meta: ['봄', '동쪽', '청색', '결단과 정리'],
+    intro: ['청룡이 수호하는 동쪽의 일곱 별자리.', '결단과 정리, 절제의 기운을 지닙니다.'],
+  },
+};
+
+export const isDirectionId = (id: string | undefined): id is DirectionId =>
+  id === 'east' || id === 'north' || id === 'west' || id === 'south';
+
 /** 상단 탭 — '전체' + 방위 */
 export type DictionaryTabId = 'all' | DirectionId;
 export const dictionaryTabs: { id: DictionaryTabId; label: string }[] = [
@@ -100,10 +131,11 @@ export const constellationsOf = (direction: DirectionId) => constellations.filte
 export const findConstellation = (id: string) => constellations.find((c) => c.id === id);
 
 /**
- * 상세 화면 주소 (08_04_01 방위 상세 · 08_04_02 별자리 상세) — ⚠️ 아직 라우트 없음
- * 상세 화면을 구현할 때 이 주소로 라우트를 추가하고 카드·버튼을 연결
+ * 사전 주소 — 방위 상세(08_04_01)는 라우트 있음
+ * ⚠️ 별자리 상세(08_04_02)는 아직 라우트 없음 — 구현할 때 라우트를 추가하고 카드를 연결
  */
 export const dictionaryPaths = {
+  main: '/constellations/dictionary',
   direction: (id: DirectionId) => `/constellations/dictionary/direction/${id}`,
   constellation: (id: string) => `/constellations/dictionary/constellation/${id}`,
 };

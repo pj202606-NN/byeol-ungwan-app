@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
+import Chevron from '../../components/Chevron.tsx';
 import Icon from '../../components/Icon.tsx';
 import type { Constellation, DictionaryTabId } from './dictionaryData.ts';
-import { dictionaryTabs, searchPlaceholder } from './dictionaryData.ts';
+import { dictionaryTabs, glossary, searchPlaceholder } from './dictionaryData.ts';
 import './DictionaryParts.css';
 
 /**
@@ -69,5 +70,26 @@ export function ConstellationCard({ item }: { item: Constellation }) {
         {item.alias && <span>{item.alias}</span>}
       </p>
     </article>
+  );
+}
+
+/** 용어 사전 (2열 카드) — ⏳ 용어 설명 화면·이동 방식 미확정 */
+export function DictionaryGlossary({ className }: { className?: string }) {
+  return (
+    <section className={`dictionary-section dictionary-glossary${className ? ` ${className}` : ''}`} aria-labelledby="dict-title-glossary">
+      <h2 id="dict-title-glossary" className="dictionary-section__head dictionary-glossary__title">
+        {glossary.title}
+      </h2>
+      <p className="dictionary-section__sub">{glossary.subtitle}</p>
+      <ul className="dictionary-glossary__list">
+        {glossary.items.map((g) => (
+          <li key={g.id} className="dictionary-glossary__item">
+            <span className="dictionary-glossary__term">{g.term}</span>
+            <span className="dictionary-glossary__summary">{g.summary}</span>
+            <Chevron direction="right" size={7} className="dictionary-glossary__chevron" />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

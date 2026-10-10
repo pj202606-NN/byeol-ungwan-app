@@ -1,0 +1,69 @@
+/* ==========================================================================
+   08_04_01 방위 상세 — figma-reference/08_04_01_direction-detail_draft.png (초안, 2x PNG ÷ 2 = CSS px)
+   세로 위치는 상태 표시줄(54) 아래 콘텐츠 시작점 기준. 사전 메인(DictionaryPage.css)과 같은 스타일
+   ========================================================================== */
+
+.direction {
+  margin-bottom: calc(-1 * var(--content-bottom-space));
+  padding-bottom: var(--content-bottom-space);
+  background: var(--color-app-bg);
+  color: var(--color-text);
+}
+
+/* ── 위쪽: 헤더 · 탭 · 그림 자리 · 방위 정보 ── */
+.direction-top {
+  position: relative;
+  padding-bottom: 62.5px; /* 정보 줄 아래 38.5 + 본문 판이 겹치는 24 */
+  background: linear-gradient(to bottom, var(--color-app-bg) 37%, #071722 95%);
+}
+
+/* 탭 아래 ~ '동방 7수' 위 (171.5) — 방위 그림이 오면 이 자리에 */
+.direction-top__image {
+  height: 171.5px;
+}
+
+/* ── 본문 판 (위 402) ── */
+.direction-sheet {
+  position: relative;
+  margin-top: -24px;
+  padding: 44px 0 72px;
+  border-radius: 24px 24px 0 0;
+  background: linear-gradient(to bottom, var(--color-app-bg) 75%, #03070d 100%);
+}
+
+/* 소개 문장 (가운데 594 · 617) */
+.direction-intro {
+  margin-top: 105.5px;
+  padding: 0 20px 0 25px;
+  font-family: var(--font-point);
+  font-size: 16.5px;
+  line-height: 23px;
+  word-break: keep-all;
+  color: var(--color-text);
+}
+
+.direction-intro span {
+  display: block;
+}
+
+/* 3열 카드 (393 폭: 106 × 133.5, 가로 17.5 · 세로 42.5) */
+.direction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42.5px 17.5px;
+  margin-top: 40.5px;
+  padding: 0 20px;
+}
+
+.direction-grid .dict-card__image {
+  aspect-ratio: 106 / 133.5;
+}
+
+.direction-grid .dict-card__name {
+  margin-top: 10px;
+}
+
+/* 용어 사전 (제목 위 97.5) */
+.direction-sheet .dictionary-glossary {
+  margin-top: 97.5px;
+}
