@@ -13,8 +13,8 @@ const REPO_NAME = 'byeol-ungwan-app';
 const APP_NAME = '별운관';
 const APP_SHORT_NAME = '별운관';
 const APP_DESCRIPTION = '별운관 졸업전시 웹앱';
-const THEME_COLOR = '#ffffff'; // 상태 표시줄·주소창 색 (index.html 의 theme-color 와 맞출 것)
-const BACKGROUND_COLOR = '#ffffff'; // 설치 앱 실행 시 스플래시 배경색
+const THEME_COLOR = '#070e16'; // 상태 표시줄·주소창 색 (index.html 의 theme-color 와 맞출 것)
+const BACKGROUND_COLOR = '#070e16'; // 설치 앱 실행 시 스플래시 배경색
 
 export default defineConfig(({ command, isPreview }) => {
   // 로컬 개발(dev)은 '/', 프로덕션 빌드·미리보기(preview)는 '/byeol-ungwan-app/'
