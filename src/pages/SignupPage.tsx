@@ -1,5 +1,5 @@
 import { useRef, useState, type FormEvent } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import PageHeader from '../components/PageHeader.tsx';
 import type { UserProfile } from './my/myData.ts';
 import { onboardingPath } from './onboarding/onboardingData.ts';
@@ -35,7 +35,6 @@ const fields = ['name', 'birthDate', 'birthTime'] as const;
  */
 export default function SignupPage({ onComplete, initial }: SignupPageProps) {
   const navigate = useNavigate();
-  const location = useLocation();
   const [values, setValues] = useState<SignupValues>({
     name: initial?.name ?? '',
     birthDate: initial?.birthDate ?? '',
@@ -62,11 +61,8 @@ export default function SignupPage({ onComplete, initial }: SignupPageProps) {
     if (submitted) setErrors(check(next));
   };
 
-  // 온보딩에서 들어왔으면 뒤로(온보딩 5단계), 직접 접속이면 온보딩 5단계로 교체
-  const goBack = () => {
-    if ((location.state as { fromOnboarding?: boolean } | null)?.fromOnboarding) navigate(-1);
-    else navigate(onboardingPath(5), { replace: true });
-  };
+  // ‹ → 온보딩 5단계 (시작 흐름은 기록을 교체하며 이동)
+  const goBack = () => navigate(onboardingPath(5), { replace: true });
 
   const submit = (e: FormEvent) => {
     e.preventDefault();

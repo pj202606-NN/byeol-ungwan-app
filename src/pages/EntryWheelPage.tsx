@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { useNavigate } from 'react-router';
+import { useEntryFlow } from '../entry/entryFlow.tsx';
 import './EntryWheelPage.css';
 
 /**
@@ -43,7 +43,7 @@ interface EntryWheelPageProps {
 }
 
 export default function EntryWheelPage({ targetSlot = 0 }: EntryWheelPageProps) {
-  const navigate = useNavigate();
+  const { finishIntro } = useEntryFlow();
   const [phase, setPhase] = useState<Phase>('idle');
   const timers = useRef<number[]>([]);
   const reduced = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -59,7 +59,8 @@ export default function EntryWheelPage({ targetSlot = 0 }: EntryWheelPageProps) 
       window.setTimeout(() => setPhase('zoomed'), spin + (reduced ? 300 : PAUSE_MS)),
       // 결과 → (깜빡임) → 메인 홈. 원판으로 다시 돌아오지 않도록 기록을 바꿔 이동
       window.setTimeout(
-        () => navigate('/', { replace: true }),
+        // 시작 흐름 완료 → 원판 자리를 홈으로 교체 (홈이 다시 시작 화면으로 돌아가지 않음)
+        finishIntro,
         spin + (reduced ? 300 + 2000 : PAUSE_MS + ZOOM_MS + BLINK_MS + HOLD_MS),
       ),
     );

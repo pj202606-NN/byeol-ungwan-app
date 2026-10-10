@@ -1,4 +1,5 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { useEntryFlow } from '../entry/entryFlow.tsx';
 import Chevron from '../components/Chevron.tsx';
 import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import Icon from '../components/Icon.tsx';
@@ -19,9 +20,17 @@ import './MyPage.css';
  * 09 마이 — figma-reference/09_my-page.png (393 × 1373)
  * 기본 메뉴바 '마이'. 사용자 정보는 예시(exampleUser) — 회원가입·저장 연결 전까지 표시만
  * 실제 동작: 별자리·운세 메뉴 → 각 화면, '사전 보기' → 사전 메인
- * ⏳ 표시만(동작 미확정): 프로필 ›(계정 설정 · 출생 시각 추가 예정), 화면 모드, 알림, 공지사항, 약관, 재설정
+ * '재설정' → 01 시작 화면 (처음부터 다시 체험, 삭제 기능 없음)
+ * ⏳ 표시만(동작 미확정): 프로필 ›(계정 설정 · 출생 시각 추가 예정), 화면 모드, 알림, 공지사항, 약관
  */
 export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
+  const navigate = useNavigate();
+  const { setProfile } = useEntryFlow();
+  // 재설정: 새 관람객을 위해 회원가입 임시 입력값(메모리)만 비우고 01 시작 화면으로 — 저장소 · 캐시는 건드리지 않음
+  const restart = () => {
+    setProfile(null);
+    navigate('/splash', { replace: true }); // 시작 흐름과 같이 기록 교체 → 체험 뒤 홈에서 뒤로 가기로 이 마이가 나오지 않음
+  };
   // 출생 시각은 선택 항목 — 없으면 줄에서 뺌
   const profileLine = [formatBirthDate(user.birthDate), user.birthTime, exampleMyConstellation.guardian].filter(Boolean).join(' · ');
 
@@ -156,7 +165,10 @@ export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
             <p className="my-reset__title">{settings.reset.title}</p>
             <p className="my-row__desc">{settings.reset.desc}</p>
           </div>
-          <span className="my-reset__button">{settings.reset.button}</span>
+          {/* '재설정' → 임시 입력값을 비우고 01 시작 화면부터 다시 체험 (2026-10-10) */}
+          <button type="button" className="my-reset__button" onClick={restart}>
+            {settings.reset.button}
+          </button>
         </div>
       </section>
 

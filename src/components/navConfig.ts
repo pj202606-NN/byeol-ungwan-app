@@ -42,6 +42,7 @@ export const CONSTELLATION_NAV: NavItem[] = [
 export const CONSTELLATION_BACK_TO = '/';
 
 export function isActive(item: NavItem, pathname: string): boolean {
-  if (item.matchPrefix === '/') return pathname === '/';
+  // 홈: 기본 주소(#/) + 개발용 홈 주소(#/home)
+  if (item.matchPrefix === '/') return pathname === '/' || pathname === '/home';
   return pathname === item.matchPrefix || pathname.startsWith(`${item.matchPrefix}/`);
 }
