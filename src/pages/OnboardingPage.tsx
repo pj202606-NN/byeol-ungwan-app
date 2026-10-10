@@ -1,14 +1,6 @@
 import { Navigate, useNavigate, useParams } from 'react-router';
-import { onboardingPath, onboardingSteps } from './onboarding/onboardingData.ts';
+import { onboardingPath, onboardingSteps, signupPath } from './onboarding/onboardingData.ts';
 import './OnboardingPage.css';
-
-interface OnboardingPageProps {
-  /**
-   * 마지막 단계 버튼('운세 보러 가기')을 눌렀을 때 — 03 회원가입으로 이어질 예정
-   * ⏳ 회원가입 미구현이라 아직 연결하지 않음 (생략 시 아무 동작 없음)
-   */
-  onFinish?: () => void;
-}
 
 /**
  * 02 온보딩 — figma-reference/02_01 ~ 02_05_onboarding.png (393 × 852, 콘텐츠 798)
@@ -17,7 +9,7 @@ interface OnboardingPageProps {
  * - 위치 표시(점)는 표시만. 시안에 이전 버튼·건너뛰기·밀어서 넘기기 없음
  * ⏳ 미확정: 단계 전환 애니메이션, 조작 방식(스와이프 등)
  */
-export default function OnboardingPage({ onFinish }: OnboardingPageProps) {
+export default function OnboardingPage() {
   const { step: stepParam } = useParams();
   const navigate = useNavigate();
   const step = Number(stepParam);
@@ -28,7 +20,8 @@ export default function OnboardingPage({ onFinish }: OnboardingPageProps) {
   const current = onboardingSteps[step - 1];
   const isLast = step === total;
   const next = () => {
-    if (isLast) onFinish?.();
+    // 마지막 단계 → 03 회원가입 (2026-10-10 연결). 회원가입의 ‹ 는 이 단계로 돌아옴
+    if (isLast) navigate(signupPath, { state: { fromOnboarding: true } });
     else navigate(onboardingPath(step + 1));
   };
 

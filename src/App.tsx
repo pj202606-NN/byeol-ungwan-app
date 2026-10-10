@@ -6,6 +6,7 @@ import RecordsPage from './pages/RecordsPage.tsx';
 import MyPage from './pages/MyPage.tsx';
 import SplashPage from './pages/SplashPage.tsx';
 import OnboardingPage from './pages/OnboardingPage.tsx';
+import SignupPage from './pages/SignupPage.tsx';
 import ExplorePage from './pages/ExplorePage.tsx';
 import RankingPage from './pages/RankingPage.tsx';
 import CompatibilityPage from './pages/CompatibilityPage.tsx';
@@ -25,9 +26,11 @@ export default function App() {
         {/* 초기 진입 과정(01~04) — 하단 메뉴바 없음. 아직 앱 실행 흐름에는 연결하지 않음 (개발 중 직접 주소로 확인) */}
         <Route element={<AppShell showNav={false} />}>
           <Route path="splash" element={<SplashPage />} />
-          {/* 02 온보딩 1~5단계 — 마지막 버튼은 회원가입 구현 시 연결 */}
+          {/* 02 온보딩 1~5단계 — 마지막 버튼 → 회원가입 */}
           <Route path="onboarding" element={<Navigate to="/onboarding/1" replace />} />
           <Route path="onboarding/:step" element={<OnboardingPage />} />
+          {/* 03 회원가입(기본 정보 입력) — 다음 단계(04 원판)는 미구현이라 연결하지 않음 */}
+          <Route path="signup" element={<SignupPage />} />
         </Route>
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />

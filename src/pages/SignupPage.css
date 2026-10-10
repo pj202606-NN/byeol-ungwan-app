@@ -1,0 +1,175 @@
+/* ==========================================================================
+   03 회원가입(기본 정보 입력) — 기존 화면 규칙으로 구성 (참고 PNG 는 내용만 참고)
+   - 좌우 20 (홈 · 사전 카드 · 마이 · 온보딩 버튼과 같은 정렬선)
+   - 위쪽 청록 그라데이션 + 둥근 본문 판 (사전 · 탐색 · 운세와 같은 구조)
+   - 글자: 작은 제목 12.5 금색 / 큰 제목 포인트 23 / 본문 15·24 회색 / 라벨 14·600 (마이) / 보조 13·20
+   - 입력칸: 카드색(--color-surface) · 모서리 10 (탐색 지도 카드) / 버튼: 온보딩 버튼과 같은 모양
+   ========================================================================== */
+
+.signup {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--color-app-bg);
+  color: var(--color-text);
+}
+
+/* ── 위쪽: ‹ · 소개 ── */
+.signup-top {
+  padding-bottom: 64px; /* 소개 아래 40 + 본문 판이 겹치는 24 */
+  background: linear-gradient(to bottom, var(--color-app-bg) 30%, #071722 100%);
+}
+
+.signup-intro {
+  margin-top: 8px;
+  padding: 0 20px;
+}
+
+.signup-intro__label {
+  font-size: 12.5px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  color: #cac0a8;
+}
+
+.signup-intro__title {
+  margin: 8px 0 0;
+  font-family: var(--font-point);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 30px;
+  word-break: keep-all;
+}
+
+.signup-intro__desc {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 24px;
+  word-break: keep-all;
+  color: var(--color-text-sub);
+}
+
+/* ── 본문 판: 입력 항목 + 버튼 (버튼은 화면 아래, 내용이 길면 내용 뒤) ── */
+.signup-sheet {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: -24px;
+  padding-top: 40px;
+  border-radius: 24px 24px 0 0;
+  background: var(--color-app-bg);
+}
+
+.signup-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0 20px 40px; /* 아래 40: 화면이 짧아 버튼이 바로 이어질 때의 최소 간격 */
+}
+
+.signup-field__label {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.signup-field__optional {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--color-text-sub);
+}
+
+/* 입력칸 — 글자 16 (iOS 에서 입력 시 화면이 확대되지 않는 최소 크기) */
+.signup-field__input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  margin-top: 10px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--color-surface);
+  font: inherit;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--color-text);
+  color-scheme: dark; /* 기기의 날짜·시각 선택기도 어두운 화면으로 */
+  outline: none;
+  appearance: none;
+  transition: border-color 0.2s;
+}
+
+.signup-field__input::placeholder {
+  color: #555b5f;
+}
+
+.signup-field__input:focus-visible {
+  border-color: var(--color-accent);
+}
+
+/* 날짜·시각: 비어 있을 때 안내 글자(연도. 월. 일. / --:--)를 흐리게 */
+.signup-field__input--picker.is-empty {
+  color: #555b5f;
+}
+
+.signup-field__input--picker::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+.signup-field__input--picker::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+/* 오류: 앱의 금색 강조(#cac0a8)로 표시 — 새 색(빨강 등)을 들이지 않음 */
+.signup-field.is-invalid .signup-field__input {
+  border-color: #cac0a8;
+}
+
+.signup-field__error {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: keep-all;
+  color: #cac0a8;
+}
+
+.signup-field__hint {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: keep-all;
+  color: var(--color-text-sub);
+}
+
+/* 진행 버튼 — 온보딩 버튼과 같은 모양 · 위치 (아래 57.5, Safe Area 고려)
+   이 화면의 주 버튼이라 배경이 어두운 본문 판과 구분되도록 앱의 '선택됨' 파랑(#17344d, 운세·궁합 칩)을 사용 */
+.signup-submit {
+  flex: 0 0 auto;
+  height: 57.5px;
+  margin: auto 20px max(57.5px, calc(env(safe-area-inset-bottom, 0px) + 23.5px));
+  border: 0;
+  border-radius: 28.75px;
+  background: #17344d;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-submit:active {
+  background: #1d4160;
+}
+
+.signup-submit:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

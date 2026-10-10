@@ -19,3 +19,6 @@ export const onboardingSteps: OnboardingStep[] = [
 ];
 
 export const onboardingPath = (step: number) => `/onboarding/${step}`;
+
+/** 온보딩 다음 화면 — 03 회원가입 */
+export const signupPath = '/signup';

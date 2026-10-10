@@ -37,7 +37,8 @@ export default function PageHeader({ title, showBack = true, sticky = false, rig
           <Chevron direction="left" size={14} />
         </button>
       )}
-      <h1 className="page-header__title">{title}</h1>
+      {/* 제목이 없는 화면(03 회원가입 등)은 ‹ 만 */}
+      {title && <h1 className="page-header__title">{title}</h1>}
       {right ?? (
         // 프로필 이미지 자리 (디자인 시안도 단색 원, 동작 미확정)
         <span className="page-header__avatar" aria-hidden="true" />
