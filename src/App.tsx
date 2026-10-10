@@ -3,6 +3,7 @@ import AppShell from './layouts/AppShell.tsx';
 import HomePage from './pages/HomePage.tsx';
 import FortunePage from './pages/FortunePage.tsx';
 import RecordsPage from './pages/RecordsPage.tsx';
+import MyPage from './pages/MyPage.tsx';
 import ExplorePage from './pages/ExplorePage.tsx';
 import RankingPage from './pages/RankingPage.tsx';
 import CompatibilityPage from './pages/CompatibilityPage.tsx';
@@ -23,6 +24,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="fortune" element={<FortunePage />} />
           <Route path="records" element={<RecordsPage />} />
+          <Route path="my" element={<MyPage />} />
           {/* 별자리 영역: 진입은 항상 '탐색' (APP_SCREEN_STRUCTURE.md 4장) */}
           <Route path="constellations">
             <Route path="explore" element={<ExplorePage />} />

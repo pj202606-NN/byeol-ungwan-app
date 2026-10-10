@@ -1,0 +1,324 @@
+/* ==========================================================================
+   09 마이 — figma-reference/09_my-page.png (2x PNG 측정값 ÷ 2 = CSS px)
+   세로 위치는 상태 표시줄(54) 아래 콘텐츠 시작점 기준
+   ========================================================================== */
+
+.my {
+  /* 배경이 메뉴바 아래(본문 끝 여백)까지 이어지도록 — 레이아웃 높이는 그대로 */
+  margin-bottom: calc(-1 * var(--content-bottom-space));
+  padding-bottom: calc(19px + var(--content-bottom-space));
+  background: linear-gradient(to bottom, var(--color-app-bg) 25%, #081823 85%, #030c14 100%);
+  color: var(--color-text);
+}
+
+.my-chevron {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-left: auto;
+  color: #acaaaa;
+}
+
+/* ── 프로필 (위 85, 도형 x 32~72 · 글자 x 102.5) ── */
+.my-profile {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 13px;
+  padding: 0 23px 0 26px;
+}
+
+.my-profile__figure {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: 52px;
+  height: 48px;
+  margin-top: 1px;
+}
+
+.my-profile__text {
+  min-width: 0;
+  margin-left: 24.5px;
+}
+
+.my-profile__name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.my-profile__line {
+  margin-top: 3.3px;
+  font-size: 13.5px;
+  line-height: 20px;
+  word-break: keep-all;
+  color: #cac0a8;
+}
+
+/* ── 공통: 작은 제목 · 구분선 ── */
+.my-block {
+  padding: 0 20px;
+}
+
+.my-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.my-divider {
+  height: 1px;
+  margin: 7px 20px 0;
+  border: 0;
+  background: #1d2d3a;
+}
+
+/* ── 나의 별자리 (제목 위 166.5) ── */
+.my-constellation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32.5px; /* 프로필 줄(도형 포함) 아래 */
+}
+
+.my-constellation + .my-divider {
+  margin-top: 17px;
+}
+
+.my-constellation__name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #cac0a8;
+}
+
+.my-constellation__name span {
+  margin-left: 7.5px;
+  font-weight: 400;
+  color: #505050;
+}
+
+.my-constellation__link {
+  flex: 0 0 auto;
+  padding: 6px 0;
+  font-size: 12.5px;
+  line-height: 18px;
+  text-decoration: none;
+  color: #7b7b7b;
+}
+
+/* ── 오늘의 운세 한 줄 ── */
+.my-fortune {
+  margin-top: 21px;
+}
+
+.my-fortune__text {
+  margin-top: 2.8px;
+  font-family: var(--font-point);
+  font-size: 15px;
+  line-height: 23.7px;
+  word-break: keep-all;
+  color: #cac0a8;
+}
+
+.my-fortune__text span {
+  display: block;
+}
+
+.my-fortune + .my-section .my-divider {
+  margin-top: 17px;
+}
+
+/* ── 섹션 (구분선 → 제목 → 줄 목록) ── */
+.my-section__title {
+  margin-top: 20.5px;
+  padding: 0 20px;
+}
+
+.my-list {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 설정 목록은 제목 아래 조금 더 띄움 (시안 862 · 918 · 974 · 1030) */
+.my-list--settings {
+  margin-top: 8.8px;
+}
+
+/* 한 줄 56 — 아이콘 칸 x 20~54 (가운데 37), 글자 x 70 */
+.my-row {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 23px 0 20px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a.my-row:focus-visible,
+.my-constellation__link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+.my-row__icon {
+  display: flex;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  --icon-size: 24px;
+}
+
+.my-row__icon svg {
+  stroke-width: var(--bottom-nav-icon-stroke);
+}
+
+/* 공지사항 · 약관: 시안의 회색 원 (아이콘 에셋 없음) */
+.my-row__icon--placeholder {
+  border-radius: 50%;
+  background: #696969;
+}
+
+.my-row__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-left: 16px;
+}
+
+.my-row > .my-row__title {
+  margin-left: 16px;
+}
+
+.my-row__title {
+  font-size: 15px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.my-row__desc {
+  font-size: 10px;
+  line-height: 14px;
+  word-break: keep-all;
+  color: #555;
+}
+
+/* 화면 모드: 라이트 | 다크 (94 × 26, 현재 '다크') */
+.my-segment {
+  display: flex;
+  flex: 0 0 auto;
+  margin: 0 -3px 0 auto; /* 오른쪽 끝 x 373 */
+  padding-left: 8px;
+}
+
+.my-segment span {
+  width: 47px;
+  height: 26px;
+  border: 1px solid #1d2d3a;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  color: #d9d9d9;
+}
+
+.my-segment span:first-child {
+  border-right: 0;
+  border-radius: 9px 0 0 9px;
+}
+
+.my-segment span:last-child {
+  border-left: 0;
+  border-radius: 0 9px 9px 0;
+}
+
+.my-segment .is-current {
+  background: #1d2d3a;
+  font-weight: 600;
+}
+
+/* 알림: 켜짐 표시 (41.5 × 23) */
+.my-switch {
+  position: relative;
+  flex: 0 0 auto;
+  width: 41.5px;
+  height: 23px;
+  margin: 0 -0.5px 0 auto; /* 오른쪽 끝 x 370.5 */
+  border-radius: 11.5px;
+  background: #1d2d3a;
+}
+
+.my-switch::after {
+  position: absolute;
+  top: 2px;
+  left: 2.5px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  content: '';
+}
+
+.my-switch.is-on::after {
+  left: auto;
+  right: 2.5px;
+}
+
+/* ── 초기화 ── */
+.my-reset {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 17.3px;
+  padding: 0 20px;
+}
+
+.my-reset__title {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.my-reset__button {
+  flex: 0 0 auto;
+  width: 57px;
+  height: 26px;
+  border-radius: 8px;
+  background: #1d2d3a;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  color: #d9d9d9;
+}
+
+/* ── 아래쪽 자리 (시안의 회색 막대 2개 · 사각형) ── */
+.my-footer {
+  position: relative;
+  height: 41px;
+  margin: 44px 20px 0;
+}
+
+.my-footer__bar {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 108px;
+  height: 12px;
+  background: #c9cbcf;
+}
+
+.my-footer__bar--short {
+  top: 24px;
+  width: 69px;
+}
+
+.my-footer__logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 41px;
+  background: linear-gradient(to bottom, #cbced0, #a9afb7);
+}
