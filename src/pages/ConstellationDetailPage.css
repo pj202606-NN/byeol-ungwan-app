@@ -254,10 +254,15 @@
 }
 
 .constellation-lucky__image {
+  display: grid;
+  place-items: center;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  background: #454a50;
+  font-family: var(--font-point);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-text);
 }
 
 .constellation-lucky__label {

@@ -77,10 +77,9 @@ try {
   }
   for (const direction of ['east', 'north', 'west', 'south']) {
     await offline.goto(`${base}#/constellations/dictionary/direction/${direction}`);
-    await offline.locator('.direction-top__image img').waitFor();
-    assert.ok(await offline.locator('.direction-top__image img').evaluate(async img => {
-      await img.decode(); return img.naturalWidth === 1500 && !!(await caches.match(img.src))?.ok;
-    }));
+    await offline.locator('.direction').waitFor();
+    assert.equal(await offline.locator('.direction-top__image img').count(), 0);
+    assert.equal(await offline.locator('.dict-card').count(), 7);
   }
   await offline.goto(`${base}#/constellations/explore`);
   await offline.locator('.explore').waitFor();

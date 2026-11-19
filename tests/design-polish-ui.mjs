@@ -6,7 +6,6 @@ const engine = isWebKit ? 'webkit' : 'chrome';
 const browser = await (isWebKit ? webkit.launch({ headless: true }) : chromium.launch({ channel: 'chrome', headless: true }));
 const origin = process.env.TEST_ORIGIN ?? 'http://localhost:5173';
 const copy = JSON.parse(await readFile(new URL('../src/data/constellations/guardianCopy.json', import.meta.url), 'utf8'));
-const stems = { east: 'azure-dragon', north: 'black-tortoise', west: 'white-tiger', south: 'vermilion-bird' };
 await mkdir('review/design-polish', { recursive: true });
 const errors = [];
 try {
@@ -35,10 +34,7 @@ try {
     };
     for (const id of ['east', 'north', 'west', 'south']) {
       await go(`/constellations/dictionary/direction/${id}`, '.direction');
-      const image = page.locator('.direction-top__image img');
-      await image.evaluate(img => img.decode());
-      assert.ok((await image.getAttribute('src')).split('/').at(-1).startsWith(stems[id] + '-'));
-      assert.deepEqual(await image.evaluate(img => [img.naturalWidth, img.naturalHeight, getComputedStyle(img).objectFit]), [1500, 2000, 'cover']);
+      assert.equal(await page.locator('.direction-top__image img').count(), 0);
       assert.equal((await page.locator('.direction-top__image').boundingBox()).height, 171.5);
       const intro = (await page.locator('.direction-intro span').allTextContents()).join(' ');
       assert.equal(intro.trim(), copy.entries[id].shortIntro);
@@ -119,5 +115,5 @@ try {
     await context.close();
   }
   assert.deepEqual(errors, []);
-  console.log(`PASS ${engine}: four 2-sentence/3-line intros, full-width guardian images and gradients, 1.25x dictionary/1.22x home cards/detail unchanged, 19px lucky glyphs, shared inert settings lock/reset position, full reset→intro→signup→wheel→home; 5 viewports, no page errors.`);
+  console.log(`PASS ${engine}: four intros and empty guardian regions, dictionary/home card sizes, 19px lucky glyphs, inert settings/reset flow; 5 viewports, no page errors.`);
 } finally { await browser.close(); }

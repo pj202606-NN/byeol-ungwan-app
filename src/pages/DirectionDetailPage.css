@@ -19,27 +19,7 @@
 
 /* 탭 아래 ~ '동방 7수' 위 (171.5) — 방위 그림이 오면 이 자리에 */
 .direction-top__image {
-  position: relative;
-  overflow: hidden;
   height: 171.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.direction-top__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.direction-top__image::after {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  content: '';
-  background: linear-gradient(to bottom, var(--color-app-bg) 0%, rgba(7, 14, 22, 0.4) 25%, rgba(7, 14, 22, 0.08) 55%, var(--color-app-bg) 100%);
 }
 
 /* ── 본문 판 (위 402) ── */

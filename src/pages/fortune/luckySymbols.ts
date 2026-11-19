@@ -1,6 +1,14 @@
+import catalog from '../../data/constellations/catalog.json';
+
 export type LuckySymbolKind = 'color' | 'direction' | 'weekday' | 'planet';
+const kinds: LuckySymbolKind[] = ['color', 'direction', 'weekday', 'planet'];
+
+/** 사전과 운세가 같은 별자리 ID의 원본 행운 상징을 사용한다. */
+export function getLuckySymbols(id: string) {
+  return (catalog.find(star => star.id === id)?.luckySymbols ?? []).map((symbol, index) => ({ ...symbol, kind: kinds[index]! }));
+}
 const characters: Record<LuckySymbolKind, Record<string, string>> = {
-  color: { 황색: '黃', 노랑: '黃', 청색: '靑', 파랑: '靑', 적색: '赤', 빨강: '赤', 백색: '白', 흰색: '白', 흑색: '黑', 검정: '黑', 녹색: '綠', 초록: '綠', 자색: '紫', 보라: '紫' },
+  color: { 황색: '黃', 노랑: '黃', 청색: '靑', 파랑: '靑', 적색: '赤', 빨강: '赤', 백색: '白', 흰색: '白', 흑색: '黑', 검정: '黑', 녹색: '綠', 초록: '綠', 자색: '紫', 보라: '紫', 황금색: '金', 은색: '銀' },
   direction: { 중앙: '中', 동쪽: '東', 동: '東', 서쪽: '西', 서: '西', 남쪽: '南', 남: '南', 북쪽: '北', 북: '北', 북동: '北東', 북서: '北西', 남동: '南東', 남서: '南西' },
   weekday: { 일요일: '日', 월요일: '月', 화요일: '火', 수요일: '水', 목요일: '木', 금요일: '金', 토요일: '土' },
   planet: { 태양: '日', 달: '月', 수성: '水', 금성: '金', 지구: '地', 화성: '火', 목성: '木', 토성: '土', 천왕성: '天王', 해왕성: '海王' },

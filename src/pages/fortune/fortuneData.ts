@@ -3,7 +3,6 @@
  * 실제 운세·조언·분석 원고는 services/fortunes.ts에서 조회한다.
  */
 import { todayHero } from '../home/homeData.ts';
-import type { LuckySymbolKind } from './luckySymbols.ts';
 
 export const fortuneHero = {
   name: todayHero.name,
@@ -20,14 +19,6 @@ const sampleBody = [
   '적응력과 현실 감각이 오늘의 흐름과 다소 엇갈리니,',
   '잘 되던 일도 한 번 더 확인하고 지금 할 수 있는 것에만',
   '집중하십시오.',
-];
-
-/** Display samples until per-constellation lucky-symbol data is supplied. */
-export const luckySymbols: { kind: LuckySymbolKind; label: string; value?: string; example: boolean }[] = [
-  { kind: 'color', label: '행운의 색', value: '황색', example: true },
-  { kind: 'direction', label: '행운의 방위', value: '중앙', example: true },
-  { kind: 'weekday', label: '행운의 요일', value: '토요일', example: true },
-  { kind: 'planet', label: '행운의 행성', value: '토성', example: true },
 ];
 
 /** 심화 운세 안내 (출생 시각 입력 시 제공 예정 — APP_SCREEN_STRUCTURE.md 2장) */

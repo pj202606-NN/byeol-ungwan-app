@@ -47,6 +47,11 @@ try {
     assert.ok((await page.locator('.dict-hero__name').textContent()).includes(star.hanja));
     assert.equal((await page.locator('#constellation-description').textContent()).trim(), copy.entries[star.id].sections.description);
     await checkFigure('.constellation-top__figure', '.dict-tabs', '.dict-hero');
+    assert.equal(await page.locator('.constellation-top__figure > g').getAttribute('transform').then(value => value.startsWith('translate(0 -15)')), true);
+    const luckyValues = star.luckySymbols.map(symbol => symbol.value);
+    assert.deepEqual(await page.locator('.constellation-lucky__value').allTextContents(), luckyValues);
+    const luckyGlyphs = await page.locator('.constellation-lucky__image').allTextContents();
+    assert.ok(luckyGlyphs.every(glyph => glyph && glyph !== '—'), star.id);
     await page.locator('.constellation-image img').evaluate(async image => { image.loading = 'eager'; await image.decode(); });
     assert.ok((await page.locator('.constellation-image img').getAttribute('src')).split('/').at(-1).startsWith(`${star.graphicKey}-`));
     assert.ok((await page.locator('#constellation-observation').textContent()).includes(star.observation.representativeStar));
@@ -56,6 +61,9 @@ try {
       name: '관람객', birthDate: `2000-${String(star.start.month).padStart(2, '0')}-${String(star.start.day).padStart(2, '0')}`,
     });
     await page.reload();
+    await go('/fortune', '.fortune');
+    assert.deepEqual(await page.locator('.fortune-lucky__value').allTextContents(), luckyValues);
+    assert.deepEqual(await page.locator('.fortune-lucky__image').allTextContents(), luckyGlyphs);
     await go('/constellations/explore', '.explore');
     assert.equal(await page.locator('.explore-where__label strong').textContent(), star.name);
     await checkFigure('.explore-top__figure', '.page-header', '.explore-where');

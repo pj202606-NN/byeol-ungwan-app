@@ -4,8 +4,8 @@ import Chevron from '../components/Chevron.tsx';
 import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 import QuoteBlock from '../components/QuoteBlock.tsx';
-import { deepFortune, fortuneHero, luckySymbols } from './fortune/fortuneData.ts';
-import { luckyHanja } from './fortune/luckySymbols.ts';
+import { deepFortune, fortuneHero } from './fortune/fortuneData.ts';
+import { getLuckySymbols, luckyHanja } from './fortune/luckySymbols.ts';
 import '../components/CircleBadge.css';
 import '../components/FeatureLocked.css';
 import { fortunePeriods, getFortuneContent, type FortunePeriod } from '../services/fortunes.ts';
@@ -22,6 +22,7 @@ export default function FortunePage() {
 function FortunePane({ period, onPeriodChange }: { period: FortunePeriod; onPeriodChange: (period: FortunePeriod) => void }) {
   const { constellation, fortuneDate } = useRequiredEntryFlow();
   const hero = constellation;
+  const luckySymbols = getLuckySymbols(constellation.id);
   const content = getFortuneContent(constellation.starId, fortuneDate, period);
   const analysis = period === 'analysis';
   const [open, setOpen] = useState<Record<string, boolean>>({});
@@ -83,12 +84,12 @@ function FortunePane({ period, onPeriodChange }: { period: FortunePeriod; onPeri
 
         {!analysis && (
           <>
-            {/* 행운의 상징은 기존 표시 유지. 새 JSON에는 해당 수치가 없다. */}
+            {/* 별자리별 기본 데이터의 행운 상징을 사전과 공유한다. */}
             <section className="fortune-lucky">
               <h2 className="fortune-lucky__title">행운의 상징</h2>
               <ul className="fortune-lucky__list">
                 {luckySymbols.map((symbol) => (
-                  <li key={symbol.label} data-example={symbol.example || undefined}>
+                  <li key={symbol.label}>
                     <span className="fortune-lucky__image circle-badge" aria-hidden="true">{luckyHanja(symbol.kind, symbol.value)}</span>
                     <span className="fortune-lucky__label">{symbol.label}</span>
                     <span className="fortune-lucky__value">{symbol.value || '—'}</span>

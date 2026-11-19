@@ -6,6 +6,8 @@ import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import ConstellationCardArt from '../components/ConstellationCardArt.tsx';
 import { constellationCardFocus } from '../components/constellationCardFocus.ts';
 import PageHeader from '../components/PageHeader.tsx';
+import { getLuckySymbols, luckyHanja } from './fortune/luckySymbols.ts';
+import '../components/CircleBadge.css';
 import { DictionaryGlossary, DictionaryHero, DictionaryTabs } from './dictionary/DictionaryParts.tsx';
 import {
   constellationDetails,
@@ -58,7 +60,7 @@ export default function ConstellationDetailPage() {
   return (
     <div className="constellation">
       <div className="constellation-top">
-        <ConstellationFigure className="constellation-top__figure" graphicKey={item.id === 'yu' ? 'ryu' : item.id} scale={1.6} offsetY={-45} viewBox="0 41 393 360" stars={detail.stars} lines={detail.lines} />
+        <ConstellationFigure className="constellation-top__figure" graphicKey={item.id === 'yu' ? 'ryu' : item.id} scale={1.6} offsetY={-15} viewBox="0 41 393 360" stars={detail.stars} lines={detail.lines} />
         <PageHeader title="별자리 사전" onBack={goBack} />
         <DictionaryTabs active={item.direction} onSelect={selectTab} />
 
@@ -124,10 +126,9 @@ export default function ConstellationDetailPage() {
             행운의 상징
           </h2>
           <ul className="constellation-lucky__list">
-            {detail.lucky.map((l) => (
+            {getLuckySymbols(item.id).map((l) => (
               <li key={l.label}>
-                {/* 상징 이미지 자리 — 에셋 미제공 */}
-                <span className="constellation-lucky__image" aria-hidden="true" />
+                <span className="constellation-lucky__image circle-badge" aria-hidden="true">{luckyHanja(l.kind, l.value)}</span>
                 <span className="constellation-lucky__label">{l.label}</span>
                 <span className="constellation-lucky__value">{l.value}</span>
               </li>

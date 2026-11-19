@@ -15,6 +15,17 @@ const original = JSON.parse(source);
 const keys = ['각수', '항수', '저수', '방수', '심수', '미수', '기수', '두수', '우수', '여수', '허수', '위수(危)', '실수', '벽수', '규수', '루수', '위수(胃)', '묘수', '필수', '자수', '삼수', '정수', '귀수', '류수', '성수', '장수', '익수', '진수'];
 const categories = [['total', '종합', '종합'], ['relation', '인간관계', '관계'], ['work', '학업 · 일', '학업·일'], ['money', '금전 · 재물', '금전']];
 
+test('28수의 행운 상징은 별자리별 원본을 사용하고 모든 한자를 표시한다', () => {
+  const catalog = JSON.parse(fs.readFileSync(new URL('../src/data/constellations/catalog.json', import.meta.url), 'utf8'));
+  for (const star of catalog) {
+    const lucky = symbols.getLuckySymbols(star.id);
+    assert.deepEqual(lucky.map(({ label, value }) => ({ label, value })), star.luckySymbols);
+    assert.deepEqual(lucky.map(symbol => symbol.kind), ['color', 'direction', 'weekday', 'planet']);
+    assert.ok(lucky.every(symbol => symbols.luckyHanja(symbol.kind, symbol.value) !== '—'), star.id);
+  }
+  assert.deepEqual(symbols.getLuckySymbols('unknown'), []);
+});
+
 test('원고를 수정 없이 요청 경로에 복사하고 28수와 두 위수를 고유 ID에 연결한다', () => {
   assert.equal(fs.readFileSync(new URL('../src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json', import.meta.url), 'utf8'), source);
   assert.deepEqual(Object.keys(original.constellations), keys);
