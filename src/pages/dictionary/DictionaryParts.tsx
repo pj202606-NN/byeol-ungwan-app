@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import Chevron from '../../components/Chevron.tsx';
 import Icon from '../../components/Icon.tsx';
+import ConstellationCardArt from '../../components/ConstellationCardArt.tsx';
 import type { Constellation, DictionaryTabId } from './dictionaryData.ts';
 import { dictionaryTabs, glossary, searchPlaceholder } from './dictionaryData.ts';
 import './DictionaryParts.css';
@@ -64,8 +65,9 @@ export function DictionarySearch() {
 export function ConstellationCard({ item, to, backTo }: { item: Constellation; to?: string; backTo?: string }) {
   const body = (
     <>
-      {/* 카드 이미지 자리 — 에셋 미제공 */}
-      <div className="dict-card__image" aria-hidden="true" />
+      <div className="dict-card__image">
+        <ConstellationCardArt src={item.image} alt={`${item.name} · ${item.alias}`} />
+      </div>
       <p className="dict-card__name">
         {item.name}
         {item.alias && <span>{item.alias}</span>}

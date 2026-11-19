@@ -32,16 +32,23 @@ export default function BottomNav() {
         className={`bottom-nav ${isConstellation ? 'bottom-nav--constellation' : 'bottom-nav--main'}`}
         aria-label={isConstellation ? '별자리 메뉴' : '주 메뉴'}
       >
-        {isConstellation && (
+        <div className="bottom-nav__panel bottom-nav__panel--main" aria-hidden={isConstellation} inert={isConstellation}>
+          <ul className="bottom-nav__list">
+            {MAIN_NAV.map((item) => (
+              <NavButton key={item.key} item={item} active={isActive(item, pathname)} />
+            ))}
+          </ul>
+        </div>
+        <div className="bottom-nav__panel bottom-nav__panel--constellation" aria-hidden={!isConstellation} inert={!isConstellation}>
           <Link to={CONSTELLATION_BACK_TO} className="bottom-nav__back" aria-label="홈으로 돌아가기">
             <Icon name="back" className="bottom-nav__icon" />
           </Link>
-        )}
         <ul className="bottom-nav__list">
-          {(isConstellation ? CONSTELLATION_NAV : MAIN_NAV).map((item) => (
+          {CONSTELLATION_NAV.map((item) => (
             <NavButton key={item.key} item={item} active={isActive(item, pathname)} />
           ))}
         </ul>
+        </div>
       </nav>
     </div>
   );

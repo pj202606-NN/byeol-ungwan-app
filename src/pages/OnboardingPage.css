@@ -40,6 +40,8 @@
 
 /* 문구 2줄 (가운데 431.8 · 463.3) */
 .onboarding__text {
+  position: relative;
+  top: calc(-1 * var(--onboarding-text-lift, clamp(40px, 10svh, 80px)));
   margin-top: 36px;
   font-family: var(--font-point);
   font-size: 16.5px;

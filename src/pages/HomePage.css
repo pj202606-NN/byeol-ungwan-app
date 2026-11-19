@@ -35,7 +35,7 @@
 
 .home-hero__figure {
   position: absolute;
-  top: 0;
+  top: -12px;
   left: 50%;
   width: 393px;
   height: 494px;
@@ -130,9 +130,14 @@
 
 .home-today__text {
   margin-top: 14.5px;
+  margin-right: 28px;
   font-family: var(--font-point);
   font-size: 16.5px;
   line-height: 23px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-wrap: pretty;
 }
 
 .home-today__text span {
@@ -382,6 +387,10 @@
   background: var(--color-surface);
 }
 
+.home-compat__legend li:nth-child(1) .home-compat__dot { background: #a6d3f2; }
+.home-compat__legend li:nth-child(2) .home-compat__dot { background: #4e89b5; }
+.home-compat__legend li:nth-child(3) .home-compat__dot { background: #1f4667; }
+
 .home-compat__picks {
   display: flex;
   gap: 24px;
@@ -406,8 +415,6 @@
 .home-compat__image {
   width: 76px;
   height: 76px;
-  border-radius: 50%;
-  background: var(--color-surface);
 }
 
 .home-compat__name {
@@ -416,6 +423,20 @@
   font-weight: 400;
   line-height: 20px;
 }
+
+.home-compat__pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.home-compat__type { margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
+.home-compat__pick:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 8px; }
 
 /* ── 별자리 탐색 ───────────────────────────────────────────────────── */
 .home-explore {
@@ -434,7 +455,7 @@
   max-width: 210px;
   aspect-ratio: 210 / 246;
   border-radius: 10px;
-  background: var(--color-surface-2);
+  background-color: var(--color-surface-2);
 }
 
 .home-explore__chart {
@@ -469,8 +490,6 @@
   gap: 7.5px;
   margin: 9px 0 0;
   /* 아래로 갈수록 흐려지는 처리 (디자인) */
-  -webkit-mask-image: linear-gradient(to bottom, #000 42%, rgba(0, 0, 0, 0.35) 62%, transparent 88%);
-  mask-image: linear-gradient(to bottom, #000 42%, rgba(0, 0, 0, 0.35) 62%, transparent 88%);
 }
 
 .home-explore__rows dt {
@@ -484,13 +503,13 @@
   margin: 1.5px 0 0;
   font-size: 12px;
   line-height: 18px;
-  white-space: nowrap;
+  white-space: normal;
   color: #a6a1a1;
 }
 
 .home-explore__more {
   position: absolute;
-  top: 197.5px;
+  bottom: 0;
   left: 50%;
   padding: 0;
   border: 0;
@@ -504,6 +523,8 @@
 }
 
 /* 아래 방향 꺾쇠 (﹀) */
+.home-explore__basis { margin-top: 8px; font-size: 10px; line-height: 16px; color: var(--color-text-muted); }
+
 .home-explore__chevron {
   display: inline-block;
   width: 7px;
@@ -575,19 +596,29 @@
 
 .home-dict__card {
   position: relative;
+  overflow: hidden;
   height: 129px;
   border-radius: 10px;
-  background: var(--color-surface);
+  background-color: var(--color-surface);
 }
 
 .home-dict__card span {
   position: absolute;
-  top: 8.5px;
-  right: 10px;
-  font-size: 10.5px;
+  top: 5px;
+  right: 6px;
+  z-index: 1;
+  font-size: 8px;
   line-height: 14px;
   white-space: nowrap;
-  color: var(--color-accent);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.home-dict__card::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(2, 8, 15, 0.58), rgba(2, 8, 15, 0.08) 55%);
+  content: '';
+  pointer-events: none;
 }
 
 .home-dict__name {
@@ -600,7 +631,8 @@
 }
 
 .home-dict__name span {
-  margin-left: 2px;
+  display: block;
+  margin-left: 0;
   font-size: 11px;
   font-weight: 400;
   color: #707070;

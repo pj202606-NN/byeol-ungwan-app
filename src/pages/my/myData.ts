@@ -31,21 +31,6 @@ export const exampleUser: UserProfile = {
 /** '2004. 05. 03' */
 export const formatBirthDate = (iso: string) => iso.split('-').join('. ');
 
-/* ── 나의 별자리 (⏳ 사용자 정보로 정해지는 규칙 미확정 — 시안 값 그대로) ── */
-
-/**
- * ⚠️ 시안 그대로이며 다른 화면과 서로 맞지 않음 (임의로 고치지 않음):
- *  - 이름 '누수' 인데 한자는 '角宿'(각수의 한자) — 누수의 전통 한자는 '婁宿'
- *  - 프로필 도형은 홈·사전의 저수 도형과 같음
- *  - 홈·사전의 내 별자리는 '저수'
- */
-export const exampleMyConstellation = {
-  name: '누수',
-  hanja: '角宿',
-  /** 프로필 줄 끝 '백호' */
-  guardian: '백호',
-};
-
 /** 프로필 왼쪽 작은 별자리 — 홈 todayHero 좌표를 0.2423 배로 줄여 화면 좌표(x 32~72, y 91~129)로 옮김 */
 const scale = 0.2423;
 export const profileFigure = {

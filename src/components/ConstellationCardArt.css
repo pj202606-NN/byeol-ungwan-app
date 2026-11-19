@@ -1,0 +1,10 @@
+.constellation-card-art {
+  display: block;
+  width: 100%;
+  /* Keep the smaller, raised art covering the bottom of short list frames. */
+  height: calc(100% + var(--card-art-overdraw, 16px));
+  object-fit: cover;
+  object-position: var(--card-art-position, center top);
+  transform: translateY(var(--card-art-offset, min(-24px, calc(-5% - 16px)))) scale(var(--card-art-scale, 1.22));
+  transform-origin: center;
+}

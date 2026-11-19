@@ -6,8 +6,7 @@ import RecordsPage from './pages/RecordsPage.tsx';
 import MyPage from './pages/MyPage.tsx';
 import SplashPage from './pages/SplashPage.tsx';
 import OnboardingPage from './pages/OnboardingPage.tsx';
-import EntryWheelPage from './pages/EntryWheelPage.tsx';
-import { EntryFlowProvider, HomeEntry, MainShell, SignupStep } from './entry/entryFlow.tsx';
+import { EntryFlowProvider, EntryWheelStep, HomeEntry, MainShell, SignupStep } from './entry/entryFlow.tsx';
 import ExplorePage from './pages/ExplorePage.tsx';
 import RankingPage from './pages/RankingPage.tsx';
 import CompatibilityPage from './pages/CompatibilityPage.tsx';
@@ -23,7 +22,7 @@ import ConstellationDetailPage from './pages/ConstellationDetailPage.tsx';
 export default function App() {
   return (
     <HashRouter>
-      {/* 초기 진입 과정에서 입력한 사용자 정보 (메모리, 영구 저장 없음) */}
+      {/* 초기 입력 정보와 판정 결과를 탭 세션에서 복원 */}
       <EntryFlowProvider>
         <Routes>
           {/* 초기 진입 과정(01~04) — 하단 메뉴바 없음. 기본 주소로 앱을 열면 01 부터 (각 주소로 직접 열기도 가능) */}
@@ -32,16 +31,16 @@ export default function App() {
             {/* 02 온보딩 1~5단계 — 마지막 버튼 → 회원가입 */}
             <Route path="onboarding" element={<Navigate to="/onboarding/1" replace />} />
             <Route path="onboarding/:step" element={<OnboardingPage />} />
-            {/* 03 회원가입(기본 정보 입력) — 검증 통과 → 04 원판 (입력 정보는 EntryFlowProvider 메모리에만) */}
+            {/* 03 정보 입력 — 검증 통과 시 탭 세션에 저장하고 원판으로 이동 */}
             <Route path="signup" element={<SignupStep />} />
             {/* 04 원판 돌리기 — 회원가입 통과 후 진입, 연출이 끝나면 홈 */}
-            <Route path="entry-wheel" element={<EntryWheelPage />} />
+            <Route path="entry-wheel" element={<EntryWheelStep />} />
           </Route>
           {/* 메인 앱 — 이 화면들을 한 번 보면 이후 기본 주소(#/)는 시작 화면 없이 홈 */}
           <Route element={<MainShell />}>
             {/* 기본 주소: 앱을 막 열었으면 01 시작 화면부터, 앱 안에서 왔으면 홈 */}
             <Route index element={<HomeEntry />} />
-            {/* 개발용: 시작 흐름 없이 홈을 바로 열기 */}
+            {/* 입력한 사용자 정보가 있을 때만 홈을 표시 */}
             <Route path="home" element={<HomePage />} />
             <Route path="fortune" element={<FortunePage />} />
             <Route path="records" element={<RecordsPage />} />

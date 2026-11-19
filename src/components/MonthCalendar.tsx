@@ -20,6 +20,7 @@ interface MonthCalendarProps {
   highlighted?: CalendarDate;
   onPrev?: () => void;
   onNext?: () => void;
+  onSelect?: (date: CalendarDate) => void;
 }
 
 const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
@@ -34,7 +35,7 @@ const same = (a: CalendarDate | undefined, y: number, m: number, d: number) =>
  * 월 달력 (07 기록) — ‹ YYYY년 M월 › + 요일 + 날짜, 날짜 위 점(기록 표시)
  * '오늘' 이후 날짜는 흐리게 표시
  */
-export default function MonthCalendar({ year, month, marks = {}, today, highlighted, onPrev, onNext }: MonthCalendarProps) {
+export default function MonthCalendar({ year, month, marks = {}, today, highlighted, onPrev, onNext, onSelect }: MonthCalendarProps) {
   const firstWeekday = new Date(year, month - 1, 1).getDay();
   const daysInMonth = new Date(year, month, 0).getDate();
   const todayNum = today ? today.year * 10000 + today.month * 100 + today.day : Infinity;
@@ -77,10 +78,14 @@ export default function MonthCalendar({ year, month, marks = {}, today, highligh
             .filter(Boolean)
             .join(' ');
           return (
-            <span key={day} className={cls} role="gridcell">
+            <button key={day} type="button" className={cls} role="gridcell" disabled={future}
+              data-date={dateKey(year, month, day)} aria-selected={same(highlighted, year, month, day)}
+              aria-current={same(today, year, month, day) ? 'date' : undefined}
+              aria-label={`${year}년 ${month}월 ${day}일${mark ? ', 기분 기록 있음' : ''}`}
+              onClick={() => onSelect?.({ year, month, day })}>
               {mark && <span className="month-calendar__dot" style={{ background: mark }} aria-hidden="true" />}
               <span className="month-calendar__num">{day}</span>
-            </span>
+            </button>
           );
         })}
       </div>

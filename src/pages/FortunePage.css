@@ -7,13 +7,18 @@
   /* 고정 영역 높이: 헤더(72) + 기간 탭(38.5) + 분류 버튼 줄(52) */
   --fortune-tabs-height: 38.5px;
   --fortune-chips-height: 52px;
+  --fortune-text-right: 76px;
   padding-bottom: 16px;
   background: var(--color-app-bg);
   color: var(--color-text);
 }
 
+.fortune--analysis {
+  padding-bottom: 48px;
+}
+
 /* ── 기간 탭 (오늘의 운세 / 이달의 운세 / 올해의 운세 / 분석) — 헤더 아래 고정 ──
-   각 탭은 별자리 운세 안의 하위 페이지 (현재: 오늘의 운세. 나머지는 디자인 전) */
+   오늘·이달·올해·분석은 같은 화면 구조에서 내용과 항목을 전환한다. */
 .fortune-tabs {
   position: sticky;
   top: var(--page-header-height);
@@ -82,10 +87,11 @@
   color: #9ca0a4;
 }
 
-/* 홈 별자리 좌표(viewBox 105 225 185 180)를 0.365 배로 축소 */
+/* 모든 운세 기간·분석에서 공통으로 사용하는 별자리 도형 */
 .fortune-hero__figure {
-  width: 67.5px;
-  height: 65.7px;
+  width: 96px;
+  height: 93.5px;
+  margin-top: -14px;
 }
 
 /* 393 폭에서 가운데 x 309.5 */
@@ -122,7 +128,7 @@
 
 .fortune-quote,
 .fortune-advice {
-  margin: 0 20px 0 36px;
+  margin: 0 var(--fortune-text-right) 0 36px;
 }
 
 .fortune-divider {
@@ -217,6 +223,8 @@
 
 .fortune-category__body {
   margin-top: 6.5px;
+  /* 제목·접기 화살표는 초안 폭, 본문만 좁힌 폭으로 유지 */
+  margin-right: calc(var(--fortune-text-right) - 39px);
   font-size: 15px;
   line-height: 24px;
   color: var(--color-text-sub);
@@ -255,10 +263,15 @@
 }
 
 .fortune-lucky__image {
+  display: grid;
+  place-items: center;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  background: #454a50;
+  font-family: var(--font-point);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-text);
 }
 
 .fortune-lucky__label {
@@ -296,11 +309,6 @@
   font-size: 15px;
   line-height: 23.5px;
   color: var(--color-text-sub);
-  filter: blur(5px);
-  opacity: 0.55;
-  user-select: none;
-  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
 }
 
 .fortune-deep__blurred-title {
@@ -316,14 +324,7 @@
 }
 
 .fortune-deep__notice {
-  position: absolute;
   top: 58px;
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 .fortune-deep__title {

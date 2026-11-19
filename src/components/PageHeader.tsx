@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import Chevron from './Chevron.tsx';
+import ProfileAvatar from './ProfileAvatar.tsx';
 import './PageHeader.css';
 
 interface PageHeaderProps {
@@ -40,8 +41,7 @@ export default function PageHeader({ title, showBack = true, sticky = false, rig
       {/* 제목이 없는 화면(03 회원가입 등)은 ‹ 만 */}
       {title && <h1 className="page-header__title">{title}</h1>}
       {right ?? (
-        // 프로필 이미지 자리 (디자인 시안도 단색 원, 동작 미확정)
-        <span className="page-header__avatar" aria-hidden="true" />
+        <ProfileAvatar />
       )}
     </header>
   );

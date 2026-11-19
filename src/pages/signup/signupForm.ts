@@ -84,7 +84,7 @@ export const signupCopy = {
     '이십팔수는 별이 하루에 한 자리씩 머무는 하늘의 스물여덟 구역입니다. 생년월일만 있어도 나의 자리를 찾을 수 있고, 태어난 시각을 더하면 그날의 결을 더 자세히 읽을 수 있습니다.',
   nameLabel: '이름 또는 별명',
   namePlaceholder: '예) 하람',
-  birthDateLabel: '생년월일',
+  birthDateLabel: '생년월일 (양력)',
   birthTimeLabel: '태어난 시각',
   birthTimeHint: '태어난 시각을 입력하면 더 상세한 해석을 확인할 수 있어요. 입력하지 않아도 기본 별자리와 운세는 그대로 확인할 수 있습니다.',
   submit: '나의 별자리 찾기',

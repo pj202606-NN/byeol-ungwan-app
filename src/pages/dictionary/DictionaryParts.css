@@ -154,15 +154,24 @@
 }
 
 .dict-card__image {
+  --card-art-scale: 1.25;
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 78 / 100;
   border-radius: 8px;
   background: var(--color-surface);
 }
 
+.dict-card__image img {
+  position: absolute;
+  inset: 0;
+}
+
 .dict-card__name {
   display: flex;
   align-items: baseline;
-  height: 20px;
+  flex-wrap: wrap;
+  min-height: 20px;
   margin-top: 7.5px;
   padding-left: 2px;
   font-size: 13.5px;
@@ -174,8 +183,9 @@
 
 /* 좁은 화면에서는 별칭 끝을 줄임 */
 .dict-card__name span {
+  flex-basis: 100%;
   min-width: 0;
-  margin-left: 5px;
+  margin-left: 0;
   overflow: hidden;
   font-size: 10.5px;
   font-weight: 400;

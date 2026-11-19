@@ -27,6 +27,11 @@ export default defineConfig(({ command, isPreview }) => {
   return {
     base,
 
+    // 현재 Windows 작업 폴더에서 변경 알림이 누락되어 이전 JSON 모듈이 남는 것을 방지.
+    server: {
+      watch: { usePolling: true, interval: 300 },
+    },
+
     define: {
       __APP_BUILD_TIME__: JSON.stringify(command === 'build' ? buildTime : 'dev'),
     },
@@ -58,6 +63,8 @@ export default defineConfig(({ command, isPreview }) => {
           ],
         },
         workbox: {
+          // 공식 본명조 한국어 WOFF2 원본(4,751,636B)도 오프라인에 포함.
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
           // 빌드 결과물 전체를 미리 캐시 → 오프라인에서도 앱 실행 가능
           globPatterns: ['**/*.{js,css,html,svg,png,ico,webp,woff2,webmanifest}'],
           // 새 버전이 활성화될 때 이전 버전 캐시 정리

@@ -1,6 +1,7 @@
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router';
 import Chevron from '../components/Chevron.tsx';
 import PageHeader from '../components/PageHeader.tsx';
+import { guardianImages } from '../components/guardianImages.ts';
 import {
   ConstellationCard,
   DictionaryGlossary,
@@ -52,8 +53,9 @@ export default function DirectionDetailPage() {
         <PageHeader title="별자리 사전" onBack={goToMain} />
         <DictionaryTabs active={id} onSelect={selectTab} />
 
-        {/* 방위 그림 자리 — 초안의 빈 영역 그대로 (에셋 미제공) */}
-        <div className="direction-top__image" aria-hidden="true" />
+        <div className="direction-top__image">
+          <img src={guardianImages[id]} alt={`${detail.name} 사신수 그림`} decoding="async" />
+        </div>
 
         <DictionaryHero
           label={detail.label}

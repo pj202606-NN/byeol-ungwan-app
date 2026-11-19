@@ -1,108 +1,75 @@
-import { useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState, type CSSProperties } from 'react';
+import { useLocation } from 'react-router';
+import { useRequiredEntryFlow } from '../entry/entryFlow.tsx';
 import Chevron from '../components/Chevron.tsx';
 import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import Icon from '../components/Icon.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 import QuoteBlock from '../components/QuoteBlock.tsx';
 import CompatibilitySelector from './compatibility/CompatibilitySelector.tsx';
-import {
-  exampleResults,
-  lockedNotice,
-  myConstellation,
-  resultSectionKeys,
-} from './compatibility/compatibilityData.ts';
+import { COMPATIBILITY_READING_MS, lockedNotice, pairFigure } from './compatibility/compatibilityData.ts';
+import { compatibilitySectionKeys, getCompatibility, type CompatibilityResult } from '../services/compatibility.ts';
 import { useSectionNav } from '../utils/useSectionNav.ts';
 import './CompatibilityPage.css';
 
-/**
- * 08_02 오늘의 궁합 — 한 페이지 안의 세 가지 상태
- *  1) 선택 전 (08_02_compatibility.png)
- *  2) 상대 별자리 선택 하단 시트 (08_02_01_compatibility-selector.png)
- *  3) 선택 후 결과 (08_02_02_compatibility-result.png)
- * 결과는 디자인 시안의 예시('항수')만 있음 — 다른 별자리는 이름만 표시하고 결과는 만들지 않음
- */
 export default function CompatibilityPage() {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [frame, setFrame] = useState<Element | null>(null); // 시트가 열려 있으면 시트를 띄울 앱 프레임
+  const { constellation } = useRequiredEntryFlow();
+  const location = useLocation();
+  const [selection, setSelection] = useState<{ id: number | null; turn: number }>(() => {
+    const candidate = (location.state as { partnerId?: unknown } | null)?.partnerId;
+    return { id: typeof candidate === 'number' && Number.isInteger(candidate) && candidate >= 1 && candidate <= 28 ? candidate : null, turn: 0 };
+  });
+  const [revealed, setRevealed] = useState<string | null>(null);
+  const [frame, setFrame] = useState<Element | null>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const result = selection.id === null ? null : getCompatibility(constellation.starId, selection.id);
+  const readingKey = constellation.starId + ':' + selection.id + ':' + selection.turn;
+  const phase = !result ? 'idle' : revealed === readingKey ? 'ready' : 'connecting';
 
-  const result = selectedId ? exampleResults[selectedId] : undefined;
-  const selectedName = selectedId?.split(':')[1];
+  useEffect(() => {
+    if (selection.id === null) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const timer = window.setTimeout(() => setRevealed(readingKey), reduced ? 0 : COMPATIBILITY_READING_MS);
+    return () => window.clearTimeout(timer);
+  }, [readingKey, selection.id]);
 
-  const [open, setOpen] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries(resultSectionKeys.map((k) => [k, true])),
-  );
-  const toggle = (key: string) => setOpen((prev) => ({ ...prev, [key]: !prev[key] }));
-
-  const { activeKey, goTo, rootRef, sectionRef, itemRef } = useSectionNav(resultSectionKeys, { stickySelectors: [] });
-
-  const openSelector = () => setFrame(triggerRef.current?.closest('.app-frame') ?? null);
-  const closeSelector = () => setFrame(null);
-  const select = (id: string) => {
-    setSelectedId(id);
-    closeSelector();
+  const select = (id: number) => {
+    setSelection((current) => ({ id, turn: current.turn + 1 }));
+    setFrame(null);
   };
 
   return (
-    <div className="compat" ref={rootRef}>
+    <div className="compat" data-phase={phase} style={{ '--compat-reading-duration': `${COMPATIBILITY_READING_MS}ms` } as CSSProperties}>
       <div className="compat-top">
-        {/* 디자인 시안에 ‹ 없음 — 별자리 메뉴바의 ← 로 홈 이동 */}
         <PageHeader title="오늘의 궁합" showBack={false} />
-
-        <p className="compat-question">
-          오늘, <strong>두 별자리의 인연</strong>은 어떨까요?
-        </p>
-
+        <p className="compat-question">오늘, <strong>두 별자리의 인연</strong>은 어떨까요?</p>
         <div className="compat-pair">
-          {/* 나 */}
           <div className="compat-side">
             <p className="compat-side__label">나</p>
-            <ConstellationFigure
-              className="compat-side__figure"
-              viewBox="50 148 96 96"
-              stars={myConstellation.stars}
-              lines={myConstellation.lines}
-              lineWidth={0.6}
-            />
-            <p className="compat-side__name">
-              {myConstellation.name} <span>{myConstellation.hanja}</span>
-            </p>
-            <p className="compat-side__sub">{myConstellation.alias}</p>
+            <ConstellationFigure className="compat-side__figure" graphicKey={constellation.graphicKey}
+              viewBox={pairFigure.viewBox} stars={pairFigure.stars} lines={pairFigure.lines} />
+            <p className="compat-side__name">{constellation.name} <span>{constellation.hanja}</span></p>
+            <p className="compat-side__sub">{constellation.alias}</p>
           </div>
-
           <Icon name="compatibility" size={20} className="compat-pair__icon" />
-
-          {/* 상대방 — 누르면 선택 시트 */}
-          <button
-            ref={triggerRef}
-            type="button"
-            className="compat-side compat-side--partner"
-            aria-haspopup="dialog"
-            aria-expanded={frame !== null}
-            onClick={openSelector}
-          >
+          {phase === 'connecting' && <CompatibilityWeave key={readingKey} />}
+          <button ref={triggerRef} type="button" className="compat-side compat-side--partner"
+            aria-haspopup="dialog" aria-expanded={frame !== null}
+            aria-label={result ? result.partner.alias + ' 선택됨, 상대 별자리 변경' : '상대 별자리 선택'}
+            disabled={phase === 'connecting'}
+            onClick={() => setFrame(triggerRef.current?.closest('.app-frame') ?? null)}>
             <span className="compat-side__label">상대방</span>
             {result ? (
               <>
-                <ConstellationFigure
-                  className="compat-side__figure"
-                  viewBox="248 148 96 96"
-                  stars={result.partner.stars}
-                  lines={result.partner.lines}
-                  lineWidth={0.6}
-                />
-                <span className="compat-side__name">
-                  {result.partner.name} <span>{result.partner.hanja}</span>
-                </span>
+                <ConstellationFigure className="compat-side__figure" graphicKey={result.partner.graphicKey}
+                  viewBox={pairFigure.viewBox} stars={pairFigure.stars} lines={pairFigure.lines} />
+                <span className="compat-side__name">{result.partner.name} <span>{result.partner.hanja}</span></span>
                 <span className="compat-side__sub">{result.partner.alias}</span>
               </>
             ) : (
               <>
                 <span className="compat-side__ring" aria-hidden="true" />
-                <span className="compat-side__select">
-                  {selectedName ?? '상대 별자리 선택'}
-                  <Chevron direction="right" size={6} className="compat-side__chevron" />
-                </span>
+                <span className="compat-side__select">상대 별자리 선택<Chevron direction="right" size={6} className="compat-side__chevron" /></span>
                 <span className="compat-side__sub">탭하여 고르기</span>
               </>
             )}
@@ -110,105 +77,104 @@ export default function CompatibilityPage() {
         </div>
       </div>
 
-      {/* ── 본문 판 ── */}
       <div className="compat-sheet">
-        {result ? (
-          <>
-            <QuoteBlock
-              className="compat-quote"
-              label={result.quote.label}
-              lines={result.quote.lines}
-              footer={result.quote.date}
-            />
-
-            <hr className="compat-divider compat-divider--result" />
-
-            <nav className="compat-chips" aria-label="궁합 풀이 바로가기">
-              {result.sections.map((s) => (
-                <button
-                  key={s.key}
-                  ref={itemRef(s.key as (typeof resultSectionKeys)[number])}
-                  type="button"
-                  className="compat-chips__chip"
-                  aria-current={activeKey === s.key ? 'true' : undefined}
-                  aria-controls={`compat-section-${s.key}`}
-                  onClick={() => goTo(s.key as (typeof resultSectionKeys)[number])}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </nav>
-
-            <div className="compat-sections">
-              {result.sections.map((s) => (
-                <section
-                  key={s.key}
-                  id={`compat-section-${s.key}`}
-                  ref={sectionRef(s.key as (typeof resultSectionKeys)[number])}
-                  className="compat-section"
-                >
-                  <h2 className="compat-section__head">
-                    <button
-                      type="button"
-                      className="compat-section__toggle"
-                      aria-expanded={open[s.key]}
-                      aria-controls={`compat-body-${s.key}`}
-                      onClick={() => toggle(s.key)}
-                    >
-                      {s.label}
-                      <Chevron direction={open[s.key] ? 'up' : 'down'} size={10} className="compat-section__chevron" />
-                    </button>
-                  </h2>
-                  <div id={`compat-body-${s.key}`} className="compat-section__body" hidden={!open[s.key]}>
-                    {s.body && <p>{s.body}</p>}
-                    {s.bullets && (
-                      <ul>
-                        {s.bullets.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </section>
-              ))}
-            </div>
-          </>
+        {phase === 'ready' && result ? (
+          <CompatibilityResultPanel key={readingKey} result={result} />
+        ) : phase === 'connecting' ? (
+          <div className="compat-reading" role="status" aria-live="polite">
+            <p>두 별자리의 인연을 맺고 있어요.</p>
+            <span>별과 별 사이, 인연을 살피는 중</span>
+          </div>
         ) : (
           <>
-            <p className="compat-guide">
-              상대의 별자리를 선택해 <strong>궁합을 확인</strong>해 보세요!
-            </p>
-
+            <p className="compat-guide">상대의 별자리를 선택해 <strong>궁합을 확인</strong>해 보세요!</p>
             <hr className="compat-divider" />
-
-            {/* 선택 전: 흐리게 가린 풀이 + 안내 */}
             <section className="compat-locked" aria-label={lockedNotice.title}>
               <div className="compat-locked__blurred" aria-hidden="true">
                 <p className="compat-locked__blurred-title">상세 풀이</p>
-                <p>계절이 이웃한 별자리끼리의 만남입니다. 변화의 시기를 함께 통과하는 인연으로, 각자의 시간을 인정할 때 관계가 깊어집니다.</p>
+                <p>두 별자리의 성향과 서로에게 필요한 배려를 살펴봅니다. 별자리마다 다른 인연의 이야기가 펼쳐집니다.</p>
               </div>
               <div className="compat-locked__notice">
                 <p className="compat-locked__title">{lockedNotice.title}</p>
-                <p className="compat-locked__desc">
-                  {lockedNotice.lines.map((line) => (
-                    <span key={line}>{line}</span>
-                  ))}
-                </p>
+                <p className="compat-locked__desc">{lockedNotice.lines.map((line) => <span key={line}>{line}</span>)}</p>
               </div>
             </section>
           </>
         )}
       </div>
+      {frame && <CompatibilitySelector container={frame} myName={constellation.name}
+        selectedId={selection.id} onSelect={select} onClose={() => setFrame(null)} />}
+    </div>
+  );
+}
 
-      {frame && (
-        <CompatibilitySelector
-          container={frame}
-          myName={myConstellation.name}
-          selectedId={selectedId}
-          onSelect={select}
-          onClose={closeSelector}
-        />
-      )}
+function CompatibilityWeave() {
+  const gradientId = useId();
+  return (
+    <svg className="compat-weave" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id={gradientId}>
+          <stop offset="0%" stopColor="#fff5d9" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#fff5d9" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <g className="compat-weave__arrival">
+        <circle cx="18" cy="120" r="2.4" fill="#dfd5bb" />
+        <circle cx="222" cy="120" r="2.4" fill="#9cb7cd" />
+        <path className="compat-weave__lead" pathLength="1" d="M18 120 Q31 111 44 120" />
+        <path className="compat-weave__lead compat-weave__lead--blue" pathLength="1" d="M222 120 Q209 129 196 120" />
+      </g>
+      <g className="compat-weave__orbit">
+        <circle className="compat-weave__guide" cx="120" cy="120" r="76" />
+        <path className="compat-weave__arc" pathLength="1" d="M44 120 A76 76 0 0 1 196 120" />
+        <path className="compat-weave__arc compat-weave__arc--blue" pathLength="1" d="M196 120 A76 76 0 0 1 44 120" />
+        <circle className="compat-weave__mote" cx="120" cy="44" r="2" />
+        <circle className="compat-weave__mote compat-weave__mote--blue" cx="120" cy="196" r="2" />
+      </g>
+      <g className="compat-weave__knot">
+        <circle className="compat-weave__thread" pathLength="1" cx="120" cy="120" r="54" />
+        <circle className="compat-weave__thread compat-weave__thread--blue" pathLength="1" cx="120" cy="120" r="43" />
+      </g>
+      <circle className="compat-weave__glow" cx="120" cy="120" r="37" fill={'url(#' + gradientId + ')'} />
+      <circle className="compat-weave__star" cx="120" cy="120" r="2.5" />
+    </svg>
+  );
+}
+
+function CompatibilityResultPanel({ result }: { result: CompatibilityResult }) {
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  const isOpen = (key: string) => open[key] !== false;
+  const { activeKey, goTo, rootRef, sectionRef, itemRef } = useSectionNav(compatibilitySectionKeys, { stickySelectors: [] });
+  useEffect(() => { rootRef.current?.focus({ preventScroll: true }); }, [rootRef]);
+
+  return (
+    <div className="compat-result" ref={rootRef} tabIndex={-1} role="region" aria-label="궁합 결과">
+      <QuoteBlock className="compat-quote" label={result.partner.alias + '와의 궁합'}
+        lines={[result.title]} footer={result.relation + ' · 궁합도 ' + result.score + '점'} />
+      <hr className="compat-divider compat-divider--result" />
+      <nav className="compat-chips" aria-label="궁합 풀이 바로가기">
+        {result.sections.map((section) => (
+          <button key={section.key} ref={itemRef(section.key)} type="button" className="compat-chips__chip"
+            aria-current={activeKey === section.key ? 'true' : undefined}
+            aria-controls={'compat-section-' + section.key} onClick={() => goTo(section.key)}>
+            {section.label}
+          </button>
+        ))}
+      </nav>
+      <div className="compat-sections">
+        {result.sections.map((section) => (
+          <section key={section.key} id={'compat-section-' + section.key} ref={sectionRef(section.key)} className="compat-section">
+            <h2 className="compat-section__head">
+              <button type="button" className="compat-section__toggle" aria-expanded={isOpen(section.key)}
+                aria-controls={'compat-body-' + section.key}
+                onClick={() => setOpen((current) => ({ ...current, [section.key]: !isOpen(section.key) }))}>
+                {section.label}<Chevron direction={isOpen(section.key) ? 'up' : 'down'} size={10} className="compat-section__chevron" />
+              </button>
+            </h2>
+            <div id={'compat-body-' + section.key} className="compat-section__body" hidden={!isOpen(section.key)}><p>{section.body}</p></div>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }

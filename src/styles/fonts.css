@@ -3,8 +3,8 @@
    출처·라이선스: src/assets/fonts/FONT_LICENSES.md
 
    - 기본 폰트: Pretendard (tokens.css 의 --font-family)
-   - 포인트 폰트 후보 3종: 등록만 해 둠. 브라우저는 실제로 사용하는 화면에서만 내려받음.
-     사용 예)  font-family: var(--font-point-hahmlet);
+   - 명조: Adobe 공식 Source Han Serif KR 2.003 (가변 250~900)
+   - 기존 후보 파일은 보존하며 앱에서는 사용하지 않음.
    ========================================================================== */
 
 /* ── 기본: Pretendard (가변 폰트 하나로 45~920 모든 굵기) ── */
@@ -14,6 +14,25 @@
   font-style: normal;
   font-display: swap;
   src: url('../assets/fonts/pretendard/PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Source Han Serif KR';
+  font-weight: 250 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/source-han-serif/SourceHanSerifKR-VF.otf.woff2') format('woff2');
+}
+
+/* KR 축소판 미수록 한자 貉: 동일한 본명조 K 원본에서 추출한 OFL 파생본.
+   내부 이름은 예약명 Source를 제거. 이 글자가 있는 화면에서만 내려받는다. */
+@font-face {
+  font-family: 'Byeolungwan Serif Supplement';
+  font-weight: 250 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/source-han-serif/ByeolungwanSerifSupplement.woff2?no-inline') format('woff2');
+  unicode-range: U+8C89;
 }
 
 /* ── 포인트 후보 1: Hahmlet (함렡) ── */

@@ -25,30 +25,35 @@ interface ObservationChartProps {
   label: string;
   /** 현재 위치 (viewBox 좌표) */
   point?: [number, number];
+  track?: [number, number][];
   /** 보여 줄 영역 — 기본은 홈 카드(420×492). 탐색 화면처럼 카드 비율이 다르면 중심(210,246) 기준으로 지정 */
   viewBox?: string;
   /** 방위·별자리 이름 글자 크기 (viewBox 단위, 기본 16) */
   labelSize?: number;
   className?: string;
+  /** Stage 1: keep the compass, but never draw an unverified position or sample track. */
+  unavailable?: boolean;
 }
 
 export default function ObservationChart({
   label,
   point = [113, 290],
+  track = TRACK_DOTS,
   viewBox = '0 0 420 492',
   labelSize = 16,
   className,
+  unavailable = false,
 }: ObservationChartProps) {
   const [px, py] = point;
   return (
-    <svg className={className} viewBox={viewBox} role="img" aria-label={`관측 지도: ${label}의 현재 위치`}>
+    <svg className={className} viewBox={viewBox} role="img" aria-label={unavailable ? '관측 지도: 현재 위치 계산 준비 중' : `관측 지도: ${label}의 현재 위치`}>
       <g fill="none" stroke="#5b6b76" strokeWidth="1.6">
         <circle cx={C.x} cy={C.y} r={R} />
         <circle cx={C.x} cy={C.y} r={102} strokeDasharray="5 5" strokeOpacity="0.7" />
         <circle cx={C.x} cy={C.y} r={52} strokeDasharray="5 5" strokeOpacity="0.7" />
         <line x1={C.x - R} y1={C.y} x2={C.x + R} y2={C.y} />
         <line x1={C.x} y1={C.y - R} x2={C.x} y2={C.y + R} />
-        <line x1={C.x} y1={C.y} x2={px} y2={py} stroke="#9fb3c2" />
+        {!unavailable && <line x1={C.x} y1={C.y} x2={px} y2={py} stroke="#9fb3c2" />}
       </g>
 
       <g fill="#9aa7b1">
@@ -58,19 +63,22 @@ export default function ObservationChart({
         ))}
       </g>
       <g fill="#b9c3ca">
-        {TRACK_DOTS.map(([x, y]) => <circle key={`t${x}-${y}`} cx={x} cy={y} r="4" />)}
+        {!unavailable && track.map(([x, y], index) => <circle key={index} cx={x} cy={y} r="4" />)}
       </g>
 
       {/* 현재 위치 */}
-      <circle cx={px} cy={py} r="15" fill="#4f6577" fillOpacity="0.8" />
-      <circle cx={px} cy={py} r="9" fill="#d7ecf2" />
+      {!unavailable && <>
+        <circle cx={px} cy={py} r="15" fill="#4f6577" fillOpacity="0.8" />
+        <circle cx={px} cy={py} r="9" fill="#d7ecf2" />
+      </>}
 
       <g fill="#d2e1e8" fontSize={labelSize} textAnchor="middle" fontFamily="var(--font-family)">
         <text x={C.x} y={C.y - R - 9}>북</text>
         <text x={C.x} y={C.y + R + 23}>남</text>
         <text x={C.x - R - 18} y={C.y + 6}>서</text>
         <text x={C.x + R + 18} y={C.y + 6}>동</text>
-        <text x={px} y={py - 20} fontSize={labelSize}>{label}</text>
+        {unavailable ? <text x={C.x} y={C.y + 6} fontSize={labelSize}>현재 위치 계산 준비 중</text>
+          : <text x={px} y={py - 20} fontSize={labelSize}>{label}</text>}
       </g>
     </svg>
   );

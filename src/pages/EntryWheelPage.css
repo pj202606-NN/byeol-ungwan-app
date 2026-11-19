@@ -24,19 +24,20 @@
   container-type: size;
 }
 
-/* 화면 어디를 눌러도 시작 (대기 상태에서만) */
+/* 원판 내부에서 시작하는 포인터 드래그. 브라우저 세로 스와이프와 분리 */
 .entry-wheel__stage {
   position: absolute;
   inset: 0;
   padding: 0;
   border: 0;
   background: none;
-  cursor: pointer;
-  touch-action: manipulation; /* 두 번 눌러 확대 방지 */
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.entry-wheel__stage:disabled {
+.entry-wheel__stage[aria-disabled='true'] {
   cursor: default;
 }
 
@@ -53,6 +54,7 @@
   transition: transform var(--zoom-ms, 1200ms) cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+.entry-wheel.is-zooming .entry-wheel__zoom,
 .entry-wheel.is-zoomed .entry-wheel__zoom {
   transform: translateY(var(--rdot)) scale(3.2);
 }
@@ -117,23 +119,19 @@
   transition: opacity 0.8s ease;
 }
 
+.entry-wheel.is-zooming .entry-wheel__core,
 .entry-wheel.is-zoomed .entry-wheel__core {
   opacity: 0;
 }
 
-/* 고정 표시 — 회전이 시작되면 나타남 */
+/* 고정 원형 표시 — 확대가 완료된 뒤 나타남 */
 .entry-wheel__marker {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.entry-wheel:not(.is-idle) .entry-wheel__marker {
+.entry-wheel.is-zoomed .entry-wheel__marker {
   opacity: 1;
-}
-
-.ew-marker-line {
-  stroke: #cac0a8;
-  stroke-width: 0.8;
 }
 
 .ew-marker-ring {
@@ -150,7 +148,6 @@
 /* 찾은 칸의 큰 원: 확대가 끝나면 천천히 두 번 깜빡임 (1.2초 × 2 = BLINK_MS) */
 .entry-wheel.is-zoomed .ew-marker-ring--found {
   animation: entry-wheel-blink 1.2s ease-in-out 2;
-  animation-delay: var(--zoom-ms, 1200ms);
 }
 
 @keyframes entry-wheel-blink {
@@ -198,14 +195,17 @@
   flex-direction: column;
   align-items: center;
   transform: translateY(-10px); /* 첫 줄 가운데가 안내 문구와 같은 높이 */
-  animation: entry-wheel-result-in 0.6s ease-out both;
-  animation-delay: calc(var(--zoom-delay, 0.7s));
 }
 
-/* 별자리 이름 자리 (비움 — 배정 규칙 미확정) */
+.entry-wheel.is-zoomed .entry-wheel__result { animation: entry-wheel-result-in 0.6s ease-out both; }
+
+/* 생일로 판정한 별자리 이름 */
 .entry-wheel__name {
   height: 40px;
   margin-top: 12px;
+  font-family: var(--font-point);
+  font-size: 22px;
+  color: var(--color-gold);
 }
 
 .entry-wheel__underline {
@@ -230,7 +230,7 @@
     transition: none;
   }
 
-  .entry-wheel__result,
+  .entry-wheel.is-zoomed .entry-wheel__result,
   .entry-wheel.is-zoomed .ew-marker-ring--found {
     animation: none;
   }

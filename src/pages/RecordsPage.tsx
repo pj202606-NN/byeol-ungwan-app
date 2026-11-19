@@ -1,40 +1,60 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useRequiredEntryFlow } from '../entry/entryFlow.tsx';
 import Chevron from '../components/Chevron.tsx';
 import MonthCalendar from '../components/MonthCalendar.tsx';
+import { dateKey, type CalendarDate } from '../components/MonthCalendar.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 import QuoteBlock from '../components/QuoteBlock.tsx';
 import {
   moods,
-  sampleDayDetail,
-  sampleHighlighted,
-  sampleRecords,
-  sampleToday,
+  recordsToday,
+  RECORDS_TODAY,
+  type MoodKey,
   selectionLegend,
   shortRecordPlaceholder,
 } from './records/recordsData.ts';
 import './RecordsPage.css';
+import { readRecords, recordFortune, recordStorageKey, saveRecords } from '../services/records.ts';
 
 const moodColor = Object.fromEntries(moods.map((m) => [m.key, m.color]));
-const calendarMarks = Object.fromEntries(Object.entries(sampleRecords).map(([date, mood]) => [date, moodColor[mood]]));
 
 /**
  * 07 기록 — figma-reference/07_records.png (393 × 1364)
- * 데이터는 디자인 시안 예시 값 (저장 기능 없음).
- * 동작: 이전·다음 달 넘기기, '오늘의 운세 보러 가기' → 운세, 짧은 기록 입력(저장 안 함)
- * 확정: 금색 원 = 선택한 날짜, 테두리 원 = 오늘, 기분은 하루 1개
- * 추후 구현(지금은 표시만): 날짜 선택, 기분 선택, '기록 남기기' 저장
+ * 전시 미리보기 오늘은 2026-11-20. 과거 예시 기록 + 사용자별 탭 세션 저장.
+ * 금색 원 = 선택한 날짜, 테두리 원 = 오늘. 날짜별 기분 1개·메모·운세를 복원한다.
  */
 export default function RecordsPage() {
   const navigate = useNavigate();
-  const [view, setView] = useState({ year: sampleToday.year, month: sampleToday.month });
+  const { profile, constellation, selectFortuneDate } = useRequiredEntryFlow();
+  const storageKey = recordStorageKey(profile.name, profile.birthDate);
+  const [records, setRecords] = useState(() => readRecords(storageKey, constellation.starId));
+  const [selected, setSelected] = useState<CalendarDate>(recordsToday);
+  const selectedKey = dateKey(selected.year, selected.month, selected.day);
+  const [mood, setMood] = useState<MoodKey | null>(() => records[RECORDS_TODAY]?.mood ?? null);
+  const [note, setNote] = useState(() => records[RECORDS_TODAY]?.note ?? '');
+  const [message, setMessage] = useState('');
+  const [view, setView] = useState({ year: recordsToday.year, month: recordsToday.month });
+  const calendarMarks = Object.fromEntries(Object.entries(records).map(([date, record]) => [date, moodColor[record.mood]]));
+  const saved = records[selectedKey];
+  const fortune = saved ? { text: saved.fortune, example: saved.example } : recordFortune(constellation.starId, selectedKey);
+  const selectDay = (date: CalendarDate) => {
+    const record = records[dateKey(date.year, date.month, date.day)];
+    setSelected(date); setMood(record?.mood ?? null); setNote(record?.note ?? ''); setMessage('');
+  };
+  const save = () => {
+    if (!mood) { setMessage('오늘의 기분을 하나 골라 주세요.'); return; }
+    const next = { ...records, [selectedKey]: { mood, note: note.trim(), fortune: fortune.text, example: fortune.example } };
+    setRecords(next);
+    setMessage(saveRecords(storageKey, next) ? '기록을 저장했어요.' : '현재 화면에 기록했어요. 브라우저 저장소를 사용할 수 없어 새로고침하면 사라집니다.');
+  };
   const moveMonth = (delta: number) =>
     setView(({ year, month }) => {
       const d = new Date(year, month - 1 + delta, 1);
       return { year: d.getFullYear(), month: d.getMonth() + 1 };
     });
 
-  const recordCount = Object.keys(sampleRecords).length;
+  const recordCount = Object.keys(records).length;
 
   return (
     <div className="records">
@@ -46,8 +66,9 @@ export default function RecordsPage() {
           year={view.year}
           month={view.month}
           marks={calendarMarks}
-          today={sampleToday}
-          highlighted={sampleHighlighted}
+          today={recordsToday}
+          highlighted={selected}
+          onSelect={selectDay}
           onPrev={() => moveMonth(-1)}
           onNext={() => moveMonth(1)}
         />
@@ -83,23 +104,24 @@ export default function RecordsPage() {
       {/* ── 선택한 날의 기록 ── */}
       <div className="records-sheet">
         <p className="records-day__weekday">
-          {sampleDayDetail.weekday}
-          {sampleDayDetail.isToday && <> · 오늘</>}
+          {new Intl.DateTimeFormat('ko-KR', { weekday: 'long', timeZone: 'Asia/Seoul' }).format(new Date(selectedKey + 'T12:00:00+09:00'))}
+          {selectedKey === RECORDS_TODAY && <> · 오늘</>}
         </p>
-        <h2 className="records-day__date">{sampleDayDetail.dateLabel}</h2>
+        <h2 className="records-day__date">{selected.year}년 {selected.month}월 {selected.day}일</h2>
 
-        <QuoteBlock className="records-quote" lines={sampleDayDetail.quote} footer={sampleDayDetail.source} />
+        <QuoteBlock className="records-quote" lines={[fortune.text]} footer={`${constellation.name} · ${constellation.alias} · ${constellation.hanja}`} />
 
-        <button type="button" className="records-link" onClick={() => navigate('/fortune')}>
+        {selectedKey >= '2026-11-19' && <button type="button" className="records-link" onClick={() => { selectFortuneDate(selectedKey); navigate('/fortune'); }}>
           오늘의 운세 보러 가기 <Chevron direction="right" size={6} />
-        </button>
+        </button>}
 
         <section className="records-block">
           <h2 className="records-block__title">오늘의 기분</h2>
-          {/* 하루 1개 선택 (확정) — 선택·저장 기능은 추후 구현, 지금은 표시만 */}
+          {/* 하루에 기분 하나를 선택하여 저장한다. */}
           <div className="records-chips" role="group" aria-label="오늘의 기분">
             {moods.map((m) => (
-              <button key={m.key} type="button" className="records-chips__chip">
+              <button key={m.key} type="button" className="records-chips__chip" aria-pressed={mood === m.key}
+                onClick={() => { setMood(m.key); setMessage(''); }}>
                 {m.label}
               </button>
             ))}
@@ -108,11 +130,11 @@ export default function RecordsPage() {
 
         <section className="records-block records-block--note">
           <h2 className="records-block__title">짧은 기록</h2>
-          <textarea className="records-note" placeholder={shortRecordPlaceholder} aria-label="짧은 기록" rows={4} />
-          {/* 저장 기능은 추후 구현 — 지금은 동작 없음 (저장되는 것처럼 보이지 않게) */}
-          <button type="button" className="records-save">
-            기록 남기기
+          <textarea className="records-note" value={note} onChange={(e) => { setNote(e.target.value); setMessage(''); }} placeholder={shortRecordPlaceholder} aria-label="짧은 기록" rows={4} maxLength={500} />
+          <button type="button" className="records-save" onClick={save}>
+            {saved ? '기록 수정하기' : '기록 남기기'}
           </button>
+          <p className="records-status" role="status">{message}</p>
         </section>
       </div>
     </div>

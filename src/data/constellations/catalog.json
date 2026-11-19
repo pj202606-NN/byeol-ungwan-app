@@ -1,0 +1,2914 @@
+[
+  {
+    "starId": 1,
+    "id": "gak",
+    "name": "각수",
+    "hanja": "角宿",
+    "formalName": "각수(角宿)·이무기자리",
+    "alias": "이무기자리",
+    "animal": "이무기",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "04.10~04.19",
+    "start": {
+      "month": 4,
+      "day": 10
+    },
+    "end": {
+      "month": 4,
+      "day": 19
+    },
+    "element": "목",
+    "graphicKey": "gak",
+    "keyringId": "gak",
+    "description": "각수(角宿)는 동방 청룡의 일곱 별자리 중 첫 번째로, 하늘에 그려진 용의 뿔에 해당합니다. 각수의 주요 별 가운데 스피카는 봄철 밤하늘에서 볼 수 있습니다. 이 별자리의 상징동물 이무기는 물속에서 오래 지내다 용으로 승천한다고 전해지는 한국 설화 속 존재입니다.",
+    "resultIntroduction": "이무기자리인 각수는 동방 청룡의 첫 별자리로, 하늘에 그려진 용의 뿔에 해당합니다. 이무기는 오랜 세월 물속에서 지내다가 여의주를 얻거나 때가 되면 용으로 승천한다는 설화 속 존재입니다.",
+    "keyringParagraphs": [
+      "각수는 동방 청룡 7수의 첫 번째 별자리로, ‘각’은 뿔을 뜻합니다. 옛사람들은 이 별을 청룡의 뿔에 빗대어 이름 붙였습니다.",
+      "각수를 상징하는 동물인 이무기는 아직 용이 되지 못한 존재입니다. 우리 설화에서는 깊은 물속에 살며 오랜 세월을 보낸 뒤 용이 되어 하늘로 올라간다고 전해집니다.",
+      "봄철 밤하늘, 처녀자리 부근에서 밝게 빛나는 각수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "잠재력",
+      "성장",
+      "가능성",
+      "변화",
+      "도전",
+      "새로운 시작"
+    ],
+    "folklore": "용이 되기 전 단계의 존재로, 물속에서 천 년을 수행하면 용이 되어 승천한다고 전해집니다. 승천할 때 누군가 목격하면 실패한다는 이야기가 있습니다. 삼국유사 《보양이목》에 이무기에 대한 기록이 수록되어 있고, 전국의 연못과 강에 이무기 전설이 다수 전해집니다. '용 못된 이무기'라는 속담에도 등장합니다.",
+    "traditionalName": "각목교(角木蛟)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "청색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "목요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "목성"
+      }
+    ],
+    "traditionalSymbol": "천문·천정·군사",
+    "traditionalDegrees": 12,
+    "summary": "각수, 이무기자리는 낯선 시작에서 가능성을 보고 작은 도전을 성장으로 바꾸는 별입니다.",
+    "observation": {
+      "representativeStar": "α Vir (스피카)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 1,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "5월",
+      "westernConstellation": "처녀자리",
+      "observationDescription": "밝은 1등성 스피카로 봄 밤하늘에서 쉽게 찾을 수 있습니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 처녀자리 부근에서 밝게 빛나는 각수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 2,
+    "id": "hang",
+    "name": "항수",
+    "hanja": "亢宿",
+    "formalName": "항수(亢宿)·용자리",
+    "alias": "용자리",
+    "animal": "용",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "04.20~04.29",
+    "start": {
+      "month": 4,
+      "day": 20
+    },
+    "end": {
+      "month": 4,
+      "day": 29
+    },
+    "element": "금",
+    "graphicKey": "hang",
+    "keyringId": "hang",
+    "description": "항수(亢宿)는 동방 청룡의 일곱 별자리 중 두 번째로, 용의 목 부분에 해당합니다. 항수는 처녀자리 부근의 별들과 연결됩니다. 상징동물인 용은 옛이야기에서 비를 내리고 물을 다스리는 신령한 존재로 등장하며, 왕의 옷인 용포와 궁궐의 장식에서도 그 모습을 볼 수 있습니다.",
+    "resultIntroduction": "용자리인 항수는 동방 청룡의 두 번째 별자리로, 하늘에 그려진 용의 목에 해당합니다. 용은 예부터 비와 물을 다스리는 신성한 동물로 여겨졌으며, 왕의 얼굴을 용안이라 부를 만큼 왕권의 상징이기도 했습니다.",
+    "keyringParagraphs": [
+      "항수는 동방 청룡 7수의 두 번째 별자리로, 네 개의 별이 목처럼 길게 이어진 모습에서 청룡의 ‘목’을 뜻하는 별이 되었습니다.",
+      "항수를 상징하는 동물인 용은 비와 물을 다스리는 신성한 존재입니다. 옛사람들은 가뭄이 들면 용에게 비를 빌었으며, 저 옛날 용은 왕의 권위를 나타내는 상징이었습니다.",
+      "봄철 밤하늘, 처녀자리 부근에서 밝게 빛나는 항수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "권위",
+      "자존심",
+      "완성도",
+      "결단력",
+      "높은 기준",
+      "리더십"
+    ],
+    "folklore": "조선왕조실록 전반에 걸쳐 용은 왕권의 상징이었습니다. 왕의 얼굴을 용안(龍顔), 왕의 옷을 용포(龍袍)라 하였습니다. 삼국유사에는 문무왕이 동해의 용이 되어 나라를 지킨다는 기록이 전합니다.",
+    "traditionalName": "항금룡(亢金龍)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "백색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "금요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "금성"
+      }
+    ],
+    "traditionalSymbol": "왕실의 내부 조정·심사",
+    "traditionalDegrees": 10,
+    "summary": "항수, 용자리는 혼란 속에서도 중심을 잡고 책임 있는 판단으로 믿음을 얻는 별입니다.",
+    "observation": {
+      "representativeStar": "κ Vir",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 4.2,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "6월",
+      "westernConstellation": "처녀자리",
+      "observationDescription": "4등성으로 어두운 하늘에서 관측이 가능합니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 처녀자리 부근에서 밝게 빛나는 항수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 3,
+    "id": "jeo",
+    "name": "저수",
+    "hanja": "氐宿",
+    "formalName": "저수(氐宿)·너구리자리",
+    "alias": "너구리자리",
+    "animal": "너구리",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "04.30~05.17",
+    "start": {
+      "month": 4,
+      "day": 30
+    },
+    "end": {
+      "month": 5,
+      "day": 17
+    },
+    "element": "토",
+    "graphicKey": "jeo",
+    "keyringId": "jeo",
+    "description": "저수(氐宿)는 동방 청룡에 속한 세 번째 별자리입니다. 저(氐)라는 글자는 바탕이나 뿌리를 뜻하며, 별들은 청룡의 몸 아래쪽에 배치됩니다. 상징동물인 너구리는 숲과 마을 근처에 사는 야생동물로, 밤에 주로 활동합니다. 한국의 옛이야기에서도 종종 친숙한 동물로 등장합니다.",
+    "resultIntroduction": "너구리자리인 저수는 동방 청룡의 세 번째 별자리로, 용의 몸 아래쪽에 해당합니다. 저(氐)는 바탕이나 뿌리를 뜻하는 글자입니다. 너구리는 숲과 마을 주변에 살며 밤에 활발히 움직이는 야생동물입니다.",
+    "keyringParagraphs": [
+      "저수는 동방 청룡 7수의 세 번째 별자리로, 밑바탕과 근본이라는 뜻을 담은 ‘저’의 이름을 따라 청룡의 가슴에 빗대어집니다.",
+      "저수를 상징하는 동물인 너구리는 숲과 들에서 살아가는 동물입니다. 밤에 주로 활동하며 계절에 따라 변화하는 환경에 적응하며 살아갑니다. 전통 28수에서는 저토학이라는 이름으로도 불렸습니다.",
+      "봄철 밤하늘, 천칭자리 부근에서 밝게 빛나는 저수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "적응력",
+      "현실 감각",
+      "영리함",
+      "눈치",
+      "유연성",
+      "관찰력"
+    ],
+    "folklore": "조선의 훈몽자회(1527년)에 '넝우리'로 기록된 친근한 동물입니다. 거창을 배경으로 한 '천년묵은 너구리와 감찰선생' 설화가 전해집니다. 여우 설화의 일부 판본에서는 여우와 재주를 겨루는 존재로 등장합니다.",
+    "traditionalName": "저토학(氐土貉)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "토요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "토성"
+      }
+    ],
+    "traditionalSymbol": "천근·왕실의 거처",
+    "traditionalDegrees": 15,
+    "summary": "저수, 너구리자리는 익숙한 일상을 아끼고 변화에도 유연하게 적응해 기반을 다지는 별입니다.",
+    "observation": {
+      "representativeStar": "α Lib (주벤엘게누비)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.8,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "6월",
+      "westernConstellation": "천칭자리",
+      "observationDescription": "초여름 남쪽 하늘에서 천칭자리의 밝은 별로 확인할 수 있습니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 천칭자리 부근에서 밝게 빛나는 저수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 4,
+    "id": "bang",
+    "name": "방수",
+    "hanja": "房宿",
+    "formalName": "방수(房宿)·토끼자리",
+    "alias": "토끼자리",
+    "animal": "토끼",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "05.18~05.27",
+    "start": {
+      "month": 5,
+      "day": 18
+    },
+    "end": {
+      "month": 5,
+      "day": 27
+    },
+    "element": "화",
+    "graphicKey": "bang",
+    "keyringId": "bang",
+    "description": "방수(房宿)는 동방 청룡의 네 번째 별자리로, 이름에 집을 뜻하는 방(房) 자가 쓰였습니다. 전통 천문에서는 궁궐과 관련된 의미를 지니기도 했습니다. 상징동물인 토끼는 달에서 방아를 찧는 옥토끼로 유명합니다. 달 표면의 어두운 무늬를 토끼의 모습으로 바라본 이야기에서 비롯됐습니다.",
+    "resultIntroduction": "토끼자리인 방수는 동방 청룡의 네 번째 별자리입니다. 방(房)은 집이나 방을 뜻하며, 옛 천문에서는 궁궐과 관련지어 해석했습니다. 토끼는 달에서 방아를 찧는 옥토끼 이야기로 우리에게 친숙한 동물입니다.",
+    "keyringParagraphs": [
+      "방수는 동방 청룡 7수의 네 번째 별자리로, ‘방’은 방이나 집을 뜻합니다. 옛사람들은 이 이름을 따라 청룡의 몸통에 빗대어 불렀습니다.",
+      "방수를 상징하는 동물인 토끼는 달과 인연이 있습니다. 옛사람들은 달 표면의 어두운 무늬에서 토끼의 모습을 떠올렸으며, 달나라의 옥토끼가 절구에 약을 찧는다는 이야기가 전해져 내려옵니다.",
+      "여름철 밤하늘, 전갈자리 부근에서 밝게 빛나는 방수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "온화함",
+      "감수성",
+      "평화로움",
+      "직관",
+      "복",
+      "섬세함"
+    ],
+    "folklore": "달 속에서 불로초를 찧는 옥토끼로 전해집니다. 후예와 항아 신화에서 달을 상징하는 동물이며, 십이지의 하나입니다. 영리하게 위기를 벗어나는 토끼 민담이 다수 전해집니다.",
+    "traditionalName": "방일토(房日兎)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황금색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "일요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "태양"
+      }
+    ],
+    "traditionalSymbol": "명당·천마·조정",
+    "traditionalDegrees": 10,
+    "summary": "방수, 토끼자리는 부드러운 태도와 재치로 마음을 잇고 어려운 상황을 푸는 별입니다.",
+    "observation": {
+      "representativeStar": "π Sco",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.9,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "여름철",
+      "recommendedMonth": "7월",
+      "westernConstellation": "전갈자리",
+      "observationDescription": "여름 밤 전갈자리 머리 부근에서 관측됩니다.",
+      "keyringObservationDescription": "여름철 밤하늘, 전갈자리 부근에서 밝게 빛나는 방수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 5,
+    "id": "sim",
+    "name": "심수",
+    "hanja": "心宿",
+    "formalName": "심수(心宿)·여우자리",
+    "alias": "여우자리",
+    "animal": "여우",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "05.28~06.06",
+    "start": {
+      "month": 5,
+      "day": 28
+    },
+    "end": {
+      "month": 6,
+      "day": 6
+    },
+    "element": "수",
+    "graphicKey": "sim",
+    "keyringId": "sim",
+    "description": "심수(心宿)는 동방 청룡의 다섯 번째 별자리이며, 심(心)은 심장을 뜻합니다. 용의 심장에 해당하는 별 무리로, 대표적인 밝은 별인 안타레스는 여름밤 전갈자리 부근에서 볼 수 있습니다. 상징동물인 여우는 구미호 설화에 등장하며, 영리하고 신비로운 존재로 오랫동안 이야기 속에 남아 있습니다.",
+    "resultIntroduction": "여우자리인 심수는 동방 청룡의 다섯 번째 별자리로, 하늘에 그려진 용의 심장에 해당합니다. 여우는 구미호 이야기에서 사람의 모습으로 변하거나 신비로운 힘을 지닌 존재로 등장합니다.",
+    "keyringParagraphs": [
+      "심수는 동방 청룡 7수의 다섯 번째 별자리로, 청룡의 심장에 해당합니다. 세 개의 별 가운데 중심에는 옛날 대화성이라 불렸던 전갈자리의 안타레스가 있습니다.",
+      "심수를 상징하는 동물인 여우는 우리 설화에서 영리하고 신비로운 존재로 등장합니다. 사람으로 둔갑하거나 신비한 구슬을 지녀 사람에게 특별한 지혜를 주는 여우구슬 이야기가 대표적입니다.",
+      "여름철 밤하늘, 전갈자리 부근에서 밝게 빛나는 심수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "직관",
+      "예민함",
+      "신비로움",
+      "감성",
+      "매력",
+      "다층적 면모"
+    ],
+    "folklore": "구미호 전승은 조선시대 문헌에 광범위하게 기록되어 있습니다. 신라 시대에는 삼기산의 흑여우신 설화가 전해집니다. 여우누이·여우구슬 설화가 전국적으로 전승되며, 천 년을 묵으면 사람으로 변신한다고 알려져 있습니다.",
+    "traditionalName": "심월호(心月狐)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "은색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "월요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "달"
+      }
+    ],
+    "traditionalSymbol": "천왕의 자리·상벌",
+    "traditionalDegrees": 10,
+    "summary": "심수, 여우자리는 말속에 숨은 뜻을 읽고 예리한 통찰로 상황의 핵심을 찾는 별입니다.",
+    "observation": {
+      "representativeStar": "σ Sco (알니야트)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.9,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "여름철",
+      "recommendedMonth": "7월",
+      "westernConstellation": "전갈자리",
+      "observationDescription": "전갈자리 중심부의 밝은 별로 여름 밤하늘의 명물입니다.",
+      "keyringObservationDescription": "여름철 밤하늘, 전갈자리 부근에서 밝게 빛나는 심수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 6,
+    "id": "mi",
+    "name": "미수",
+    "hanja": "尾宿",
+    "formalName": "미수(尾宿)·호랑이자리",
+    "alias": "호랑이자리",
+    "animal": "호랑이",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "06.07~06.20",
+    "start": {
+      "month": 6,
+      "day": 7
+    },
+    "end": {
+      "month": 6,
+      "day": 20
+    },
+    "element": "화",
+    "graphicKey": "mi",
+    "keyringId": "mi",
+    "description": "미수(尾宿)는 동방 청룡의 여섯 번째 별자리로, 미(尾)는 꼬리라는 뜻입니다. 용의 꼬리에 해당하는 별들은 여름철 전갈자리 부근에서 찾아볼 수 있습니다. 상징동물인 호랑이는 산신도와 까치호랑이 그림에 자주 등장합니다. 산의 수호자이면서 익살스러운 모습으로도 사랑받은 동물입니다.",
+    "resultIntroduction": "호랑이자리인 미수는 동방 청룡의 여섯 번째 별자리로, 용의 길게 이어진 꼬리에 해당합니다. 호랑이는 우리 민화에서 산신 곁에 등장하며, 산을 지키는 강인한 동물로 그려졌습니다.",
+    "keyringParagraphs": [
+      "미수는 동방 청룡 7수의 여섯 번째 별자리로, 청룡의 꼬리에 해당합니다. ‘미’는 꼬리를 뜻하며, 별이 길게 휘어진 형태로 빛나고 있습니다.",
+      "미수를 상징하는 동물인 호랑이는 우리 민화와 설화에서 자주 등장합니다. 산을 지키는 산신의 곁에 그려지기도 하고, 익살스러운 모습으로 나타나기도 합니다. 호랑이는 두려움의 대상이면서도 나쁜 기운을 물리치는 수호의 상징이기도 했습니다.",
+      "여름철 밤하늘, 전갈자리 부근에서 밝게 빛나는 미수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "용맹함",
+      "추진력",
+      "열정",
+      "강인함",
+      "개척 정신",
+      "승부욕"
+    ],
+    "folklore": "단군신화에 등장하는 한국을 대표하는 동물입니다. 조선왕조실록에는 한양 도성 내 출몰 기록이 다수 남아 있습니다. 무관의 흉배 문양으로 사용되었으며, 산신의 사자 또는 산신 자체로 숭배받았습니다. 효자와 충신을 돕는 의로운 호랑이 설화도 널리 전해집니다.",
+    "traditionalName": "미화호(尾火虎)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "적색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "화요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "화성"
+      }
+    ],
+    "traditionalSymbol": "왕실의 후사·보호",
+    "traditionalDegrees": 11,
+    "summary": "미수, 호랑이자리는 소중한 사람을 위해 앞장서며 책임감으로 어려운 순간을 지키는 별입니다.",
+    "observation": {
+      "representativeStar": "μ Sco",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.3,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "여름철",
+      "recommendedMonth": "7월",
+      "westernConstellation": "전갈자리",
+      "observationDescription": "전갈자리 꼬리 부분의 밝은 별로 여름 남쪽 하늘에서 잘 보입니다.",
+      "keyringObservationDescription": "여름철 밤하늘, 전갈자리 부근에서 밝게 빛나는 미수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 7,
+    "id": "gi",
+    "name": "기수",
+    "hanja": "箕宿",
+    "formalName": "기수(箕宿)·표범자리",
+    "alias": "표범자리",
+    "animal": "표범",
+    "guardian": "청룡",
+    "direction": "east",
+    "sashin": "동방청룡",
+    "period": "06.21~07.03",
+    "start": {
+      "month": 6,
+      "day": 21
+    },
+    "end": {
+      "month": 7,
+      "day": 3
+    },
+    "element": "수",
+    "graphicKey": "gi",
+    "keyringId": "gi",
+    "description": "기수(箕宿)는 동방 청룡의 마지막 별자리입니다. 기(箕)는 곡식의 쭉정이를 걸러 내는 키라는 농기구를 뜻하며, 옛 천문에서는 바람과도 관련된 별로 보았습니다. 상징동물인 표범은 호랑이보다 작은 고양잇과 맹수로, 뚜렷한 반점 무늬와 민첩한 움직임이 특징입니다.",
+    "resultIntroduction": "표범자리인 기수는 동방 청룡의 일곱 번째이자 마지막 별자리입니다. 기(箕)는 곡식을 까부르는 농기구인 키를 뜻합니다. 표범은 몸의 무늬가 뚜렷하고 빠르게 움직이는 고양잇과 맹수입니다.",
+    "keyringParagraphs": [
+      "기수는 동방 청룡 7수의 마지막 별자리입니다. ‘기’는 곡식을 골라내는 도구인 키를 뜻하며, 네 개의 별이 키를 닮은 모양으로 빛난다고 하여 이름 붙여졌습니다.",
+      "기수를 상징하는 동물인 표범은 과거 한반도에서도 살았던 맹수입니다. 독특한 반점 무늬를 지녔으며, 옛 문헌에서는 불범이나 매화범이라는 이름으로도 불렸습니다.",
+      "여름철 밤하늘, 궁수자리 부근에서 밝게 빛나는 기수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "집중력",
+      "속도감",
+      "정교함",
+      "독립성",
+      "날렵함",
+      "냉철함"
+    ],
+    "folklore": "조선 왕실에서는 공을 세운 신하에게 표범 가죽을 하사하였습니다. 조선왕조실록에는 표범 출몰 기록이 다수 남아 있습니다. 호랑이와 함께 호표(虎豹)로 묶여 맹수의 상징으로 통용되었습니다.",
+    "traditionalName": "기수표(箕水豹)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "흑색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "동"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "수요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "수성"
+      }
+    ],
+    "traditionalSymbol": "키·바람·언쟁",
+    "traditionalDegrees": 11,
+    "summary": "기수, 표범자리는 깊은 집중력으로 중요한 순간을 포착하고 목표를 향해 나아가는 별입니다.",
+    "observation": {
+      "representativeStar": "γ Sgr (알나시)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.7,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "여름철",
+      "recommendedMonth": "8월",
+      "westernConstellation": "궁수자리",
+      "observationDescription": "사수자리의 밝은 별로 은하수 중심부 근처에서 관측됩니다.",
+      "keyringObservationDescription": "여름철 밤하늘, 궁수자리 부근에서 밝게 빛나는 기수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 8,
+    "id": "du",
+    "name": "두수",
+    "hanja": "斗宿",
+    "formalName": "두수(斗宿)·해태자리",
+    "alias": "해태자리",
+    "animal": "해태",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "07.04~07.22",
+    "start": {
+      "month": 7,
+      "day": 4
+    },
+    "end": {
+      "month": 7,
+      "day": 22
+    },
+    "element": "목",
+    "graphicKey": "du",
+    "keyringId": "du",
+    "description": "두수(斗宿)는 북방 현무의 첫 별자리로, 별의 모양을 국자에 비유한 이름입니다. 이름이 비슷한 북두칠성과는 다른 별 무리입니다. 상징동물인 해태는 시비를 가리고 재앙을 막는 상상의 동물로 전해집니다. 경복궁 광화문 앞 해태상에는 화재를 막고 궁궐을 지키려는 뜻도 담겨 있습니다.",
+    "resultIntroduction": "해태자리인 두수는 북방 현무의 첫 별자리로, 국자 모양을 뜻하는 두(斗) 자를 씁니다. 해태는 옳고 그름을 판단하고 나쁜 기운을 막는다는 상상의 동물입니다. 광화문 앞 해태상도 널리 알려져 있습니다.",
+    "keyringParagraphs": [
+      "두수는 북방 현무 7수의 첫 번째 별자리입니다. ‘두’는 국자 모양의 도구를 뜻하며, 여섯 개의 별이 국자를 닮아 남두육성이라고도 불립니다.",
+      "두수를 상징하는 동물인 해태는 옳고 그름을 판단하는 동물입니다. 뿔이 달린 모습으로 묘사되기도 하며, 불의를 저지른 사람을 뿔로 받는다고 전해집니다. 경복궁 광화문 앞의 해태상은 재앙을 막고 궁궐을 지키는 수호의 의미를 담고 있습니다.",
+      "여름철 밤하늘, 궁수자리 부근에서 밝게 빛나는 두수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "공정함",
+      "정의감",
+      "판단력",
+      "원칙",
+      "지혜",
+      "수호"
+    ],
+    "folklore": "조선 경복궁 광화문 앞에 해태 석상이 세워졌습니다. 사헌부의 상징으로, 조선 관료들의 흉배 문양에 사용되었습니다. 현재 서울시의 상징 동물이기도 합니다. 옳고 그름을 판단하여 죄인을 물어뜯는 수호신수로 전해집니다.",
+    "traditionalName": "두목해(斗木獬)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "청색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "목요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "목성"
+      }
+    ],
+    "traditionalSymbol": "남두·종묘·인재",
+    "traditionalDegrees": 16,
+    "summary": "두수, 해태자리는 옳고 그름을 헤아리고 흔들림 없는 원칙으로 신뢰를 얻는 별입니다.",
+    "observation": {
+      "representativeStar": "φ Sgr",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 3.2,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "여름철",
+      "recommendedMonth": "9월",
+      "westernConstellation": "궁수자리",
+      "observationDescription": "사수자리 남두육성의 일부로 초가을 남쪽 하늘에서 관측됩니다.",
+      "keyringObservationDescription": "여름철 밤하늘, 궁수자리 부근에서 밝게 빛나는 두수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 9,
+    "id": "u",
+    "name": "우수",
+    "hanja": "牛宿",
+    "formalName": "우수(牛宿)·소자리",
+    "alias": "소자리",
+    "animal": "소",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "07.23~08.01",
+    "start": {
+      "month": 7,
+      "day": 23
+    },
+    "end": {
+      "month": 8,
+      "day": 1
+    },
+    "element": "금",
+    "graphicKey": "u",
+    "keyringId": "u",
+    "description": "우수(牛宿)는 북방 현무의 두 번째 별자리이며, 우(牛)는 소를 뜻합니다. 전통 천문에서 견우와 관련된 별 무리로 알려져 있습니다. 상징동물인 소는 농경사회에서 논밭을 갈고 짐을 나르며 사람의 삶을 도왔습니다. 견우와 직녀 이야기에도 소를 돌보는 견우라는 이름이 전해집니다.",
+    "resultIntroduction": "소자리인 우수는 북방 현무의 두 번째 별자리로, 소 우(牛) 자를 이름에 씁니다. 소는 오래전부터 논밭을 일구는 데 힘을 보탠 동물입니다. 밤하늘의 견우와 직녀 이야기에도 소와 관련된 이름이 남아 있습니다.",
+    "keyringParagraphs": [
+      "우수는 북방 현무 7수의 두 번째 별자리입니다. ‘우’는 소를 뜻하며, 옛 천문에서는 견우성이라는 이름과도 연결되었습니다.",
+      "우수를 상징하는 동물인 소는 오랫동안 농사와 운송을 도운 친숙한 동물입니다. 저 옛날 소는 집안의 중요한 재산이었으며, 성실함과 풍요를 상징했습니다. 민화에서도 소는 목동과 함께 평화로운 농촌의 풍경을 이루는 소재로 등장합니다.",
+      "여름에서 가을로 넘어가는 밤하늘, 염소자리 부근에서 밝게 빛나는 우수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "성실함",
+      "인내",
+      "꾸준함",
+      "신뢰감",
+      "묵직함",
+      "착실함"
+    ],
+    "folklore": "하늘에서 소를 모는 존재인 견우(牽牛)를 상징합니다. 칠월칠석 견우·직녀 설화로 널리 알려져 있습니다. 조선시대에는 소의 중요성으로 인해 도살 금지령이 수차례 발령되었습니다. 농경 사회에서 없어서는 안 될 핵심 노동력이었습니다.",
+    "traditionalName": "우금우(牛金牛)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "백색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "금요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "금성"
+      }
+    ],
+    "traditionalSymbol": "관문·다리·희생",
+    "traditionalDegrees": 10,
+    "summary": "우수, 소자리는 빠른 성과보다 노력을 믿고 맡은 일을 끝까지 해내는 든든한 별입니다.",
+    "observation": {
+      "representativeStar": "β Cap (다비흐)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 3.1,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "여름에서 가을로 넘어가는",
+      "recommendedMonth": "9월",
+      "westernConstellation": "염소자리",
+      "observationDescription": "염소자리의 밝은 별로 가을 남쪽 하늘에서 찾을 수 있습니다.",
+      "keyringObservationDescription": "여름에서 가을로 넘어가는 밤하늘, 염소자리 부근에서 밝게 빛나는 우수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 10,
+    "id": "yeo",
+    "name": "여수",
+    "hanja": "女宿",
+    "formalName": "여수(女宿)·박쥐자리",
+    "alias": "박쥐자리",
+    "animal": "박쥐",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "08.02~08.12",
+    "start": {
+      "month": 8,
+      "day": 2
+    },
+    "end": {
+      "month": 8,
+      "day": 12
+    },
+    "element": "토",
+    "graphicKey": "yeo",
+    "keyringId": "nyeo",
+    "description": "여수(女宿)는 북방 현무의 세 번째 별자리입니다. 상징동물인 박쥐는 한때 복을 부르는 길상동물로 여겨졌습니다. 박쥐의 한자 이름 편복(蝙蝠)에 들어가는 복(蝠)이 복(福)과 소리가 비슷하기 때문입니다. 박쥐 다섯 마리를 그린 오복 문양은 옷과 가구 장식에도 널리 쓰였습니다.",
+    "resultIntroduction": "박쥐자리인 여수는 북방 현무의 세 번째 별자리입니다. 박쥐는 오늘날의 인상과 달리 옛날에는 복을 부르는 동물로 사랑받았습니다. 박쥐를 그린 문양은 옷과 가구, 장신구에도 자주 쓰였습니다.",
+    "keyringParagraphs": [
+      "여수는 북방 현무 7수의 세 번째 별자리입니다. ‘여’는 여성을 뜻하며, 옛 천문에선 이 별을 생활의 모습에 빗대어 설명하기도 했습니다.",
+      "여수를 상징하는 동물인 박쥐는 옛사람들에게는 복을 부르는 동물이었습니다. 박쥐를 뜻하는 한자 ‘복(蝠)’이 복을 뜻하는 ‘복(福)’과 발음이 같았기 때문입니다. 박쥐는 행인의 위에 그려져 길조와 같은 의미를 가지기도 했습니다.",
+      "가을철 밤하늘, 물병자리 부근에서 밝게 빛나는 여수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "행운",
+      "숨은 재능",
+      "섬세한 감각",
+      "적응력",
+      "복",
+      "예리한 직감"
+    ],
+    "folklore": "조선의 민화와 공예품에 박쥐 문양이 다수 등장합니다. 길상(吉祥)의 상징으로 의복과 그릇에 새겨졌습니다. 오복(五福)을 상징하는 문양으로 널리 사용되었습니다.",
+    "traditionalName": "여토복(女土蝠)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "토요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "토성"
+      }
+    ],
+    "traditionalSymbol": "직물·혼인·궁중 직무",
+    "traditionalDegrees": 12,
+    "summary": "여수, 박쥐자리는 작은 변화를 놓치지 않고 섬세한 배려로 좋은 인연을 가꾸는 별입니다.",
+    "observation": {
+      "representativeStar": "ε Aqr (알발리)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 3.8,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을철",
+      "recommendedMonth": "10월",
+      "westernConstellation": "물병자리",
+      "observationDescription": "물병자리 남쪽 부근에서 관측되며 어두운 하늘이 필요합니다.",
+      "keyringObservationDescription": "가을철 밤하늘, 물병자리 부근에서 밝게 빛나는 여수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 11,
+    "id": "heo",
+    "name": "허수",
+    "hanja": "虛宿",
+    "formalName": "허수(虛宿)·쥐자리",
+    "alias": "쥐자리",
+    "animal": "쥐",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "08.13~08.22",
+    "start": {
+      "month": 8,
+      "day": 13
+    },
+    "end": {
+      "month": 8,
+      "day": 22
+    },
+    "element": "화",
+    "graphicKey": "heo",
+    "keyringId": "heo",
+    "description": "허수(虛宿)는 북방 현무의 네 번째 별자리로, 허(虛)는 비어 있다는 뜻입니다. 물병자리 부근의 별들과 연결되며 가을철 밤하늘에서 찾아볼 수 있습니다. 상징동물인 쥐는 십이지의 첫 동물로, 열두 동물이 순서를 정하는 이야기에서도 재치를 발휘하는 존재로 등장합니다.",
+    "resultIntroduction": "쥐자리인 허수는 북방 현무의 네 번째 별자리이며, 허(虛)는 비어 있다는 뜻입니다. 쥐는 십이지에서 가장 먼저 등장하는 동물입니다. 작은 몸집과 재빠른 움직임 덕분에 옛이야기에서는 영리한 동물로 묘사됩니다.",
+    "keyringParagraphs": [
+      "허수는 북방 현무 7수의 네 번째 별자리입니다. ‘허’는 비어 있다는 뜻을 지니며, 옛 천문에서는 폐허와 죽음에 관련된 의미로 해석되기도 했습니다.",
+      "허수를 상징하는 동물인 쥐는 십이지의 첫 번째 동물이자, 작은 몸집과 뛰어난 재치가 돋보이는 동물입니다. 열두 동물이 순서를 정하는 이야기에서 소의 등에 올라탔다가 결승점 앞에서 먼저 뛰어내려 첫 자리를 차지했다고 전해집니다.",
+      "가을철 밤하늘, 물병자리 부근에서 밝게 빛나는 허수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "재치",
+      "기민함",
+      "눈치",
+      "임기응변",
+      "번성",
+      "영리함"
+    ],
+    "folklore": "십이지의 첫 번째 동물로, 영리하게 소의 등에 올라타 가장 먼저 도착하였습니다. 힘이 아닌 지혜와 기민함으로 순서를 차지한 영리한 존재로 전해집니다.",
+    "traditionalName": "허일서(虛日鼠)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황금색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "일요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "태양"
+      }
+    ],
+    "traditionalSymbol": "제사·상례·애도",
+    "traditionalDegrees": 10,
+    "summary": "허수, 쥐자리는 제한된 상황에서도 길을 찾아 작은 기회를 성과로 만드는 별입니다.",
+    "observation": {
+      "representativeStar": "β Aqr (사달수드)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.9,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을철",
+      "recommendedMonth": "10월",
+      "westernConstellation": "물병자리",
+      "observationDescription": "물병자리의 밝은 별로 가을 밤 남동쪽 하늘에서 관측됩니다.",
+      "keyringObservationDescription": "가을철 밤하늘, 물병자리 부근에서 밝게 빛나는 허수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 12,
+    "id": "wi-north",
+    "name": "위수",
+    "hanja": "危宿",
+    "formalName": "위수(危宿)·제비자리",
+    "alias": "제비자리",
+    "animal": "제비",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "08.23~09.07",
+    "start": {
+      "month": 8,
+      "day": 23
+    },
+    "end": {
+      "month": 9,
+      "day": 7
+    },
+    "element": "수",
+    "graphicKey": "wi-north",
+    "keyringId": "wi-north",
+    "description": "위수(危宿)는 북방 현무의 다섯 번째 별자리로, 위(危)에는 높고 위태롭다는 뜻이 담겨 있습니다. 상징동물인 제비는 봄에 찾아와 처마 밑에 둥지를 트는 철새입니다. 흥부전에서는 흥부가 다친 제비를 도와주자 제비가 박씨를 물어다 주고, 그 박에서 보물이 나오는 이야기가 전해집니다.",
+    "resultIntroduction": "제비자리인 위수는 북방 현무의 다섯 번째 별자리입니다. 위(危)는 높거나 위태롭다는 뜻을 지닌 글자입니다. 제비는 봄이 되면 돌아오는 철새로, 흥부전에서는 다친 다리를 고쳐 준 은혜를 박씨로 갚습니다.",
+    "keyringParagraphs": [
+      "위수는 북방 현무 7수의 다섯 번째 별자리입니다. ‘위는 높고 위태롭다는 뜻을 지니며, 옛 천문에서는 지붕 위처럼 높은 곳의 모습에 빗대어졌습니다.",
+      "위수를 상징하는 동물인 제비는 봄이 오면 돌아오는 철새로, 반가운 소식과 은혜를 상징합니다. 다친 다리를 고쳐 준 흥부에게 보은한 제비의 이야기가 예로부터 오랫동안 전해집니다.",
+      "가을철 밤하늘, 물병자리와 페가수스자리 부근에서 밝게 빛나는 위수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "길조",
+      "귀환",
+      "변화 감지",
+      "민감한 감수성",
+      "복",
+      "따뜻한 마음"
+    ],
+    "folklore": "흥부와 놀부 설화에서 복을 가져다주는 핵심 존재입니다. 봄의 시작을 알리는 길조로 여겨졌습니다. 제비집을 건드리면 재앙이 온다는 속신이 전국적으로 전해집니다.",
+    "traditionalName": "위월연(危月燕)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "은색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "월요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "달"
+      }
+    ],
+    "traditionalSymbol": "집과 건축·분묘",
+    "traditionalDegrees": 17,
+    "summary": "위수, 제비자리는 소중한 인연을 지키며 멀어진 마음을 다시 이어 주는 따뜻한 별입니다.",
+    "observation": {
+      "representativeStar": "α Aqr (사달멜릭)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.9,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을철",
+      "recommendedMonth": "10월",
+      "westernConstellation": "물병자리와 페가수스자리",
+      "observationDescription": "물병자리 알파성으로 가을 저녁 하늘에서 찾기 쉽습니다.",
+      "keyringObservationDescription": "가을철 밤하늘, 물병자리와 페가수스자리 부근에서 밝게 빛나는 위수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 13,
+    "id": "sil",
+    "name": "실수",
+    "hanja": "室宿",
+    "formalName": "실수(室宿)·돼지자리",
+    "alias": "돼지자리",
+    "animal": "돼지",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "09.08~09.22",
+    "start": {
+      "month": 9,
+      "day": 8
+    },
+    "end": {
+      "month": 9,
+      "day": 22
+    },
+    "element": "화",
+    "graphicKey": "sil",
+    "keyringId": "sil",
+    "description": "실수(室宿)는 북방 현무의 여섯 번째 별자리로, 이름에 집을 뜻하는 실(室) 자가 쓰였습니다. 페가수스자리의 밝은 별들과 연결되어 가을밤 하늘에서 찾아볼 수 있습니다. 상징동물인 돼지는 우리 민속에서 재물과 풍요의 의미를 지녔으며, 돼지꿈을 좋은 징조로 여기는 풍습도 이어져 왔습니다.",
+    "resultIntroduction": "돼지자리인 실수는 북방 현무의 여섯 번째 별자리로, 실(室)은 집이나 방을 뜻합니다. 돼지는 우리 민속에서 재물과 풍요를 상징했습니다. 돼지가 등장하는 꿈을 길몽으로 여기는 풍습도 이와 관련이 있습니다.",
+    "keyringParagraphs": [
+      "실수는 북방 현무 7수의 여섯 번째 별자리입니다. ‘실’은 집이나 방을 뜻하며, 옛 천문에서는 건물을 이루는 공간에 비유되었습니다.",
+      "실수를 상징하는 동물인 돼지는 예부터 재물과 풍요를 나타내는 동물로 여겨졌습니다. 돼지가 등장하는 꿈을 재물이 들어올 징조로 해석하는 풍습이 있으며, 풍요로운 삶의 이미지와 연결되었습니다.",
+      "가을철 밤하늘, 페가수스자리 부근에서 밝게 빛나는 실수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "풍요",
+      "재물복",
+      "낙관성",
+      "현실적",
+      "복",
+      "넉넉함"
+    ],
+    "folklore": "돼지꿈은 재물의 징조로 여겨졌습니다. 민속에서 돼지는 부와 복의 상징이며, 복돼지 저금통은 이러한 문화를 잘 보여줍니다. 십이지의 마지막 동물로, 풍요와 다산을 상징합니다.",
+    "traditionalName": "실화저(室火猪)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "적색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "화요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "화성"
+      }
+    ],
+    "traditionalSymbol": "궁실·종묘·군량",
+    "traditionalDegrees": 16,
+    "summary": "실수, 돼지자리는 일상의 행복을 아끼고 가진 것을 가꾸며 넉넉함을 나누는 별입니다.",
+    "observation": {
+      "representativeStar": "α Peg (마르카브)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.5,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을철",
+      "recommendedMonth": "11월",
+      "westernConstellation": "페가수스자리",
+      "observationDescription": "페가수스 대사각형의 한 꼭짓점으로 가을 밤하늘의 길잡이입니다.",
+      "keyringObservationDescription": "가을철 밤하늘, 페가수스자리 부근에서 밝게 빛나는 실수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 14,
+    "id": "byeok",
+    "name": "벽수",
+    "hanja": "壁宿",
+    "formalName": "벽수(壁宿)·수달자리",
+    "alias": "수달자리",
+    "animal": "수달",
+    "guardian": "현무",
+    "direction": "north",
+    "sashin": "북방현무",
+    "period": "09.23~10.02",
+    "start": {
+      "month": 9,
+      "day": 23
+    },
+    "end": {
+      "month": 10,
+      "day": 2
+    },
+    "element": "수",
+    "graphicKey": "byeok",
+    "keyringId": "byeok",
+    "description": "벽수(壁宿)는 북방 현무의 일곱 번째이자 마지막 별자리입니다. 벽(壁)은 담장이라는 뜻이며, 앞의 실수와 함께 하늘의 집을 이루는 별로 보았습니다. 관련 별들은 가을철 페가수스자리 부근에서 볼 수 있습니다. 상징동물인 수달은 물속을 헤엄치며 물고기를 잡고, 물가에 보금자리를 만듭니다.",
+    "resultIntroduction": "수달자리인 벽수는 북방 현무의 마지막 별자리입니다. 벽(壁)은 담장이나 벽을 뜻하며 실수와 함께 하늘의 집을 이루는 것으로 여겨졌습니다. 수달은 강과 하천에서 물고기 등을 잡아먹으며 사는 동물입니다.",
+    "keyringParagraphs": [
+      "벽수는 북방 현무 7수의 마지막 별자리입니다. ‘벽’은 건물의 벽을 뜻하며, 앞선 실수와 함께 집을 이루는 공간에 비유되었습니다.",
+      "벽수를 상징하는 동물인 수달은 강과 하천에서 살아가는 동물입니다. 능숙하게 헤엄치며, 물속에서 물고기를 사냥합니다. 한국에서는 옛날부터 하천 생태계의 건강함을 보여 주는 동물로도 알려져 있습니다.",
+      "가을철 밤하늘, 페가수스자리와 안드로메다자리 부근에서 밝게 빛나는 벽수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "유연함",
+      "적응력",
+      "활동성",
+      "호기심",
+      "경계 없는 자유",
+      "지적 탐구"
+    ],
+    "folklore": "수달은 한반도 전역의 하천에 서식하는 물고기 사냥의 명수입니다. 민간에서는 수달을 잡으면 그 하천의 물고기가 사라진다는 속신이 전해집니다.",
+    "traditionalName": "벽수유(壁水貐)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "흑색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "북"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "수요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "수성"
+      }
+    ],
+    "traditionalSymbol": "서고·학문·문헌",
+    "traditionalDegrees": 10,
+    "summary": "벽수, 수달자리는 새로운 것을 탐구하고 변화하는 환경에서도 자신만의 답을 찾는 별입니다.",
+    "observation": {
+      "representativeStar": "γ Peg (알게니브)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.8,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을철",
+      "recommendedMonth": "11월",
+      "westernConstellation": "페가수스자리와 안드로메다자리",
+      "observationDescription": "페가수스 대사각형의 한 꼭짓점으로 초겨울 남쪽 하늘에서 관측됩니다.",
+      "keyringObservationDescription": "가을철 밤하늘, 페가수스자리와 안드로메다자리 부근에서 밝게 빛나는 벽수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 15,
+    "id": "gyu",
+    "name": "규수",
+    "hanja": "奎宿",
+    "formalName": "규수(奎宿)·늑대자리",
+    "alias": "늑대자리",
+    "animal": "늑대",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "10.03~10.18",
+    "start": {
+      "month": 10,
+      "day": 3
+    },
+    "end": {
+      "month": 10,
+      "day": 18
+    },
+    "element": "목",
+    "graphicKey": "gyu",
+    "keyringId": "gyu",
+    "description": "규수(奎宿)는 서방 백호의 첫 별자리로, 전통 천문에서는 글과 학문을 관장하는 별로도 여겨졌습니다. 상징동물인 늑대는 무리를 이루어 생활하며 사냥과 새끼 돌보기를 함께합니다. 늑대의 울음소리는 서로의 위치를 알리고 무리와 의사소통하는 데 쓰입니다.",
+    "resultIntroduction": "늑대자리인 규수는 서방 백호의 첫 별자리입니다. 옛 천문에서는 글과 학문에 관련된 별로 여겼습니다. 늑대는 무리를 이루어 사냥하고 새끼를 함께 돌보는 동물로, 서로 소리를 내어 의사소통하기도 합니다.",
+    "keyringParagraphs": [
+      "규수는 서방 백호 7수의 첫 번째 별자리로, 백호의 꼬리에 해당합니다. 옛 천문에서는 글과 학문의 기운을 관장한다고 여겼으며, 문운을 상징하는 별자리로 알려져 있습니다.",
+      "규수를 상징하는 동물인 늑대는 과거 한반도의 산과 들에서 살아가던 맹수입니다. 이리라고도 불렸으며, 무리를 이루어 사냥하는 습성이 있습니다. 옛 설화에서는 두려운 짐승으로 등장하기도 합니다.",
+      "가을철 밤하늘, 안드로메다자리 부근에서 밝게 빛나는 규수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "전략적 사고",
+      "협력",
+      "경계심",
+      "집단 내 리더십",
+      "날카로운 판단",
+      "끈기"
+    ],
+    "folklore": "조선 문헌에 이리·승냥이로 기록된 산의 맹수입니다. '이리떼 같다'는 표현이 민간에서 사용되었습니다. 한반도에 서식하였으나 일제강점기 해수구제 정책으로 절멸하였습니다.",
+    "traditionalName": "규목랑(奎木狼)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "청색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "목요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "목성"
+      }
+    ],
+    "traditionalSymbol": "무기고·군사·제압",
+    "traditionalDegrees": 16,
+    "summary": "규수, 늑대자리는 함께하는 성취를 아끼고 서로의 장점을 모아 위기를 넘는 별입니다.",
+    "observation": {
+      "representativeStar": "η And",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 4.4,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을철",
+      "recommendedMonth": "12월",
+      "westernConstellation": "안드로메다자리",
+      "observationDescription": "안드로메다자리 남쪽 별로 어두운 하늘에서 관측이 가능합니다.",
+      "keyringObservationDescription": "가을철 밤하늘, 안드로메다자리 부근에서 밝게 빛나는 규수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 16,
+    "id": "nu",
+    "name": "루수",
+    "hanja": "婁宿",
+    "formalName": "루수(婁宿)·개자리",
+    "alias": "개자리",
+    "animal": "개(진돗개)",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "10.19~10.31",
+    "start": {
+      "month": 10,
+      "day": 19
+    },
+    "end": {
+      "month": 10,
+      "day": 31
+    },
+    "element": "금",
+    "graphicKey": "nu",
+    "keyringId": "ru",
+    "description": "루수(婁宿)는 서방 백호의 두 번째 별자리입니다. 상징동물인 개는 오랫동안 사람과 함께 살며 집을 지키고 사냥을 도왔습니다. 우리나라에는 주인이 잠든 사이 들불이 번지자 몸에 물을 묻혀 불을 끄고 주인을 구했다는 오수개 이야기가 전해집니다.",
+    "resultIntroduction": "개자리인 루수는 서방 백호의 두 번째 별자리입니다. 개는 오랫동안 사람과 함께 살며 집과 가축을 지켜 온 동물입니다. 주인이 위험에 처하자 몸을 던져 구했다는 오수개 이야기도 전해집니다.",
+    "keyringParagraphs": [
+      "루수는 서방 백호 7수의 두 번째 별자리입니다. 옛 천문에서는 사람과 짐승을 모으고 기르는 일과 관련된 별자리로 여겨졌으며, 백호의 몸통 부분에 해당합니다.",
+      "루수를 상징하는 동물인 개는 오랫동안 사람과 함께 살아왔습니다. 들불 속에 잠든 주인을 구하기 위해 몸에 물을 적셔 불을 끄다가 목숨을 잃는다는 오수의견 설화에서는 개의 충성심과 은혜를 갚는 마음을 보여 줍니다.",
+      "가을에서 겨울로 넘어가는 밤하늘, 양자자리 부근에서 밝게 빛나는 루수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "충직함",
+      "의리",
+      "믿음직함",
+      "수호",
+      "헌신",
+      "진심"
+    ],
+    "folklore": "진돗개는 대한민국 천연기념물로 지정되어 있습니다. 민간에서 개 울음은 잡귀를 쫓는다고 여겨졌으며, 장례·제의에서 부정을 방지하는 역할을 하였습니다. 불길 속에서 주인을 구한 충직한 개 이야기인 오수개 설화가 전해집니다.",
+    "traditionalName": "누금구(婁金狗)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "백색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "금요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "금성"
+      }
+    ],
+    "traditionalSymbol": "감옥·목장·제례",
+    "traditionalDegrees": 12,
+    "summary": "루수, 개자리는 맺은 인연과 약속을 오래 지키며 행동으로 깊은 신뢰를 주는 별입니다.",
+    "observation": {
+      "representativeStar": "β Ari (셰라탄)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.6,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을에서 겨울로 넘어가는",
+      "recommendedMonth": "12월",
+      "westernConstellation": "양자자리",
+      "observationDescription": "양자리의 밝은 별로 초겨울 남쪽 하늘에서 찾을 수 있습니다.",
+      "keyringObservationDescription": "가을에서 겨울로 넘어가는 밤하늘, 양자자리 부근에서 밝게 빛나는 루수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "source-conflict-needs-review"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 17,
+    "id": "wi-west",
+    "name": "위수",
+    "hanja": "胃宿",
+    "formalName": "위수(胃宿)·꿩자리",
+    "alias": "꿩자리",
+    "animal": "꿩",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "11.01~11.14",
+    "start": {
+      "month": 11,
+      "day": 1
+    },
+    "end": {
+      "month": 11,
+      "day": 14
+    },
+    "element": "토",
+    "graphicKey": "wi-west",
+    "keyringId": "wi-west",
+    "description": "위수(胃宿)는 서방 백호의 세 번째 별자리로, 위(胃)는 위장을 뜻하는 글자입니다. 상징동물인 꿩은 긴 꼬리와 화려한 깃털이 특징인 새입니다. 우리나라에서는 꿩 그림과 깃털을 장식에 활용했으며, 꿩은 민담과 속담에도 자주 등장합니다. 수컷과 암컷의 깃털 모습이 크게 다르기도 합니다.",
+    "resultIntroduction": "꿩자리인 위수는 서방 백호의 세 번째 별자리로, 위(胃)는 위장을 뜻합니다. 꿩은 긴 꼬리와 화려한 깃털로 눈에 띄는 새입니다. 예부터 자수와 장식에 그려졌으며, 꿩의 울음과 움직임은 민담에도 등장합니다.",
+    "keyringParagraphs": [
+      "위수는 서방 백호 7수의 세 번째 별자리입니다. ‘위’는 위장을 뜻하며, 옛 천문에서는 곡식과 음식을 보관하는 창고를 관장하는 별자리로 여겨졌습니다.",
+      "위수를 상징하는 동물인 꿩은 화려한 깃털을 가진 우리나라의 친숙한 들새입니다. 예부터 사냥과 음식 문화에 자주 등장했으며, 수컷 꿩인 장끼는 긴 꼬리와 화려한 깃털이 특징입니다.",
+      "가을에서 겨울로 넘어가는 밤하늘, 양자자리 부근에서 밝게 빛나는 위수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "화려함",
+      "세심함",
+      "민감성",
+      "자기만의 페이스",
+      "직감",
+      "신중함"
+    ],
+    "folklore": "꿩은 한반도 전역에 서식하는 친숙한 새입니다. '꿩 대신 닭'이라는 속담이 지금도 사용됩니다. 민화에 꿩을 소재로 한 그림이 다수 전해지며, 제사와 연회의 음식으로도 사용되었습니다.",
+    "traditionalName": "위토치(胃土雉)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "토요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "토성"
+      }
+    ],
+    "traditionalSymbol": "식량 창고·오곡·비축",
+    "traditionalDegrees": 14,
+    "summary": "위수, 꿩자리는 위험을 세심히 살피고 미래를 준비하며 소중한 것을 지키는 별입니다.",
+    "observation": {
+      "representativeStar": "35 Ari",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 4.7,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "가을에서 겨울로 넘어가는",
+      "recommendedMonth": "1월",
+      "westernConstellation": "양자자리",
+      "observationDescription": "양자리 남쪽의 어두운 별로 맑고 어두운 하늘이 필요합니다.",
+      "keyringObservationDescription": "가을에서 겨울로 넘어가는 밤하늘, 양자자리 부근에서 밝게 빛나는 위수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "source-conflict-needs-review"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 18,
+    "id": "myo",
+    "name": "묘수",
+    "hanja": "昴宿",
+    "formalName": "묘수(昴宿)·닭자리",
+    "alias": "닭자리",
+    "animal": "닭",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "11.15~11.25",
+    "start": {
+      "month": 11,
+      "day": 15
+    },
+    "end": {
+      "month": 11,
+      "day": 25
+    },
+    "element": "화",
+    "graphicKey": "myo",
+    "keyringId": "myo",
+    "description": "묘수(昴宿)는 서방 백호의 네 번째 별자리이며, 황소자리에 있는 플레이아데스 성단과 연결됩니다. 겨울철 밤하늘에서 작은 별들이 한데 모여 있는 모습을 맨눈으로도 살펴볼 수 있습니다. 상징동물인 닭은 새벽을 알리는 울음으로 익숙하며, 예부터 어둠을 물리치는 동물로도 여겨졌습니다.",
+    "resultIntroduction": "닭자리인 묘수는 서방 백호의 네 번째 별자리로, 별이 모여 있는 플레이아데스 성단과 연결됩니다. 겨울밤에는 맨눈으로도 작은 별무리를 볼 수 있습니다. 닭은 새벽마다 울어 새로운 아침을 알리는 동물입니다.",
+    "keyringParagraphs": [
+      "묘수는 서방 백호 7수의 네 번째 별자리입니다. 여러 별이 좁은 곳에 모여 있는 모습이 특징이며, 옛사람들은 이 별을 ‘좀생이별’이라고도 불렀습니다.",
+      "묘수를 상징하는 동물인 닭은 새벽을 알리는 동물로, 새로운 하루의 시작을 상징합니다. 옛사람들은 닭의 울음이 어둠을 물리친다고 믿었으며, 민화에서도 나쁜 기운을 쫓는 길상의 소재로 그렸습니다.",
+      "겨울철 밤하늘, 황소자리 부근에서 밝게 빛나는 묘수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "규칙성",
+      "성실함",
+      "각성",
+      "새로운 시작",
+      "명확함",
+      "솔직함"
+    ],
+    "folklore": "닭 울음이 귀신을 쫓는다는 속신이 전국적으로 전해집니다. 새벽 첫 닭울음은 새로운 시작을 알리는 신호로 여겨졌습니다. 해와 빛을 불러오는 신성한 존재로 숭배받았습니다.",
+    "traditionalName": "묘일계(昴日鷄)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황금색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "일요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "태양"
+      }
+    ],
+    "traditionalSymbol": "하늘의 눈과 귀·감찰",
+    "traditionalDegrees": 11,
+    "summary": "묘수, 닭자리는 남들이 놓치는 변화를 알아채고 필요한 순간에 정확히 알리는 별입니다.",
+    "observation": {
+      "representativeStar": "17 Tau (엘렉트라)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.9,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "겨울철",
+      "recommendedMonth": "1월",
+      "westernConstellation": "황소자리",
+      "observationDescription": "플레이아데스 성단(좀생이별)의 가장 밝은 별로 겨울 밤하늘의 보석입니다.",
+      "keyringObservationDescription": "겨울철 밤하늘, 황소자리 부근에서 밝게 빛나는 묘수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 19,
+    "id": "pil",
+    "name": "필수",
+    "hanja": "畢宿",
+    "formalName": "필수(畢宿)·까마귀자리",
+    "alias": "까마귀자리",
+    "animal": "까마귀",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "11.26~12.07",
+    "start": {
+      "month": 11,
+      "day": 26
+    },
+    "end": {
+      "month": 12,
+      "day": 7
+    },
+    "element": "수",
+    "graphicKey": "pil",
+    "keyringId": "pil",
+    "description": "필수(畢宿)는 서방 백호의 다섯 번째 별자리로, 필(畢)은 그물을 뜻하는 글자입니다. 황소자리 부근의 별들과 이어져 겨울밤에 관찰하기 좋습니다. 상징동물인 까마귀는 옛이야기에서 징조를 전하는 새로 등장합니다. 특히 세 발 달린 까마귀인 삼족오는 고구려 고분벽화에서도 태양 속에 그려졌습니다.",
+    "resultIntroduction": "까마귀자리인 필수는 서방 백호의 다섯 번째 별자리로, 필(畢)은 그물을 뜻합니다. 까마귀는 우리 옛이야기에서 길흉의 징조를 전하는 새로 등장합니다. 세 발 달린 까마귀 삼족오는 태양을 상징하는 존재입니다.",
+    "keyringParagraphs": [
+      "필수는 서방 백호 7수의 다섯 번째 별자리입니다. ‘필’은 짐승을 잡는 데 쓰던 그물을 뜻하며, 옛 천문에서는 비를 내리는 일과도 관련된 별자리로 여겨졌습니다.",
+      "필수를 상징하는 동물인 까마귀는 특별한 의미를 지닙니다. 대표적으로 다리가 세 개인 까마귀인 삼족오는 태양 속에 산다고 전해지는 신성한 새이며, 고구려 고분벽화에서도 태양을 상징하는 둥근 원 안에 삼족오의 모습이 그려져 있습니다.",
+      "겨울철 밤하늘, 황소자리 부근에서 밝게 빛나는 필수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "관찰력",
+      "예지력",
+      "지혜",
+      "통찰",
+      "신비로운 감각",
+      "재생"
+    ],
+    "folklore": "태양 속에 깃드는 세 발 까마귀인 삼족오(三足烏)가 고구려 벽화에 왕권과 태양의 상징으로 그려졌습니다. 한편 일반 까마귀는 민간에서 흉조로 여겨 기피하였습니다. 신성함과 불길함이 공존하는 이중적 이미지를 지닌 새입니다.",
+    "traditionalName": "필월오(畢月烏)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "은색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "월요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "달"
+      }
+    ],
+    "traditionalSymbol": "우사·경계·변방 수비",
+    "traditionalDegrees": 16,
+    "summary": "필수, 까마귀자리는 흩어진 정보에서 중요한 징후를 읽고 한발 앞서 주변을 살피는 별입니다.",
+    "observation": {
+      "representativeStar": "ε Tau (아인)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 3.5,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "겨울철",
+      "recommendedMonth": "1월",
+      "westernConstellation": "황소자리",
+      "observationDescription": "황소자리의 V자 모양 히아데스 성단 부근에서 관측됩니다.",
+      "keyringObservationDescription": "겨울철 밤하늘, 황소자리 부근에서 밝게 빛나는 필수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 20,
+    "id": "ja",
+    "name": "자수",
+    "hanja": "觜宿",
+    "formalName": "자수(觜宿)·원숭이자리",
+    "alias": "원숭이자리",
+    "animal": "원숭이",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "12.08~12.17",
+    "start": {
+      "month": 12,
+      "day": 8
+    },
+    "end": {
+      "month": 12,
+      "day": 17
+    },
+    "element": "화",
+    "graphicKey": "ja",
+    "keyringId": "ja",
+    "description": "자수(觜宿)는 서방 백호의 여섯 번째 별자리로, 겨울철 오리온자리의 머리 부근에 있는 작은 별무리와 연결됩니다. 상징동물인 원숭이는 손재주가 뛰어나고 주변을 살피며 영리하게 행동하는 동물입니다. 한국의 옛그림에서는 원숭이와 복숭아를 함께 그려 장수를 기원하는 모습도 찾아볼 수 있습니다.",
+    "resultIntroduction": "원숭이자리인 자수는 서방 백호의 여섯 번째 별자리로, 오리온자리 머리 부근의 작은 별무리입니다. 원숭이는 손을 능숙하게 써서 먹이를 다루고 도구를 활용하기도 합니다. 옛그림에서도 재주 많은 동물로 등장합니다.",
+    "keyringParagraphs": [
+      "자수는 서방 백호 7수의 여섯 번째 별자리로, 백호의 머리 부분에 해당합니다. ‘자’는 새의 부리처럼 뾰족한 부분을 뜻합니다.",
+      "자수를 상징하는 동물인 원숭이는 재주가 많고 영리한 동물로 알려져 있습니다. 옛 그림과 조각에서는 장난스럽고 재치 있는 모습으로 등장합니다. 원숭이는 무리를 지어 생활하고 손을 능숙하게 사용하는 특징도 지니고 있습니다.",
+      "겨울철 밤하늘, 오리온자리 부근에서 밝게 빛나는 자수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "재주",
+      "유쾌함",
+      "아이디어",
+      "순발력",
+      "장난기",
+      "다재다능함"
+    ],
+    "folklore": "십이지의 하나(신(申))이나 한반도에는 야생 원숭이가 서식하지 않습니다. 민화에 원숭이를 소재로 한 그림이 등장합니다. 재주가 많고 장난기 있는 존재로 묘사됩니다.",
+    "traditionalName": "자화후(觜火猴)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "적색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "화요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "화성"
+      }
+    ],
+    "traditionalSymbol": "척후·군수·비축",
+    "traditionalDegrees": 10,
+    "summary": "자수, 원숭이자리는 기발한 발상과 재치로 막힌 문제를 풀고 자원을 영리하게 쓰는 별입니다.",
+    "observation": {
+      "representativeStar": "λ Ori (메이사)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 3.4,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "겨울철",
+      "recommendedMonth": "2월",
+      "westernConstellation": "오리온자리",
+      "observationDescription": "오리온자리 머리 부분의 별로 겨울 남쪽 하늘에서 관측됩니다.",
+      "keyringObservationDescription": "겨울철 밤하늘, 오리온자리 부근에서 밝게 빛나는 자수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 21,
+    "id": "sam",
+    "name": "삼수",
+    "hanja": "參宿",
+    "formalName": "삼수(參宿)·삵자리",
+    "alias": "삵자리",
+    "animal": "삵(살쾡이)",
+    "guardian": "백호",
+    "direction": "west",
+    "sashin": "서방백호",
+    "period": "12.18~12.27",
+    "start": {
+      "month": 12,
+      "day": 18
+    },
+    "end": {
+      "month": 12,
+      "day": 27
+    },
+    "element": "수",
+    "graphicKey": "sam",
+    "keyringId": "sam",
+    "description": "삼수(參宿)는 서방 백호의 일곱 번째이자 마지막 별자리이며, 겨울 하늘에서 눈에 띄는 오리온자리와 연결됩니다. 특히 나란히 놓인 세 별은 오리온의 허리띠로 알려져 있습니다. 상징동물인 삵은 한반도에 서식하는 야생 고양잇과 동물로, 몸의 얼룩무늬와 민첩한 움직임이 특징입니다.",
+    "resultIntroduction": "삵자리인 삼수는 서방 백호의 마지막 별자리로, 겨울 하늘의 오리온자리와 연결됩니다. 허리띠처럼 나란히 놓인 세 별이 특히 유명합니다. 삵은 우리나라에 사는 야생 고양잇과 동물로, 주로 숲에서 활동합니다.",
+    "keyringParagraphs": [
+      "삼수는 서방 백호 7수의 마지막 별자리입니다. 일곱 개의 큰 별로 이루어져 있으며, 옛 천문에서는 백호의 앞발에 비유되기도 했습니다. 오리온자리의 허리띠가 삼수의 주요 부분들을 이룹니다.",
+      "삼수를 상징하는 동물인 삵은 한반도에 서식하는 야생 고양잇과 동물입니다. 살쾡이라고도 불리며, 집고양이와 달리 몸에 뚜렷한 점무늬가 있습니다.",
+      "겨울철 밤하늘, 오리온자리 부근에서 밝게 빛나는 삼수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "예리함",
+      "독립심",
+      "신중함",
+      "관찰력",
+      "날카로운 직관",
+      "자기만의 세계"
+    ],
+    "folklore": "한반도 전역에 서식하는 야생 고양이과 동물입니다. 훈몽자회(1527년)에 '리(狸)'로 기록되었습니다. 임방의 《천예록》에는 삵이 학식 높은 사람을 지식으로 압도하다 정체가 들켜 달아나는 이야기가 실려 있습니다. 조선시대에는 곡물 창고의 쥐를 잡는 역할을 하였습니다.",
+    "traditionalName": "삼수이(參水狸)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "흑색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "서"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "수요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "수성"
+      }
+    ],
+    "traditionalSymbol": "형벌·권형·변방",
+    "traditionalDegrees": 10,
+    "summary": "삼수, 삵자리는 자신만의 기준을 지키며 깊은 집중력으로 선택을 완성하는 별입니다.",
+    "observation": {
+      "representativeStar": "ζ Ori (알니탁)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 1.7,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "겨울철",
+      "recommendedMonth": "2월",
+      "westernConstellation": "오리온자리",
+      "observationDescription": "오리온의 허리띠 중 하나로 밝고 찾기 쉬운 별입니다. 겨울 밤하늘의 대표 별자리입니다.",
+      "keyringObservationDescription": "겨울철 밤하늘, 오리온자리 부근에서 밝게 빛나는 삼수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 22,
+    "id": "jeong",
+    "name": "정수",
+    "hanja": "井宿",
+    "formalName": "정수(井宿)·두루미자리",
+    "alias": "두루미자리",
+    "animal": "두루미(학)",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "12.28~01.17",
+    "start": {
+      "month": 12,
+      "day": 28
+    },
+    "end": {
+      "month": 1,
+      "day": 17
+    },
+    "element": "목",
+    "graphicKey": "jeong",
+    "keyringId": "jeong",
+    "description": "정수(井宿)는 남방 주작의 첫 별자리로, 우물 정(井) 자가 이름에 쓰였습니다. 옛사람들은 이 별의 배열을 보고 우물의 모습을 떠올렸습니다. 정수를 상징하는 동물인 두루미는 십장생 그림에 등장하는 장수의 상징이며, 선비의 품격을 나타내는 그림과 문양에도 쓰였습니다.",
+    "resultIntroduction": "두루미자리인 정수는 남방 주작의 첫 별자리입니다. 정(井)은 우물을 뜻하며, 옛사람들은 이 별의 배열에서 우물의 모습을 떠올렸습니다. 두루미는 예부터 장수와 고결함을 상징하며 십장생 그림과 민화에 자주 등장했습니다.",
+    "keyringParagraphs": [
+      "정수는 남방 주작 7수의 첫 번째 별자리로, 주작의 머리 부분에 해당합니다. ‘정’은 우물을 뜻하며, 별이 이루는 모습을 우물의 형태에 빗대어 이름 붙였습니다.",
+      "정수를 상징하는 동물인 두루미는 예부터 장수와 고결함을 상징하는 새입니다. 십장생 그림에서는 소나무나 구름과 함께 등장하며, 고려청자에 새겨진 운학문에서도 구름 사이를 나는 학의 모습을 찾아볼 수 있습니다.",
+      "겨울철 밤하늘, 쌍둥이자리 부근에서 밝게 빛나는 정수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "청렴함",
+      "고고함",
+      "품격",
+      "장수",
+      "정갈함",
+      "깊은 지조"
+    ],
+    "folklore": "조선 문관 흉배의 상징으로 선비를 대표하는 새입니다. 학의 날개를 본뜬 학창의(鶴氅衣)는 선비의 평상복으로 사용되었습니다. 고구려 벽화에는 신선이 학을 타는 모습이 그려져 있습니다. 십장생의 하나이며, 학명지사(鶴鳴志士) 고사로도 전해집니다.",
+    "traditionalName": "정목학(井木鶴)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "청색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "목요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "목성"
+      }
+    ],
+    "traditionalSymbol": "남문·법령·수리",
+    "traditionalDegrees": 18,
+    "summary": "정수, 두루미자리는 높은 기준과 차분한 태도로 신뢰를 쌓고 품위 있게 선택하는 별입니다.",
+    "observation": {
+      "representativeStar": "μ Gem",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.9,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "겨울철",
+      "recommendedMonth": "2월",
+      "westernConstellation": "쌍둥이자리",
+      "observationDescription": "쌍둥이자리 남쪽의 밝은 별로 한겨울 밤하늘에서 관측됩니다.",
+      "keyringObservationDescription": "겨울철 밤하늘, 쌍둥이자리 부근에서 밝게 빛나는 정수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 23,
+    "id": "gwi",
+    "name": "귀수",
+    "hanja": "鬼宿",
+    "formalName": "귀수(鬼宿)·염소자리",
+    "alias": "염소자리",
+    "animal": "염소",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "01.18~01.27",
+    "start": {
+      "month": 1,
+      "day": 18
+    },
+    "end": {
+      "month": 1,
+      "day": 27
+    },
+    "element": "금",
+    "graphicKey": "gwi",
+    "keyringId": "gwi",
+    "description": "귀수(鬼宿)는 남방 주작의 두 번째 별자리로, 이름에 귀신 귀(鬼) 자가 쓰였습니다. 전통 천문에서는 제사와 죽음에 관한 의미를 지녔으며, 게자리의 프레세페 성단 부근과 연결됩니다. 상징동물인 염소는 산비탈을 잘 오르고 다양한 풀을 먹는 동물로, 사람과 오랫동안 함께 살아왔습니다.",
+    "resultIntroduction": "염소자리인 귀수는 남방 주작의 두 번째 별자리입니다. 귀(鬼)는 귀신을 뜻하며, 전통 천문에서는 제사와 관련된 별로 여겼습니다. 염소는 가파른 바위 지형도 잘 오르는 동물로, 오래전부터 사람과 함께 길러졌습니다.",
+    "keyringParagraphs": [
+      "귀수는 남방 주작 7수의 두 번째 별자리로, 주작의 눈에 해당합니다. ‘귀’는 귀신을 뜻하며, 옛 천문에서는 죽은 사람의 영혼과 제사에 관련된 의미를 지닌 별자리로 여겨졌습니다.",
+      "귀수를 상징하는 동물인 염소는 오래전부터 사람과 함께 살아온 가축입니다. 거친 산비탈도 능숙하게 오르는 튼튼한 다리와 굽은 뿔이 특징이며, 양과 함께 옛 제사에서 쓰이기도 했습니다.",
+      "겨울에서 봄으로 넘어가는 밤하늘, 게자리 부근에서 밝게 빛나는 귀수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "영감",
+      "조상 음덕",
+      "신비로움",
+      "내면의 힘",
+      "정화",
+      "깊은 감수성"
+    ],
+    "folklore": "조선시대 제의에서 염소와 양은 제물로 사용되었습니다. 희생과 의례를 상징하는 동물로, 조상 신앙과 제사 문화와 깊이 연결되어 있습니다.",
+    "traditionalName": "귀금양(鬼金羊)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "백색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "금요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "금성"
+      }
+    ],
+    "traditionalSymbol": "천목·제사·감찰",
+    "traditionalDegrees": 10,
+    "summary": "귀수, 염소자리는 남들이 놓친 문제를 끝까지 살피며 책임감으로 제 몫을 하는 별입니다.",
+    "observation": {
+      "representativeStar": "β Cnc (알타흐)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 5.5,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "겨울에서 봄으로 넘어가는",
+      "recommendedMonth": "3월",
+      "westernConstellation": "게자리",
+      "observationDescription": "맨눈으로 보기 매우 어려운 신비로운 별자리입니다. 쌍안경을 사용하면 게자리 벌집성단(M44) 근처에서 확인할 수 있습니다.",
+      "keyringObservationDescription": "겨울에서 봄으로 넘어가는 밤하늘, 게자리 부근에서 밝게 빛나는 귀수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 24,
+    "id": "yu",
+    "name": "류수",
+    "hanja": "柳宿",
+    "formalName": "류수(柳宿)·노루자리",
+    "alias": "노루자리",
+    "animal": "노루",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "01.28~02.08",
+    "start": {
+      "month": 1,
+      "day": 28
+    },
+    "end": {
+      "month": 2,
+      "day": 8
+    },
+    "element": "토",
+    "graphicKey": "ryu",
+    "keyringId": "ryu",
+    "description": "류수(柳宿)는 남방 주작의 세 번째 별자리로, 버드나무 유(柳) 자를 이름에 씁니다. 옛사람들은 별이 늘어선 모습을 버드나무 가지에 비유했습니다. 상징동물인 노루는 우리나라 산과 숲에 사는 야생동물로, 풀과 잎을 먹고 주변 기척에 민감하게 반응합니다. 큰 귀와 짧은 꼬리가 특징입니다.",
+    "resultIntroduction": "노루자리인 류수는 남방 주작의 세 번째 별자리입니다. 유(柳)는 버드나무를 뜻하며, 별의 모양을 버드나무에 비유했습니다. 노루는 우리나라 산과 숲에서 볼 수 있는 동물로, 큰 귀로 주변 소리를 재빨리 알아챕니다.",
+    "keyringParagraphs": [
+      "류수는 남방 주작 7수의 세 번째 별자리로, 주작의 부리에 해당합니다. ‘류’는 버드나무를 뜻하며, 별이 이루는 모습을 버드나무 가지에 빗대어 이름 붙였습니다.",
+      "류수를 상징하는 동물인 노루는 우리나라의 산과 들에서 살아가는 동물입니다. 예로부터 노루가 사람에게 명당자리를 알려주거나 보물을 찾아주는 설화가 전해집니다.",
+      "봄철 밤하늘, 바다뱀자리 부근에서 밝게 빛나는 류수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "순수함",
+      "부드러움",
+      "섬세함",
+      "평화로움",
+      "자연스러움",
+      "따뜻한 감성"
+    ],
+    "folklore": "고려사에 궁궐 인근에 노루가 출몰한 기록이 21회나 남아 있습니다. 조선 민간에서는 산의 온순한 동물로 인식되었습니다. 자연과 연결된 순수하고 맑은 존재로 여겨집니다.",
+    "traditionalName": "류토장(柳土獐)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "토요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "토성"
+      }
+    ],
+    "traditionalSymbol": "음식 조리·맛의 조화",
+    "traditionalDegrees": 15,
+    "summary": "류수, 노루자리는 상대의 마음을 헤아리고 작은 친절로 관계의 균형을 잡는 별입니다.",
+    "observation": {
+      "representativeStar": "δ Hya",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 4.2,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "3월",
+      "westernConstellation": "바다뱀자리",
+      "observationDescription": "바다뱀자리 북쪽의 별로 봄철 남쪽 하늘에서 관측됩니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 바다뱀자리 부근에서 밝게 빛나는 류수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 25,
+    "id": "seong",
+    "name": "성수",
+    "hanja": "星宿",
+    "formalName": "성수(星宿)·말자리",
+    "alias": "말자리",
+    "animal": "말",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "02.09~02.18",
+    "start": {
+      "month": 2,
+      "day": 9
+    },
+    "end": {
+      "month": 2,
+      "day": 18
+    },
+    "element": "화",
+    "graphicKey": "seong",
+    "keyringId": "seong",
+    "description": "성수(星宿)는 남방 주작의 네 번째 별자리로, 이름에 별 성(星) 자가 쓰였습니다. 바다뱀자리의 밝은 별 알파르드와 연결되는 별무리로 알려져 있습니다. 상징동물인 말은 이동과 전쟁에서 사람의 중요한 동반자였습니다. 신라 천마총에서 발견된 천마도에는 하늘을 달리는 신비로운 말이 그려져 있습니다.",
+    "resultIntroduction": "말자리인 성수는 남방 주작의 네 번째 별자리이며, 성(星)은 말 그대로 별을 뜻합니다. 말은 먼 거리를 이동하거나 전쟁터를 달릴 때 사람과 함께했습니다. 신라의 천마도에는 하늘을 나는 말의 모습이 그려져 있습니다.",
+    "keyringParagraphs": [
+      "성수는 남방 주작 7수의 네 번째 별자리로, 주작의 목에 해당합니다. ‘성’은 별을 뜻하며, 일곱 개의 별 가운데 밝게 빛나는 별 하나가 중심을 이루고 있습니다.",
+      "성수를 상징하는 동물인 말은 예부터 사람의 이동을 돕고 전쟁터에서도 활약한 동물입니다. 신라 천마도에는 하늘을 나는 신비로운 동물이 그려져 있는데, 이를 천마로 해석하는 견해가 있을 정도로 말은 귀중한 존재로 여겨졌습니다.",
+      "봄철 밤하늘, 바다뱀자리 부근에서 밝게 빛나는 성수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "역동성",
+      "자유로움",
+      "추진력",
+      "에너지",
+      "도전",
+      "활달함"
+    ],
+    "folklore": "하늘을 나는 천마(天馬)는 고구려·신라의 벽화와 유물에 자주 등장합니다. 신라의 천마총은 이를 대표하는 유적입니다. 왕의 출생을 예고하는 신성한 말 설화도 전해집니다.",
+    "traditionalName": "성일마(星日馬)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "황금색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "일요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "태양"
+      }
+    ],
+    "traditionalSymbol": "천도·의복과 자수",
+    "traditionalDegrees": 10,
+    "summary": "성수, 말자리는 생각을 바로 행동으로 옮기고 활력으로 가능성을 현실로 만드는 별입니다.",
+    "observation": {
+      "representativeStar": "α Hya (알파드)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "4월",
+      "westernConstellation": "바다뱀자리",
+      "observationDescription": "바다뱀자리의 유일한 밝은 별로 봄 밤하늘에서 외롭게 빛납니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 바다뱀자리 부근에서 밝게 빛나는 성수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 26,
+    "id": "jang",
+    "name": "장수",
+    "hanja": "張宿",
+    "formalName": "장수(張宿)·사슴자리",
+    "alias": "사슴자리",
+    "animal": "사슴",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "02.19~03.08",
+    "start": {
+      "month": 2,
+      "day": 19
+    },
+    "end": {
+      "month": 3,
+      "day": 8
+    },
+    "element": "수",
+    "graphicKey": "jang",
+    "keyringId": "jang",
+    "description": "장수(張宿)는 남방 주작의 다섯 번째 별자리입니다. 장(張)은 펼친다는 뜻으로, 주작이 날개를 활짝 펼친 모습에 비유됩니다. 상징동물인 사슴은 십장생 그림에 등장하는 장수의 상징입니다. 옛 민화에서는 신선과 함께 그려지기도 하며, 사슴의 뿔은 특별한 생명력의 이미지와 연결됐습니다.",
+    "resultIntroduction": "사슴자리인 장수는 남방 주작의 다섯 번째 별자리로, 장(張)은 활짝 펼친다는 뜻입니다. 주작이 날개를 펼친 모습과 연결됩니다. 사슴은 십장생 그림에 자주 등장하며 장수와 복을 나타내는 동물입니다.",
+    "keyringParagraphs": [
+      "장수는 남방 주작 7수의 다섯 번째 별자리로, 주작의 모이주머니에 해당합니다. ‘장’은 활시위를 당기거나 넓게 펼친다는 뜻을 지니며, 여섯 개의 별이 모여 있습니다.",
+      "장수를 상징하는 동물인 사슴은 예부터 장수와 복을 상징했습니다. 두루미, 거북, 소나무 등과 함께 십장생 그림에 등장하며, 사슴의 뿔은 해마다 자라나고 떨어지는 특징 때문에 재생의 이미지와 연관되기도 했습니다.",
+      "봄철 밤하늘, 바다뱀자리 부근에서 밝게 빛나는 장수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "온화함",
+      "장수",
+      "여유",
+      "길상",
+      "풍요로움",
+      "내면의 평화"
+    ],
+    "folklore": "십장생의 하나로, 불로초(영지)를 찾아다니는 신령스러운 동물입니다. 민화에서 신선과 함께 단골 소재로 등장합니다. 장수와 복록을 상징하는 동물로 널리 사랑받습니다.",
+    "traditionalName": "장월록(張月鹿)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "은색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "월요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "달"
+      }
+    ],
+    "traditionalSymbol": "보물·종묘·포상",
+    "traditionalDegrees": 18,
+    "summary": "장수, 사슴자리는 예의와 배려를 지키며 공들인 노력을 뜻깊은 성취로 만드는 별입니다.",
+    "observation": {
+      "representativeStar": "ν Hya",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 3.1,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "4월",
+      "westernConstellation": "바다뱀자리",
+      "observationDescription": "바다뱀자리 중간 부분의 별로 봄 저녁 남쪽 하늘에서 관측됩니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 바다뱀자리 부근에서 밝게 빛나는 장수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 27,
+    "id": "ik",
+    "name": "익수",
+    "hanja": "翼宿",
+    "formalName": "익수(翼宿)·뱀자리",
+    "alias": "뱀자리",
+    "animal": "뱀",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "03.09~03.26",
+    "start": {
+      "month": 3,
+      "day": 9
+    },
+    "end": {
+      "month": 3,
+      "day": 26
+    },
+    "element": "화",
+    "graphicKey": "ik",
+    "keyringId": "ik",
+    "description": "익수(翼宿)는 남방 주작의 여섯 번째 별자리로, 익(翼)은 날개를 뜻합니다. 주작의 넓게 펼쳐진 날개에 비유되는 별무리입니다. 상징동물인 뱀은 자라면서 허물을 벗는 것으로 유명합니다. 한국 민속에서는 집안에 깃들어 재산을 지켜 준다는 업구렁이를 함부로 해치지 않는 풍습도 전해집니다.",
+    "resultIntroduction": "뱀자리인 익수는 남방 주작의 여섯 번째 별자리입니다. 익(翼)은 날개를 뜻하며, 주작의 날개에 해당하는 별들입니다. 뱀은 허물을 벗는 동물로, 우리 민속에서는 집안의 재물을 지키는 업구렁이로도 여겨졌습니다.",
+    "keyringParagraphs": [
+      "익수는 남방 주작 7수의 여섯 번째 별자리로, 주작의 날개에 해당합니다. ‘익’은 날개를 뜻하며, 여러 별이 넓게 펼쳐진 모습에서 날개에 빗대어 불렸습니다.",
+      "익수를 상징하는 동물인 뱀은 우리 민속에서 두려움과 신성함을 함께 지녔던 존재입니다. 특히 집 안에 사는 큰 구렁이는 재물을 지키는 가신인 ‘업’으로 여겨졌는데, 옛사람들은 업이 집을 떠나면 재산과 복도 함께 사라진다고 믿어 함부로 해치지 않았습니다.",
+      "봄철 밤하늘, 컵자리 부근에서 밝게 빛나는 익수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "변화",
+      "재생",
+      "직관력",
+      "신중함",
+      "깊은 통찰",
+      "수호"
+    ],
+    "folklore": "집을 지키는 수호신인 업구렁이(집 구렁이) 설화가 전국적으로 전해집니다. 뱀을 죽이면 집안이 망한다는 전승이 광범위하게 남아 있습니다. 용으로 변화하는 존재로서 신성한 상징 체계와 이어집니다.",
+    "traditionalName": "익화사(翼火蛇)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "적색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "화요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "화성"
+      }
+    ],
+    "traditionalSymbol": "악부·공연·교류",
+    "traditionalDegrees": 18,
+    "summary": "익수, 뱀자리는 익숙한 틀을 넘어 표현을 찾고 변화를 자기만의 색으로 바꾸는 별입니다.",
+    "observation": {
+      "representativeStar": "α Crt (알케스)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 4.1,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "4월",
+      "westernConstellation": "컵자리",
+      "observationDescription": "컵자리의 알파성으로 봄철 남쪽 하늘 낮은 곳에서 관측됩니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 컵자리 부근에서 밝게 빛나는 익수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  },
+  {
+    "starId": 28,
+    "id": "jin",
+    "name": "진수",
+    "hanja": "軫宿",
+    "formalName": "진수(軫宿)·잉어자리",
+    "alias": "잉어자리",
+    "animal": "잉어",
+    "guardian": "주작",
+    "direction": "south",
+    "sashin": "남방주작",
+    "period": "03.27~04.09",
+    "start": {
+      "month": 3,
+      "day": 27
+    },
+    "end": {
+      "month": 4,
+      "day": 9
+    },
+    "element": "수",
+    "graphicKey": "jin",
+    "keyringId": "jin",
+    "description": "진수(軫宿)는 남방 주작의 일곱 번째이자 마지막 별자리로, 진(軫)은 수레의 부품을 뜻하는 글자입니다. 전통 28수의 상징동물은 지렁이지만 별운관에서는 잉어로 다시 해석했습니다. 잉어가 물살을 거슬러 용문을 넘으면 용이 된다는 등용문 설화는 오늘날에도 성공과 출세를 뜻하는 말로 남아 있습니다.",
+    "resultIntroduction": "잉어자리인 진수는 남방 주작의 마지막 별자리입니다. 전통적으로 이 별자리의 동물은 지렁이였지만, 별운관에서는 잉어로 표현했습니다. 잉어가 거센 물살을 넘어 용이 된다는 등용문 설화는 널리 알려져 있습니다.",
+    "keyringParagraphs": [
+      "진수는 남방 주작 7수의 마지막 별자리로, 주작의 꼬리에 해당합니다. ‘진’은 수레의 뒤쪽을 뜻하며, 옛 천문에서는 수레와 이동에 관련된 일을 관장하는 별자리로 여겨졌습니다.",
+      "진수를 상징하는 동물인 잉어는 끈기와 출세의 의미를 지닌 물고기입니다. 오늘날 출세를 뜻하는 ‘등용문’은 거센 물살을 거슬러 용문을 뛰어넘은 잉어가 용으로 변한다는 이야기에서 유래했습니다.",
+      "봄철 밤하늘, 까마귀자리 부근에서 밝게 빛나는 진수를 찾아볼 수 있습니다."
+    ],
+    "keywords": [
+      "도약",
+      "끈기",
+      "출세",
+      "역경 극복",
+      "효심",
+      "풍요"
+    ],
+    "folklore": "잉어가 거센 물살의 용문(龍門)을 거슬러 올라 용이 된다는 '등용문(登龍門)' 고사로 출세와 성공의 상징이 되었습니다. 조선 민화에서는 잉어가 용으로 변하는 어변성룡도(魚變成龍圖)가 과거 급제를 기원하는 그림으로 즐겨 그려졌습니다. 병든 부모를 위해 얼음을 깨고 잉어를 구한 효자 이야기가 널리 전해지며, 잉어 꿈은 귀한 자식을 얻는 태몽으로 여겨졌습니다.",
+    "traditionalName": "진수이(軫水鯉)",
+    "luckySymbols": [
+      {
+        "label": "행운의 색",
+        "value": "흑색"
+      },
+      {
+        "label": "행운의 방위",
+        "value": "남"
+      },
+      {
+        "label": "행운의 요일",
+        "value": "수요일"
+      },
+      {
+        "label": "행운의 행성",
+        "value": "수성"
+      }
+    ],
+    "traditionalSymbol": "수레·운송·군사 이동",
+    "traditionalDegrees": 17,
+    "summary": "진수, 잉어자리는 어려운 목표 앞에서도 물러서지 않고 꾸준한 도전으로 도약하는 별입니다.",
+    "observation": {
+      "representativeStar": "γ Crv (기에나흐)",
+      "rightAscension": null,
+      "declination": null,
+      "apparentMagnitude": null,
+      "dashboardMagnitude": 2.6,
+      "dashboardMagnitudeLabel": "겉보기 등급",
+      "observationSeason": "봄철",
+      "recommendedMonth": "5월",
+      "westernConstellation": "까마귀자리",
+      "observationDescription": "까마귀자리의 밝은 별로 봄 저녁 남쪽 하늘에서 쉽게 찾을 수 있습니다.",
+      "keyringObservationDescription": "봄철 밤하늘, 까마귀자리 부근에서 밝게 빛나는 진수를 찾아볼 수 있습니다.",
+      "dataSource": {
+        "representativeStar": "public/data/28su_database_final_updated_20261119.js",
+        "coordinates": null,
+        "apparentMagnitude": null,
+        "dashboardMagnitude": "https://28su-dashboard.vercel.app/result/overview",
+        "recommendedMonth": "https://28su-dashboard.vercel.app/result/overview",
+        "observationDescription": "https://28su-dashboard.vercel.app/result/overview",
+        "observationSeason": "public/data/byeolungwan_28su_keyring_descriptions.json",
+        "westernConstellation": "public/data/byeolungwan_28su_keyring_descriptions.json"
+      },
+      "verificationStatus": {
+        "representativeStar": "project-source-unverified",
+        "coordinates": "not-verified",
+        "apparentMagnitude": "not-verified",
+        "dashboardMagnitude": "dashboard-transcribed-definition-unverified",
+        "recommendedMonth": "dashboard-transcribed",
+        "observationDescription": "dashboard-transcribed-not-astronomically-verified",
+        "observationSeason": "keyring-transcribed",
+        "westernConstellation": "keyring-transcribed"
+      }
+    },
+    "dataSource": {
+      "basic": "public/data/28su_database_final_updated_20261119.js",
+      "birth": "public/data/byeolungwan_28su_birthdate_reference.json",
+      "description": "public/data/byeolungwan_28su_descriptions_v3.json",
+      "keyring": "public/data/byeolungwan_28su_keyring_descriptions.json",
+      "tradition": "public/data/byeolungwan_28su_fortunes_20261119_25_v6.json",
+      "analysis": "src/data/fortunes/byeolungwan_fortunes_2026-11-20_24.json",
+      "dashboard": "https://28su-dashboard.vercel.app/result/overview"
+    }
+  }
+]

@@ -1,0 +1,19 @@
+.home-message {
+  width: calc(100% - 112px);
+  height: 34px;
+  overflow: hidden;
+  text-align: center;
+}
+.home-message__track { display: block; }
+.home-message__track.is-switching { animation: home-message-slide 360ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.home-message__line {
+  display: block;
+  height: 34px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@keyframes home-message-slide { to { transform: translateY(-34px); } }
+@media (prefers-reduced-motion: reduce) {
+  .home-message__track.is-switching { animation: none; transform: translateY(-34px); }
+}

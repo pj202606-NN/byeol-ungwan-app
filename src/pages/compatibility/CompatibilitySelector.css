@@ -189,7 +189,11 @@
 }
 
 .compat-selector__option {
-  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   padding: 0;
   border: 1px solid #2a353d;
   border-radius: 10px;
@@ -199,6 +203,13 @@
   color: #a0a0a0;
   cursor: pointer;
   position: relative;
+}
+
+.compat-selector__option small {
+  margin-top: 2px;
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.75;
 }
 
 /* 버튼 사이 간격까지 눌리도록 터치 영역 확장 (겹치지 않는 범위) */

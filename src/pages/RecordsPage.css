@@ -191,6 +191,9 @@
   cursor: pointer;
 }
 
+.records-chips__chip[aria-pressed='true'] { background: #264861; color: #fff1d4; box-shadow: inset 0 0 0 1px #6c95b4; }
+.records-status { min-height: 18px; margin-top: 10px; font-size: 12px; color: var(--color-text-sub); }
+
 .records-note {
   height: 120px;
   margin-top: 14.5px;

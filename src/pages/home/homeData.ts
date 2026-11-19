@@ -53,18 +53,6 @@ export const ranking = [
 export const compatibilityLegend = ['천생연분', '보완', '주의'];
 export const compatibilityPicks = ['각수', '각수', '각수'];
 
-export const exploreInfo = {
-  name: '누수',
-  hanja: '柳宿',
-  chartLabel: '각수',
-  rows: [
-    { label: '기준 시각', value: '2026. 9. 24. 오후 3:38' },
-    { label: '방위각', value: '243°' },
-    { label: '고도', value: '31°' },
-    { label: '관측 상태', value: '' },
-  ],
-};
-
 export const directions = ['청룡', '현무', '백호', '주작'];
 
 export const dictionaryCards = [

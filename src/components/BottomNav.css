@@ -35,6 +35,24 @@
   -webkit-backdrop-filter: blur(var(--bottom-nav-blur));
   backdrop-filter: blur(var(--bottom-nav-blur));
   pointer-events: auto;
+  overflow: hidden;
+}
+
+.bottom-nav__panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 460ms cubic-bezier(0.22, 1, 0.36, 1), opacity 320ms ease;
+}
+
+.bottom-nav__panel--main { transform: translateX(0); opacity: 1; }
+.bottom-nav__panel--constellation { transform: translateX(100%); opacity: 0; }
+.bottom-nav--constellation .bottom-nav__panel--main { transform: translateX(-100%); opacity: 0; }
+.bottom-nav--constellation .bottom-nav__panel--constellation { transform: translateX(0); opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bottom-nav__panel { transition: none; }
 }
 
 .bottom-nav__list {
@@ -85,7 +103,7 @@
 }
 
 /* ── 별자리 전용 메뉴바: 왼쪽 ← 원형 버튼 (검정, 지름 49) ── */
-.bottom-nav--constellation .bottom-nav__list {
+.bottom-nav__panel--constellation .bottom-nav__list {
   padding: 0 18px 0 0; /* 항목 중심: 115 · 180 · 245 · 309 */
 }
 

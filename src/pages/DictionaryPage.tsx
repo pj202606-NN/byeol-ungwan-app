@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
+import { useRequiredEntryFlow } from '../entry/entryFlow.tsx';
 import Chevron from '../components/Chevron.tsx';
 import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import PageHeader from '../components/PageHeader.tsx';
@@ -10,7 +11,7 @@ import {
   dictionaryPaths,
   directionDetails,
   directions,
-  myConstellation,
+  myConstellation as exampleMyConstellation,
   type DictionaryTabId,
 } from './dictionary/dictionaryData.ts';
 import './DictionaryPage.css';
@@ -18,13 +19,13 @@ import './DictionaryPage.css';
 /**
  * 08_04 별자리 사전 메인 — figma-reference/08_04_dictionary.png (393 × 2830)
  * 별자리 영역 화면 (별자리 전용 메뉴바 '사전')
- * 방위 '자세히 보러 가기' → 방위 상세 (상세 데이터가 있는 청룡만)
- * 방위 탭 → 방위 상세 (상세 데이터가 있는 청룡만, 2026-10-10 요청)
- * 별자리 카드 → 별자리 상세(08_04_02) (상세 데이터가 있는 별자리만)
- * ⏳ 미확정(표시만): 현무·백호·주작 탭, 검색, 자세히 보기, 용어
+ * 방위 탭·자세히 보기 → 해당 방위 상세. 카드 → 28개 공통 별자리 상세.
+ * ⏳ 미확정(표시만): 검색, 용어
  */
 export default function DictionaryPage() {
-  // 방위 탭: 상세 데이터가 있는 방위(현재 청룡)는 방위 상세로 이동, 나머지는 선택 표시만
+  const { constellation } = useRequiredEntryFlow();
+  const myConstellation = { ...exampleMyConstellation, ...constellation };
+  // 기존 상세 템플릿에 네 방위의 원본 데이터를 연결한다.
   const [tab, setTab] = useState<DictionaryTabId>('all');
   const navigate = useNavigate();
   const selectTab = (id: DictionaryTabId) => {
@@ -42,6 +43,7 @@ export default function DictionaryPage() {
         {/* 홈과 같은 별자리 좌표 — 보여 주는 영역만 위로 41 이동 */}
         <ConstellationFigure
           className="dictionary-top__figure"
+          graphicKey={constellation.graphicKey}
           viewBox="0 41 393 360"
           stars={myConstellation.stars}
           lines={myConstellation.lines}
@@ -55,10 +57,9 @@ export default function DictionaryPage() {
           hanja={myConstellation.hanja}
           meta={myConstellation.meta}
           aside={
-            // ⏳ 내 별자리 상세(08_04_02)로 이동 예정 — 상세 화면 구현 시 연결
-            <span className="dictionary-more">
+            <Link to={dictionaryPaths.constellation(constellation.id)} state={{ backTo: dictionaryPaths.main }} className="dictionary-more">
               자세히 보기 <Chevron direction="right" size={6} />
-            </span>
+            </Link>
           }
         />
       </div>

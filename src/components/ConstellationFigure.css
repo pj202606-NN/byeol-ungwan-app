@@ -1,0 +1,18 @@
+.constellation-figure__halo {
+  pointer-events: none;
+  opacity: 0.32;
+}
+
+.constellation-figure__halo--main {
+  opacity: 0.6;
+  animation: constellation-glow 12s ease-in-out infinite;
+}
+
+@keyframes constellation-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .constellation-figure__halo--main { animation: none; }
+}

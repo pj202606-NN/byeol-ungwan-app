@@ -11,6 +11,49 @@
   align-items: center;
   justify-content: center;
   background: var(--color-page-bg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+:is([data-device='pc'], [data-device='tablet']) .app-stage {
+  background: linear-gradient(to bottom, #050a10 0%, #0b131c 40%, var(--color-page-bg) 80%);
+}
+
+/* PC 바깥 배경: 천문도의 중심을 화면 아래쪽 끝에 두어 절반만 표시 */
+.app-stage__map {
+  display: none;
+}
+
+:is([data-device='pc'], [data-device='tablet']) .app-stage__map {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: min(180vw, 2000px);
+  aspect-ratio: 1;
+  opacity: 0.025;
+  pointer-events: none;
+  user-select: none;
+  transform: translate(-50%, 50%);
+}
+
+.app-stage__map img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: celestial-map-rotation 240s linear infinite;
+}
+
+@keyframes celestial-map-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-stage__map img {
+    animation: none;
+  }
 }
 
 /* ── 공통(모바일 기본값): 기기 화면 전체 사용 ── */
@@ -61,7 +104,7 @@
    높이 = (사용 가능한 높이) 와 (사용 가능한 너비 × 852/393) 중 작은 값
    너비 = aspect-ratio 로 자동 계산 → 화면 밖으로 벗어나지 않음
    내부 UI 는 scale() 없이 일반 반응형 레이아웃 */
-[data-device='pc'] .app-frame {
+:is([data-device='pc'], [data-device='tablet']) .app-frame {
   width: auto;
   height: min(
     100vh - var(--frame-margin) * 2,
@@ -76,11 +119,4 @@
   border-radius: var(--frame-radius);
   box-shadow: var(--frame-shadow);
   padding: 0; /* PC 에는 Safe Area 없음 */
-}
-
-/* ── 태블릿: 전체 화면 + 콘텐츠 최대 너비 (모바일 UI 를 그대로 확대하지 않음)
-   태블릿 전용 디자인 확정 시 이 블록에서 레이아웃을 분기합니다. ── */
-[data-device='tablet'] .app-content {
-  max-width: var(--tablet-content-max);
-  margin-inline: auto;
 }

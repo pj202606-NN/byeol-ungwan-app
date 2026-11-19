@@ -17,6 +17,7 @@
 
 /* ── 위쪽: ‹ · 소개 ── */
 .signup-top {
+  flex: 0 0 auto; /* iOS Flex 축소로 문단과 본문 판이 겹치지 않도록 콘텐츠 높이 보장 */
   padding-bottom: 64px; /* 소개 아래 40 + 본문 판이 겹치는 24 */
   background: linear-gradient(to bottom, var(--color-app-bg) 30%, #071722 100%);
 }
@@ -47,6 +48,7 @@
   font-size: 15px;
   line-height: 24px;
   word-break: keep-all;
+  overflow-wrap: anywhere;
   color: var(--color-text-sub);
 }
 
@@ -54,7 +56,8 @@
 .signup-sheet {
   position: relative;
   display: flex;
-  flex: 1;
+  flex: 1 0 auto;
+  min-width: 0;
   flex-direction: column;
   margin-top: -24px;
   padding-top: 40px;
@@ -103,6 +106,7 @@
   outline: none;
   appearance: none;
   transition: border-color 0.2s;
+  scroll-margin-block: 24px;
 }
 
 .signup-field__input::placeholder {

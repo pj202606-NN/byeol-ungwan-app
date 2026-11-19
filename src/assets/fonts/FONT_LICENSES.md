@@ -1,5 +1,25 @@
 # 폰트 출처 및 라이선스
 
+## 확정 글꼴 (2026-11-19)
+
+- UI·본문: 기존 Pretendard Variable WOFF2, `font-weight: 45 920`.
+- 기존 명조 영역: **본명조 Source Han Serif KR 2.003**, `font-weight: 250 900`.
+- Adobe 공식 배포 파일을 변환·수정 없이 사용: `source-han-serif/SourceHanSerifKR-VF.otf.woff2` (4,751,636 bytes).
+- 공식 출처: https://github.com/adobe-fonts/source-han-serif/tree/release/Variable/WOFF2/OTF/Subset
+- 고정 원본 revision: `7889f11bf31170b5d092a083b357c8c8130f89e0`.
+- SHA-256: `cd5c29b1e9fbe1374f809d2ebe46df3a0f0d33e9891407432183a7e0c03ee735`.
+- 라이선스: 공식 `source-han-serif/LICENSE.txt` (SIL OFL 1.1).
+- Pretendard에 없는 한자는 로컬 본명조로 보완. 두 파일을 preload하고 Workbox precache에 포함하며 외부 CDN을 호출하지 않음.
+- 기존 후보 파일 및 등록은 보존. 아래 목록은 기존 후보 출처 기록.
+
+### 한국어 축소판 미수록 한자 보완
+
+- 앱의 `氐土貉`에서 사용하는 `貉` (U+8C89)은 공식 KR 축소판에 없어 동일 revision의 공식 Pan-CJK 한국어판 `Variable/WOFF2/OTF/SourceHanSerifK-VF.otf.woff2`에서 이 글자만 추출함.
+- 배포 파일: `source-han-serif/ByeolungwanSerifSupplement.woff2`. 동일 SIL OFL 1.1을 적용하며 원본 저작권 및 라이선스 레코드를 보존.
+- 수정본 내부 family/unique/PostScript 이름은 `Byeolungwan Serif Supplement` / `ByeolungwanSerifSupplement`로 변경하여 예약 이름 `Source`를 사용하지 않음.
+- 재현 스크립트: `scripts/build-serif-supplement.py` (fontTools). 전체판 원본은 로컬 `review/`에만 보관하며 앱에는 작은 보완 파일만 배포.
+- CSS `unicode-range: U+8C89`로 해당 한자에만 사용. 본명조의 글자 모양·가변 굵기를 그대로 보존하고 precache에 포함.
+
 확인일: 2026-10-10 · 4종 모두 **SIL Open Font License 1.1 (OFL)**
 
 | 폰트 | 용도 | 포함 파일 (형식 · 용량) | 출처 (공식 배포처) | 라이선스 파일 |

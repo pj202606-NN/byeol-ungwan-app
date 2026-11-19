@@ -10,20 +10,19 @@
   --font-fallback-serif: 'AppleMyungjo', 'Nanum Myeongjo', 'Batang', serif;
 
   /* 기본 폰트: 앱 전체 UI·본문·버튼·입력창 */
-  --font-family: 'Pretendard Variable', var(--font-fallback-sans);
+  /* Pretendard 미수록 한자는 로컬 본명조로 보완하여 OS 글꼴 혼용 방지 */
+  --font-family: 'Pretendard Variable', 'Source Han Serif KR', 'Byeolungwan Serif Supplement', var(--font-fallback-sans);
 
   /* 포인트 폰트 후보 (비교용 — 최종 1종 선택 전까지 화면에 임의 적용하지 않음) */
   --font-point-hahmlet: 'Hahmlet', var(--font-fallback-serif);
   --font-point-song-myung: 'Song Myung', var(--font-fallback-serif);
   --font-point-maru-buri: 'Maru Buri', var(--font-fallback-serif);
 
-  /* 포인트 폰트 사용 지점 — 비교할 때 이 한 줄만 바꾸면 됨
-     예) var(--font-point-hahmlet) / var(--font-point-song-myung) / var(--font-point-maru-buri)
-     (최종 선택 전이므로 기본값은 시스템 명조) */
-  --font-point: var(--font-fallback-serif);
+  /* 기존 명조 사용 영역만 본명조로 통일 */
+  --font-point: 'Source Han Serif KR', 'Byeolungwan Serif Supplement', var(--font-fallback-serif);
 
   /* ── 색상 (Figma 05_home 기준 추출값) ── */
-  --color-page-bg: #e6e7eb;        /* PC: 앱 프레임 바깥 배경 (임시) */
+  --color-page-bg: #121c26;        /* PC: 앱보다 조금 밝은 바깥 배경 */
   --color-app-bg: #070e16;         /* 앱 기본 배경 (밤하늘) */
   --color-app-bg-deep: #030609;    /* 섹션 구분 띠 */
   --color-dome: #081b26;           /* 상단 하늘 돔 아래쪽 */

@@ -1,47 +1,44 @@
-import { Link, useNavigate } from 'react-router';
-import { useEntryFlow } from '../entry/entryFlow.tsx';
+import { Link } from 'react-router';
+import { useRequiredEntryFlow } from '../entry/entryFlow.tsx';
 import Chevron from '../components/Chevron.tsx';
 import ConstellationFigure from '../components/ConstellationFigure.tsx';
 import Icon from '../components/Icon.tsx';
 import PageHeader from '../components/PageHeader.tsx';
+import FeatureLockIcon from '../components/FeatureLockIcon.tsx';
+import '../components/FeatureLocked.css';
 import {
-  exampleMyConstellation,
-  exampleUser,
   formatBirthDate,
   myMenuSections,
   profileFigure,
   settings,
-  todayFortuneLines,
-  type UserProfile,
 } from './my/myData.ts';
 import './MyPage.css';
+import { getDailyFortune } from '../services/fortunes.ts';
 
 /**
  * 09 마이 — figma-reference/09_my-page.png (393 × 1373)
- * 기본 메뉴바 '마이'. 사용자 정보는 예시(exampleUser) — 회원가입·저장 연결 전까지 표시만
+ * 기본 메뉴바 '마이'. 입력한 사용자와 판정한 별자리 정보를 표시
  * 실제 동작: 별자리·운세 메뉴 → 각 화면, '사전 보기' → 사전 메인
- * '재설정' → 01 시작 화면 (처음부터 다시 체험, 삭제 기능 없음)
+ * '재설정' → 입력값과 탭 세션을 비우고 01 시작 화면
  * ⏳ 표시만(동작 미확정): 프로필 ›(계정 설정 · 출생 시각 추가 예정), 화면 모드, 알림, 공지사항, 약관
  */
-export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
-  const navigate = useNavigate();
-  const { setProfile } = useEntryFlow();
-  // 재설정: 새 관람객을 위해 회원가입 임시 입력값(메모리)만 비우고 01 시작 화면으로 — 저장소 · 캐시는 건드리지 않음
-  const restart = () => {
-    setProfile(null);
-    navigate('/splash', { replace: true }); // 시작 흐름과 같이 기록 교체 → 체험 뒤 홈에서 뒤로 가기로 이 마이가 나오지 않음
-  };
+export default function MyPage() {
+  const { profile, constellation, restartExperience, fortuneDate } = useRequiredEntryFlow();
+  const todayFortuneLines = [getDailyFortune(constellation.starId, fortuneDate).compact];
+  const user = profile;
+  const myConstellation = constellation;
   // 출생 시각은 선택 항목 — 없으면 줄에서 뺌
-  const profileLine = [formatBirthDate(user.birthDate), user.birthTime, exampleMyConstellation.guardian].filter(Boolean).join(' · ');
+  const profileLine = [formatBirthDate(user.birthDate), user.birthTime, myConstellation.guardian].filter(Boolean).join(' · ');
 
   return (
     <div className="my">
-      <PageHeader title="마이페이지" showBack={false} />
+      <PageHeader title="마이페이지" showBack={false} right={false} />
 
       {/* ── 프로필 (⏳ › : 계정 설정 — 화면 미구현) ── */}
       <section className="my-profile" aria-label="프로필">
         <ConstellationFigure
-          className="my-profile__figure"
+          className="my-profile__figure profile-image"
+          graphicKey={constellation.graphicKey}
           viewBox="26 86 52 48"
           stars={profileFigure.stars}
           lines={profileFigure.lines}
@@ -62,8 +59,8 @@ export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
             나의 별자리
           </h2>
           <p className="my-constellation__name">
-            {exampleMyConstellation.name}
-            <span>{exampleMyConstellation.hanja}</span>
+            {myConstellation.name}
+            <span>{myConstellation.hanja}</span>
           </p>
         </div>
         <Link to="/constellations/dictionary" className="my-constellation__link">
@@ -109,7 +106,8 @@ export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
       ))}
 
       {/* ── 설정 (⏳ 모두 표시만) ── */}
-      <section className="my-section" aria-labelledby="my-section-settings">
+      <section className="my-section my-settings feature-locked" aria-labelledby="my-section-settings" aria-disabled="true">
+        <div className="feature-locked__content" inert aria-hidden="true">
         <hr className="my-divider" />
         <h2 id="my-section-settings" className="my-label my-section__title">
           설정
@@ -152,9 +150,14 @@ export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
             </li>
           ))}
         </ul>
+        </div>
+        <div className="feature-locked__notice my-settings__notice" role="note">
+          <FeatureLockIcon />
+          <p className="feature-locked__description">이 기능은 현재 지원하지 않습니다.</p>
+        </div>
       </section>
 
-      {/* ── 초기화 (⏳ 표시만 — 삭제 기능 없음) ── */}
+      {/* ── 초기화: 잠금 영역 밖에서 기존 체험 재설정을 유지 ── */}
       <section className="my-section" aria-labelledby="my-section-reset">
         <hr className="my-divider" />
         <h2 id="my-section-reset" className="my-label my-section__title">
@@ -166,18 +169,12 @@ export default function MyPage({ user = exampleUser }: { user?: UserProfile }) {
             <p className="my-row__desc">{settings.reset.desc}</p>
           </div>
           {/* '재설정' → 임시 입력값을 비우고 01 시작 화면부터 다시 체험 (2026-10-10) */}
-          <button type="button" className="my-reset__button" onClick={restart}>
+          <button type="button" className="my-reset__button" onClick={restartExperience}>
             {settings.reset.button}
           </button>
         </div>
       </section>
 
-      {/* 아래쪽 자리 — 시안의 회색 막대·사각형 그대로 (문구·로고 미제공) */}
-      <div className="my-footer" aria-hidden="true">
-        <span className="my-footer__bar" />
-        <span className="my-footer__bar my-footer__bar--short" />
-        <span className="my-footer__logo" />
-      </div>
     </div>
   );
 }

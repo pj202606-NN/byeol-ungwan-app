@@ -1,16 +1,17 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import { createPortal } from 'react-dom';
 import Icon from '../../components/Icon.tsx';
-import { optionId, selectorGroups } from './compatibilityData.ts';
+import { selectorGroups } from './compatibilityData.ts';
+import { getCompatibilityStar } from '../../services/compatibility.ts';
 import './CompatibilitySelector.css';
 
 interface CompatibilitySelectorProps {
   /** 시트를 띄울 앱 프레임 (메뉴바까지 덮도록 .app-frame 안에 표시) */
   container: Element;
   myName: string;
-  /** 현재 선택된 항목 (optionId) */
-  selectedId: string | null;
-  onSelect: (id: string) => void;
+  /** 같은 이름의 위수도 숫자 ID로 구분 */
+  selectedId: number | null;
+  onSelect: (id: number) => void;
   onClose: () => void;
 }
 
@@ -65,10 +66,10 @@ export default function CompatibilitySelector({ container, myName, selectedId, o
   // 검색: 별자리 이름에 입력한 글자가 들어 있는 항목만 표시 (동작 미확정 — 기본 동작으로 구현)
   const keyword = query.trim();
   const groups = selectorGroups
-    .map((g) => ({ ...g, items: keyword ? g.items.filter((name) => name.includes(keyword)) : g.items }))
+    .map((g) => ({ ...g, items: keyword ? g.items.filter((star) => `${star.name} ${star.hanja} ${star.alias}`.includes(keyword)) : g.items }))
     .filter((g) => g.items.length > 0);
 
-  const selectedName = selectedId?.split(':')[1];
+  const selectedName = selectedId ? getCompatibilityStar(selectedId).name : undefined;
 
   return createPortal(
     <div className="compat-selector" onKeyDown={onKeyDown}>
@@ -87,7 +88,7 @@ export default function CompatibilitySelector({ container, myName, selectedId, o
           <h2 id={titleId} className="compat-selector__title">상대 별자리 선택</h2>
           {selectedName && (
             <p className="compat-selector__pair">
-              {myName}자리 x {selectedName}자리
+              {myName} × {selectedName}
             </p>
           )}
         </div>
@@ -109,17 +110,20 @@ export default function CompatibilitySelector({ container, myName, selectedId, o
             <section key={g.key} className="compat-selector__group" aria-label={g.label}>
               <h3 className="compat-selector__group-label">{g.label}</h3>
               <div className="compat-selector__grid">
-                {g.items.map((name) => {
-                  const id = optionId(g.key, name);
+                {g.items.map((star) => {
+                  const id = star.starId;
                   return (
                     <button
                       key={id}
                       type="button"
                       className="compat-selector__option"
                       aria-pressed={selectedId === id}
+                      aria-label={`${star.name} ${star.hanja} · ${star.alias}`}
+                      data-star-id={id}
                       onClick={() => onSelect(id)}
                     >
-                      {name}
+                      <span>{star.name}</span>
+                      <small>{star.alias}</small>
                     </button>
                   );
                 })}

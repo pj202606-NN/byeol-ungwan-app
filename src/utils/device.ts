@@ -3,7 +3,7 @@ import { APP_CONFIG } from '../app.config';
 /**
  * 화면 유형
  * - pc:     마우스 환경의 데스크톱 브라우저 → 393:852 휴대폰 프레임으로 표시
- * - tablet: 터치 기반 큰 화면 → 전체 화면 (추후 태블릿 전용 레이아웃 적용 지점)
+ * - tablet: 터치 기반 큰 화면 → PC와 동일한 바깥 배경·393:852 프레임
  * - mobile: 휴대폰 → 전체 화면 + Safe Area
  */
 export type DeviceType = 'pc' | 'tablet' | 'mobile';
@@ -19,11 +19,15 @@ export function isStandalone(): boolean {
 
 export function detectDeviceType(): DeviceType {
   const shortSide = Math.min(window.innerWidth, window.innerHeight);
-  const isLarge = shortSide >= APP_CONFIG.tabletMinShortSide;
+  const screenShortSide = Math.min(window.screen.width, window.screen.height);
+  // iPad may report a Mac user agent or run in a narrow split-view window.
+  const isIPad = /iPad/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isLarge = isIPad || shortSide >= APP_CONFIG.tabletMinShortSide
+    || (navigator.maxTouchPoints > 0 && screenShortSide >= APP_CONFIG.tabletMinShortSide);
   const hasMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  // 설치된 앱은 PC 프레임을 쓰지 않는다
-  if (hasMouse && !isStandalone()) return 'pc';
+  // Fullscreen phone UI is reserved for phones; installed tablets retain the frame.
+  if (hasMouse) return 'pc';
   return isLarge ? 'tablet' : 'mobile';
 }
 
